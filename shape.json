@@ -1,0 +1,59 @@
+{
+  "_note": "VERIFIED data only. Fields marked TODO were not retrievable in this pass.",
+  "app": {
+    "name": "HabitKit",
+    "domain": "habitkit.app",
+    "ios_id": "6443918070",
+    "play_id": "com.roehl.habitkit",
+    "founder": "Sebastian Roehl",
+    "founder_source": "itunes lookup sellerName",
+    "handles": { "x": "SebastianRoehl", "reddit": "TODO", "indiehackers": "TODO", "youtube": "TODO" }
+  },
+  "events": [
+    { "date": "2021-08-15", "kind": "launch", "title": "Web app live: 'Habit Tracking simple and social' (has Sign In)",
+      "source": "wayback", "by": null, "by_founder": false,
+      "url": "http://web.archive.org/web/20210815131021/https://habitkit.app/", "number": null, "date_exact": true },
+
+    { "date": "2022-11-26", "kind": "launch", "title": "iOS app released on the App Store",
+      "source": "appstore", "by": "Sebastian Roehl", "by_founder": true,
+      "url": "https://apps.apple.com/app/id6443918070", "number": null, "date_exact": true },
+
+    { "date": "2022-11-29", "kind": "product_change", "title": "Repositioned to 'Consistency Tracker' — tile-based charts; social framing dropped",
+      "source": "wayback", "by": null, "by_founder": false,
+      "url": "http://web.archive.org/web/20221129171355/https://habitkit.app/", "number": null, "date_exact": false },
+
+    { "date": "2023-02-05", "kind": "launch", "title": "Launched on Product Hunt",
+      "source": "producthunt", "by": "Sebastian Roehl", "by_founder": true,
+      "url": "https://www.producthunt.com/posts/habitkit-habit-tracker", "number": 28, "date_exact": true },
+
+    { "date": "2024-03-17", "kind": "mention", "title": "Submitted to Hacker News by a third party",
+      "source": "hackernews", "by": "charlesvien", "by_founder": false,
+      "url": "https://news.ycombinator.com/item?id=39738043", "number": 2, "date_exact": true },
+
+    { "date": "2024-07-10", "kind": "earned_media", "title": "Founder interview on Ship Fam podcast",
+      "source": "podcast", "by": "Ship Fam", "by_founder": true,
+      "url": "https://open.spotify.com/episode/5cjGLeIZK2dddZ5UJJOQCC", "number": null, "date_exact": true },
+
+    { "date": "2025-03-10", "kind": "product_change", "title": "Repositioned to 'Change Your Life One Habit at a Time'",
+      "source": "wayback", "by": null, "by_founder": false,
+      "url": "http://web.archive.org/web/20250310id_/https://habitkit.app/", "number": null, "date_exact": false },
+
+    { "date": "2026-09-05", "kind": "product_change", "title": "Repositioned to 'The Habit Tracker You Can Actually See'",
+      "source": "wayback", "by": null, "by_founder": false,
+      "url": "http://web.archive.org/web/20260905142804/https://habitkit.app/", "number": null, "date_exact": false }
+  ],
+  "metrics": [
+    { "date": "2026-09-10", "metric": "ios_rating_count", "value": 2410, "url": "https://itunes.apple.com/lookup?id=6443918070" },
+    { "date": "2026-09-10", "metric": "ios_rating_avg",   "value": 4.85, "url": "https://itunes.apple.com/lookup?id=6443918070" },
+    { "date": "2026-09-07", "metric": "ios_version",      "value": "1.17.2", "url": "https://itunes.apple.com/lookup?id=6443918070" }
+  ],
+  "coverage": {
+    "wayback_site":   "ok - 37 monthly captures, 2021-08 to 2026-09",
+    "appstore_lookup":"ok",
+    "hackernews":     "ok - 1 real hit (domain-anchored)",
+    "producthunt":    "not re-verified this pass",
+    "appstore_wayback":"FAILED - CDX query timed out at 40s; needed for the rating-count curve",
+    "reddit":         "FAILED - search.json now blocks unauthenticated; needs OAuth",
+    "sitemap":        "FAILED - no /sitemap.xml"
+  }
+}
