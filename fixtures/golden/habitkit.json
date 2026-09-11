@@ -1,0 +1,50 @@
+{
+  "app": {
+    "name": "Habit Tracker - HabitKit",
+    "domain": "habitkit.app",
+    "ios_id": "6443918070",
+    "play_id": "com.roehl.habitkit",
+    "founder": "Sebastian Roehl",
+    "founder_source": "itunes lookup sellerName",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/60/14/63601478-42a0-cf67-a82e-bff1531be47c/NewAppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/100x100bb.jpg"
+  },
+  "events": [
+    {
+      "date": "2022-11-26",
+      "kind": "launch",
+      "title": "iOS app released on the App Store",
+      "source": "itunes",
+      "by": "Sebastian Roehl",
+      "by_founder": true,
+      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070?uo=4",
+      "number": null,
+      "date_exact": true
+    },
+    {
+      "date": "2026-09-07",
+      "kind": "product_change",
+      "title": "Version 1.17.2 released",
+      "source": "itunes",
+      "by": "Sebastian Roehl",
+      "by_founder": true,
+      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070?uo=4",
+      "number": null,
+      "date_exact": true
+    }
+  ],
+  "metrics": [
+    {
+      "date": "2026-09-11",
+      "metric": "ios_rating_count",
+      "value": 2410,
+      "url": "https://itunes.apple.com/lookup?id=6443918070&country=us"
+    }
+  ],
+  "coverage": [
+    {
+      "source": "itunes",
+      "status": "ok",
+      "note": "2 events, 1 metrics"
+    }
+  ]
+}

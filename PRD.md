@@ -46,6 +46,8 @@ The common thread: **anyone willing to understand how a thing grew and what step
 
 ### In scope for v1
 
+**Targets: mobile apps with an App Store or Play listing only** (decided, §11.1).
+
 - Single-target reconstruction: one app/domain in, one timeline out
 - Founder marketing actions (**Axis B**) and third-party mentions (**Axis A**) — both, clearly distinguished
 - Growth metrics where publicly recoverable (mobile app store data)
@@ -370,9 +372,9 @@ Measured at four orders of magnitude in §6.3. Mitigated by domain-anchored sear
 
 Chronological presentation is uniquely dangerous here — an empty stretch *asserts something*. The `coverage` block is the mitigation and it is not optional.
 
-### 9.4 Non-app targets have far weaker metrics
+### 9.4 Non-app targets have far weaker metrics — deferred, not live
 
-Store review counts and install brackets are the highest-quality data in the catalogue, and a pure SaaS or website has neither. Those targets fall back to Wayback self-claims and Google Trends — much thinner. Directly drives open question §10.1.
+Store review counts and install brackets are the highest-quality data in the catalogue, and a pure SaaS or website has neither; those targets fall back to Wayback self-claims and Google Trends, which are much thinner. **Not a v1 risk** — §11.1 scoped v1 to apps only. This becomes live again when the company/website mode is built.
 
 ### 9.5 Most growth is not spiky
 
@@ -426,15 +428,15 @@ Consequences for the build:
 
 ## 11. Open questions
 
-### 11.1 Mobile-apps-first for v1? — needs a decision
+### 11.1 Scope — DECIDED: apps only for v1
 
-**Recommendation: yes.** Phases 0, 1 and 3 all lean on store data, which is the richest and most reliable material in the catalogue: a free endpoint that yields the founder's name, the exact release date, and — via archived listings — the growth curve. A pure SaaS or website has none of it.
+**Decided 2026-09-11 (DECISIONS.md D1): v1 supports mobile apps with an App Store or Play listing. Nothing else.**
 
-**But this narrows the stated audience.** §3 says "app/company/project/unicorn/SaaS/micro-SaaS/website," and mobile-first covers a fraction of that. Websites and SaaS would come later, in a second mode with a thinner metric set (Wayback self-claims, Google Trends, headcount).
+Every high-value source verified in §6 and §13.1 is app-specific — the free iTunes call that yields the founder's name and exact release date, the JSON-LD `aggregateRating` that yields the growth curve, the archived listings that yield version history. A pure SaaS or website has none of it.
 
-Worth knowing: the two target classes really are two pipelines sharing a spine. For an indie app the founder *is* the primary source — build-in-public posts, PH, HN, Reddit, podcasts. For a large company, founder posts are PR and mostly noise; the record is press, funding rounds, Crunchbase, the engineering blog, job postings. Wayback landing-page diffing works beautifully at both ends. Which mode a target is becomes a routing decision at ingestion.
+This deliberately narrows the audience described in §3. Companies and websites are a **post-v1 mode**, and they are genuinely a second pipeline sharing this one's spine: for an indie app the founder *is* the primary source (build-in-public posts, PH, HN, Reddit, podcasts), whereas for a company the founder's posts are PR and the real record is press, funding rounds, Crunchbase, the engineering blog and job postings. Wayback landing-page diffing is the part that works at both ends. Which mode a target is becomes a routing decision at ingestion — but not in v1, where there is only one mode.
 
-**This is the user's call, not a settled decision.**
+**Consequences now settled:** identity resolution is store-first; `metrics` has exactly one path; §9.4 and §11.4 are deferred rather than blocking.
 
 ### 11.2 Faithful record, or judgement?
 
@@ -446,7 +448,7 @@ Should the tool eventually say *"the founder credits Product Hunt; the data sugg
 
 ### 11.4 Where does the growth curve come from for non-app targets?
 
-`metrics` currently has no working proxy for websites. Candidates: landing-page self-claims via Wayback diff, Google Trends, headcount over time. All weaker than store data. Blocks §11.1 if the answer is "support everything in v1."
+`metrics` has no working proxy for websites. Candidates: landing-page self-claims via Wayback diff, Google Trends, headcount over time — all weaker than store data. **Deferred with the company/website mode (§11.1); no longer blocking.**
 
 ### 11.5 Storage engine
 
@@ -465,8 +467,8 @@ Three constraints decide it: `agent-computer` is TypeScript + Bun + Playwright; 
 | App + API | Next.js (App Router) | Search form, job page, API routes, one deploy |
 | Language | TypeScript | Matches `agent-computer`; shared `Event`/`Metric` types |
 | DB | Postgres | Job state, events, metrics, coverage |
-| ORM | Drizzle | SQL-first, light, good typed inference |
-| Queue | **pg-boss** | Postgres-backed, no Redis. Retries, backoff, per-queue throttle |
+| Driver | `postgres` + `lib/db/schema.sql` | See §12.5 — Drizzle was dropped |
+| Queue | **own `source_runs` table**, `FOR UPDATE SKIP LOCKED` | See §12.5 — pg-boss was dropped |
 | Fetching | native `fetch` / undici | Nothing more is needed |
 | Parsing | see §13 | |
 | Browse | vendored `agent-computer` | Playwright + Chromium, loopback + token |
@@ -512,9 +514,22 @@ Default `claude-opus-5` with `thinking: {type: "adaptive"}`. Two features fit un
 
 Stepping the high-volume relevance filter down to a cheaper model is the obvious cost lever if measurement calls for it — a decision to make on numbers, not upfront.
 
+### 12.5 Two deviations, decided at E2
+
+**pg-boss dropped.** It owns its own queue tables, which would have left pg-boss's job state *and*
+our coverage table as two separate records of what a crawl did — the exact duplication §12.2 warns
+against. Instead one `source_runs` table, claimed with `FOR UPDATE SKIP LOCKED` (the standard
+Postgres queue primitive, ~80 lines). "The job table *is* the coverage block" is now literally true
+rather than aspirational: `readCrawl` renders the same rows the worker claims.
+
+**Drizzle dropped.** The interesting queries — `SKIP LOCKED`, the atomic token bucket — are
+hand-written SQL regardless, leaving an ORM to do trivial inserts. Six tables in a single idempotent
+`schema.sql` applied on worker start. A migration tool is not yet earned; it becomes worth adding when
+the schema has to change without dropping data.
+
 ### 12.4 Deliberately excluded
 
-No Redis, no Temporal/Inngest, no tRPC, no microservices, no LLM in the orchestration path.
+No Redis, no Temporal/Inngest, no tRPC, no microservices, no LLM in the orchestration path, no ORM, no queue library.
 
 ---
 

@@ -1,0 +1,50 @@
+{
+  "app": {
+    "name": "HabitKit: Focus Habit Tracker",
+    "domain": null,
+    "ios_id": "6761298880",
+    "play_id": "com.devgenesis.habitkit",
+    "founder": "Mansoor Majeed",
+    "founder_source": "itunes lookup sellerName",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f3/90/ae/f390ae2c-ef8d-a0ab-fff4-937bca53fa27/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg"
+  },
+  "events": [
+    {
+      "date": "2026-03-30",
+      "kind": "launch",
+      "title": "iOS app released on the App Store",
+      "source": "itunes",
+      "by": "Mansoor Majeed",
+      "by_founder": true,
+      "url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880?uo=4",
+      "number": null,
+      "date_exact": true
+    },
+    {
+      "date": "2026-04-12",
+      "kind": "product_change",
+      "title": "Version 1.1 released",
+      "source": "itunes",
+      "by": "Mansoor Majeed",
+      "by_founder": true,
+      "url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880?uo=4",
+      "number": null,
+      "date_exact": true
+    }
+  ],
+  "metrics": [
+    {
+      "date": "2026-09-11",
+      "metric": "ios_rating_count",
+      "value": 0,
+      "url": "https://itunes.apple.com/lookup?id=6761298880&country=us"
+    }
+  ],
+  "coverage": [
+    {
+      "source": "itunes",
+      "status": "ok",
+      "note": "2 events, 1 metrics"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "565616b77deae47a": {
+    "url": "https://itunes.apple.com/search?term=HabitKit&entity=software&country=us&limit=12",
+    "file": "search-habitkit.565616b77deae47a.json",
+    "recorded_at": "2026-09-11T09:35:47.798Z",
+    "status": 200,
+    "bytes": 120044
+  },
+  "ddbc0ec39bf9ff97": {
+    "url": "https://itunes.apple.com/search?term=ngl&entity=software&country=us&limit=12",
+    "file": "search-ngl.ddbc0ec39bf9ff97.json",
+    "recorded_at": "2026-09-11T09:35:48.462Z",
+    "status": 200,
+    "bytes": 113027
+  },
+  "6c64847eae16f0a7": {
+    "url": "https://itunes.apple.com/search?term=zzqxwvnothingapp&entity=software&country=us&limit=12",
+    "file": "search-empty-ish.6c64847eae16f0a7.json",
+    "recorded_at": "2026-09-11T09:35:49.103Z",
+    "status": 200,
+    "bytes": 22779
+  },
+  "be77aad3ed01bdde": {
+    "url": "https://itunes.apple.com/lookup?id=6443918070&country=us",
+    "file": "lookup-habitkit.be77aad3ed01bdde.json",
+    "recorded_at": "2026-09-11T09:35:49.737Z",
+    "status": 200,
+    "bytes": 8877
+  },
+  "aa2cac9c5fef0622": {
+    "url": "https://itunes.apple.com/lookup?id=6761298880&country=us",
+    "file": "lookup-impostor.aa2cac9c5fef0622.json",
+    "recorded_at": "2026-09-11T09:35:50.376Z",
+    "status": 200,
+    "bytes": 11063
+  },
+  "956395e70c503155": {
+    "url": "https://itunes.apple.com/lookup?id=1&country=us",
+    "file": "lookup-missing.956395e70c503155.json",
+    "recorded_at": "2026-09-11T09:35:51.003Z",
+    "status": 200,
+    "bytes": 42
+  },
+  "04357fc95cb3bff1": {
+    "url": "https://hn.algolia.com/api/v1/search?query=habitkit.app&restrictSearchableAttributes=url,title&hitsPerPage=50",
+    "file": "hn-habitkit.04357fc95cb3bff1.json",
+    "recorded_at": "2026-09-11T09:35:51.934Z",
+    "status": 200,
+    "bytes": 1135
+  },
+  "5c9f996caa3bf668": {
+    "url": "https://hn.algolia.com/api/v1/search?query=zzqxwv-no-such-domain.example&restrictSearchableAttributes=url,title&hitsPerPage=50",
+    "file": "hn-nothing.5c9f996caa3bf668.json",
+    "recorded_at": "2026-09-11T09:35:52.842Z",
+    "status": 200,
+    "bytes": 472
+  }
+}
