@@ -6,7 +6,9 @@
     "play_id": "com.devgenesis.habitkit",
     "founder": "Mansoor Majeed",
     "founder_source": "itunes lookup sellerName",
-    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f3/90/ae/f390ae2c-ef8d-a0ab-fff4-937bca53fa27/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg"
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f3/90/ae/f390ae2c-ef8d-a0ab-fff4-937bca53fa27/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg",
+    "store_url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880",
+    "handles": {}
   },
   "events": [
     {
@@ -16,7 +18,7 @@
       "source": "itunes",
       "by": "Mansoor Majeed",
       "by_founder": true,
-      "url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880?uo=4",
+      "url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880",
       "number": null,
       "date_exact": true
     },
@@ -27,7 +29,7 @@
       "source": "itunes",
       "by": "Mansoor Majeed",
       "by_founder": true,
-      "url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880?uo=4",
+      "url": "https://apps.apple.com/us/app/habitkit-focus-habit-tracker/id6761298880",
       "number": null,
       "date_exact": true
     }

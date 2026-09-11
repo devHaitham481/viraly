@@ -6,6 +6,8 @@ import type { CrawlProgress } from "@/lib/crawl";
 import { CandidateList } from "@/components/CandidateList";
 import { Timeline } from "@/components/Timeline";
 import { CoverageReport } from "@/components/CoverageReport";
+import { GrowthChart } from "@/components/GrowthChart";
+import { InsightsPanel } from "@/components/Insights";
 
 type Stage = "idle" | "resolving" | "choosing" | "crawling" | "done";
 
@@ -73,11 +75,16 @@ export default function Home() {
 
   return (
     <main className="mx-auto max-w-2xl px-6 py-16">
-      <header>
-        <h1 className="text-2xl font-semibold tracking-tight">viraly</h1>
-        <p className="mt-1 text-[var(--color-muted)]">
-          How did this app actually grow? Reconstructed from public sources.
-        </p>
+      <header className="flex items-baseline justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">viraly</h1>
+          <p className="mt-1 text-[var(--color-muted)]">
+            How did this app actually grow? Reconstructed from public sources.
+          </p>
+        </div>
+        <a href="/compare" className="shrink-0 text-sm underline decoration-[var(--color-line)] underline-offset-4">
+          compare
+        </a>
       </header>
 
       <form onSubmit={resolve} className="mt-8 flex gap-2">
@@ -148,41 +155,74 @@ export default function Home() {
             </dl>
           </section>
 
-          <section className="mt-10">
-            <h2 className="text-sm font-medium text-[var(--color-muted)]">
-              Timeline
-              {result.pending > 0 && (
-                <span className="ml-2 font-normal">
-                  · {result.pending} source{result.pending === 1 ? "" : "s"} still running…
-                </span>
+          {/* Queued work with no worker is not slowness — it is never going to happen. Say so. */}
+          {result.pending > 0 && !result.worker_alive && (
+            <div className="mt-6 rounded-lg border border-[var(--color-accent)] px-4 py-3 text-sm">
+              <p className="font-medium text-[var(--color-accent)]">No worker is running</p>
+              <p className="mt-1 text-[var(--color-muted)]">
+                {result.pending} source{result.pending === 1 ? "" : "s"} are queued and nothing will
+                pick them up. Start one with <code className="font-mono">npm run worker</code>, or
+                deploy a worker process — Vercel alone cannot run it.
+              </p>
+            </div>
+          )}
+
+          {result.pending > 0 && result.worker_alive && (
+            <div className="mt-6 rounded-lg border border-[var(--color-line)] bg-white px-4 py-3 text-sm">
+              <div className="flex items-center gap-2 font-medium">
+                <span className="inline-block size-1.5 animate-pulse rounded-full bg-[var(--color-accent)]" />
+                Crawling — {result.coverage.filter((c) => c.status === "ok" || c.status === "empty" || c.status === "partial" || c.status === "failed").length} of {result.coverage.length} sources done
+              </div>
+              <ul className="mt-2 space-y-0.5 text-[var(--color-muted)]">
+                {result.coverage
+                  .filter((c) => c.status === "running" || c.status === "queued")
+                  .map((c) => (
+                    <li key={c.source}>
+                      {c.status === "running" ? "▸" : "·"} {c.source}
+                      {c.status === "running"
+                        ? ` — ${c.progress ?? "started"}${c.elapsed_s != null ? ` (${c.elapsed_s}s)` : ""}`
+                        : " — waiting"}
+                    </li>
+                  ))}
+              </ul>
+              {result.queue_ahead > 0 && (
+                <p className="mt-2 text-xs text-[var(--color-muted)]">
+                  {result.queue_ahead} job{result.queue_ahead === 1 ? "" : "s"} from other crawls are
+                  ahead of this one in the shared queue.
+                </p>
               )}
-            </h2>
-            <Timeline events={result.events} />
+            </div>
+          )}
+
+          <section className="mt-10">
+            <h2 className="text-sm font-medium text-[var(--color-muted)]">Timeline</h2>
+            {result.pending === 0 && result.attribution && (
+              <p className="mt-1 text-sm text-[var(--color-muted)]">{result.attribution}</p>
+            )}
+            <Timeline entries={result.timeline} />
           </section>
 
           {result.metrics.length > 0 && (
             <section className="mt-10">
-              <h2 className="text-sm font-medium text-[var(--color-muted)]">Metrics</h2>
-              <ul className="mt-3 space-y-1 text-sm">
-                {result.metrics.map((m, i) => (
-                  <li key={i} className="flex gap-4">
-                    <span className="w-24 shrink-0 tabular-nums text-[var(--color-muted)]">
-                      {m.date}
-                    </span>
-                    <span className="flex-1">{m.metric}</span>
-                    <span className="font-medium tabular-nums">
-                      {typeof m.value === "number" ? m.value.toLocaleString() : m.value}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-2 text-xs text-[var(--color-muted)]">
-                One live reading, not a series. The dated curve comes from archived store pages at E4.
-              </p>
+              <h2 className="text-sm font-medium text-[var(--color-muted)]">Growth</h2>
+              <GrowthChart metrics={result.metrics} events={result.events} />
+              {result.metrics.filter((m) => m.metric === "ios_rating_count").length < 3 && (
+                <p className="mt-2 text-xs text-[var(--color-muted)]">
+                  Only a live reading so far — the dated series comes from archived App Store pages.
+                </p>
+              )}
             </section>
           )}
 
-          <CoverageReport coverage={result.coverage} />
+          {result.pending === 0 && result.insights && (
+            <InsightsPanel insights={result.insights} name={result.app.name} />
+          )}
+
+          <CoverageReport
+            coverage={result.coverage}
+            queueAhead={result.queue_ahead}
+            violations={result.violations}
+          />
         </>
       )}
     </main>

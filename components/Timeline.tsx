@@ -1,4 +1,4 @@
-import type { Event } from "@/lib/schema";
+import type { TimelineEntry, Verdict } from "@/lib/impact";
 
 /** An inexact date is drawn differently — a bracket, never a point. */
 function DateCell({ date, exact }: { date: string; exact: boolean }) {
@@ -14,8 +14,31 @@ function DateCell({ date, exact }: { date: string; exact: boolean }) {
   );
 }
 
-export function Timeline({ events }: { events: Event[] }) {
-  if (events.length === 0) {
+const VERDICT_LABEL: Record<Verdict, string> = {
+  accelerated: "growth picked up after this",
+  slowed: "growth slowed after this",
+  steady: "no change in growth",
+  unknown: "",
+};
+
+const VERDICT_TONE: Record<Verdict, string> = {
+  accelerated: "text-emerald-700",
+  slowed: "text-[var(--color-accent)]",
+  steady: "text-[var(--color-muted)]",
+  unknown: "text-[var(--color-muted)]",
+};
+
+const rate = (v: number | null) => (v === null ? "—" : `${Math.round(v)}/mo`);
+
+/**
+ * What they did, where they were when they did it, and whether it moved anything.
+ *
+ * The third column is blank far more often than not: archived captures land roughly every two
+ * months, so most events have no reading close enough on either side to compare. Showing the reason
+ * rather than a guess is the point.
+ */
+export function Timeline({ entries }: { entries: TimelineEntry[] }) {
+  if (entries.length === 0) {
     return (
       <p className="mt-3 text-sm text-[var(--color-muted)]">
         No events. Check the coverage report below — this may mean nothing happened, or that nothing
@@ -26,7 +49,7 @@ export function Timeline({ events }: { events: Event[] }) {
 
   return (
     <ol className="mt-3 border-l border-[var(--color-line)]">
-      {events.map((e, i) => (
+      {entries.map((e, i) => (
         <li key={`${e.date}-${i}`} className="relative flex gap-4 py-3 pl-6">
           <span
             className={`absolute -left-[4.5px] top-5 size-2 rounded-full ${
@@ -35,6 +58,7 @@ export function Timeline({ events }: { events: Event[] }) {
             title={e.by_founder ? "the product's own move" : "someone else"}
           />
           <DateCell date={e.date} exact={e.date_exact} />
+
           <div className="min-w-0 flex-1">
             <a
               href={e.url}
@@ -44,11 +68,28 @@ export function Timeline({ events }: { events: Event[] }) {
             >
               {e.title}
             </a>
+
             <div className="mt-0.5 text-sm text-[var(--color-muted)]">
               {e.kind} · {e.source}
               {e.by && <> · {e.by}</>}
               {e.number !== null && <> · {e.number.toLocaleString()}</>}
+              {e.impact.ratings_at !== null && (
+                <> · at {e.impact.ratings_at.toLocaleString()} ratings</>
+              )}
             </div>
+
+            {e.impact.verdict !== "unknown" ? (
+              <div className={`mt-1 text-sm ${VERDICT_TONE[e.impact.verdict]}`}>
+                {VERDICT_LABEL[e.impact.verdict]} — {rate(e.impact.velocity_before)} →{" "}
+                {rate(e.impact.velocity_after)}
+              </div>
+            ) : (
+              e.impact.reason && (
+                <div className="mt-1 text-xs text-[var(--color-muted)]">
+                  effect not measurable — {e.impact.reason}
+                </div>
+              )
+            )}
           </div>
         </li>
       ))}

@@ -6,7 +6,9 @@
     "play_id": "com.roehl.habitkit",
     "founder": "Sebastian Roehl",
     "founder_source": "itunes lookup sellerName",
-    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/60/14/63601478-42a0-cf67-a82e-bff1531be47c/NewAppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/100x100bb.jpg"
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/60/14/63601478-42a0-cf67-a82e-bff1531be47c/NewAppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/100x100bb.jpg",
+    "store_url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "handles": {}
   },
   "events": [
     {
@@ -16,7 +18,7 @@
       "source": "itunes",
       "by": "Sebastian Roehl",
       "by_founder": true,
-      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070?uo=4",
+      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
       "number": null,
       "date_exact": true
     },
@@ -27,7 +29,7 @@
       "source": "itunes",
       "by": "Sebastian Roehl",
       "by_founder": true,
-      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070?uo=4",
+      "url": "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
       "number": null,
       "date_exact": true
     }

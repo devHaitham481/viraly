@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>HabitKit</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+        <link href="/css/app.css" rel="stylesheet">
+    </head>
+    <body class="h-full">
+            <div class="h-screen flex flex-col overflow-hidden">
+        
+        <nav class="flex items-center justify-end py-4 container mx-auto">
+            
+            <div class="flex items-center">
+                <button id="switchTheme">
+                    <svg class="w-6 h-6 text-gray-600 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="/login" class="ml-4 button-secondary px-4">Sign In</a>
+                
+            </div>
+        </nav>
+        
+        <div class="flex-1 flex flex-col lg:flex-row px-6 mt-10 lg:space-x-8 container mx-auto">
+            
+            <div class="lg:flex-1 flex flex-col justify-center text-left">
+                <h1 class="text-5xl font-bold lg:-mt-20">
+                    <span>Habit Tracking</span><br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-blue-600">simple and social</span>
+                </h1>
+                <h2 class="mt-4 text-gray-600 dark:text-gray-400">
+                    Build up new habits. Share your progress. Gain insights.
+                </h2>
+                <div class="mt-4">
+                    
+                    <div class="mt-4 flex flex-row items-center justify-center space-x-4">
+                        
+                        <a href="https://habitkit.app/register" class="flex-1 px-4 text-sm text-white text-center py-2 rounded shadow bg-gradient-to-br from-indigo-400 to-blue-600 outline-none focus:outline-none transition-ease-in border border-transparent hover:border-gray-300">
+                            <span class="ml-2">Get started</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:flex-1 relative">
+                <div class="mt-16 lg:mt-0 lg:absolute lg:top-0 lg:left-0 lg:overflow-visible">
+                    <img id="image" class="lg:mt-32 lg:h-[620px] lg:w-auto lg:max-w-none shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="-mt-64">
+        <svg class="dark:hidden" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity="1" d="M0,192L80,176C160,160,320,128,480,144C640,160,800,224,960,234.7C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+        <svg class="hidden dark:block" viewBox="0 0 1440 320">
+            <path fill="#0F172A" fill-opacity="1" d="M0,192L80,176C160,160,320,128,480,144C640,160,800,224,960,234.7C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        </svg>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-900 px-6">
+        <h2 class="text-center font-extrabold text-gray-800 dark:text-gray-200 text-4xl">All you need to track your daily rituals</h2>
+        <h3 class="mt-2 text-lg text-gray-600 dark:text-gray-300 text-center">Form new habits and get motivation by seeing your progress visualized.</h3>
+    </div>
+    
+    <div class="pt-20 bg-white dark:bg-gray-900 px-10 md:px-32 h-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-xl">
+                <div class="flex flex-col items-center px-4 py-8">
+                    <div class="-mt-14 shadow bg-gradient-to-br from-indigo-400 to-blue-600 p-2 rounded-lg">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <div class="mt-4 text-gray-800 dark:text-gray-200 text-xl font-semibold">Completions</div>
+                    <div class="mt-2 text-gray-600 dark:text-gray-400 px-4 text-center text-sm">
+                        Manage the completions for all your habits.<br>
+                        Don't break the chain and keep checking off the daily boxes.
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-xl">
+                <div class="flex flex-col items-center px-4 py-8">
+                    <div class="-mt-14 shadow bg-gradient-to-br from-indigo-400 to-blue-600 p-2 rounded-lg">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <div class="mt-4 text-gray-800 dark:text-gray-200 text-xl font-semibold">Statistics</div>
+                    <div class="mt-2 text-gray-600 dark:text-gray-400 px-4 text-center text-sm">
+                        Gain insights from your history.<br>
+                        Find out what works and what not by analysing your data.
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-xl">
+                <div class="flex flex-col items-center px-4 py-8">
+                    <div class="-mt-14 shadow bg-gradient-to-br from-indigo-400 to-blue-600 p-2 rounded-lg">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="mt-4 text-gray-800 dark:text-gray-200 text-xl font-semibold">Share</div>
+                    <div class="mt-2 text-gray-600 dark:text-gray-400 px-4 text-center text-sm">
+                        Get better in public.<br>
+                        Share your profile and get motivated by sharing your journey.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="pt-20 pb-10 bg-white dark:bg-gray-900 flex flex-col items-center justify-center text-gray-600 dark:text-gray-400 transition-ease-in">
+    <div class="space-x-8 flex flex-col md:flex-row space-y-4 md:space-y-0">
+        <a href="https://habitkit.app/tos" class="hover:text-gray-700 dark:hover:text-gray-500">Terms & Conditions</a>
+        <a href="https://habitkit.app/privacy" class="hover:text-gray-700 dark:hover:text-gray-500">Data Privacy</a>
+        <a href="mailto:sebaroehl@gmail.com" class="hover:text-gray-700 dark:hover:text-gray-500">Contact</a>
+    </div>
+    <div class="mt-5 text-gray-400 dark:text-gray-500">© 2021 Sebastian Röhl. All rights reserved.</div>
+</footer>
+    </body>
+
+    <script>
+        (function() {
+            let image = document.getElementById('image');
+            let htmlClasses = document.querySelector('html').classList;
+            const savedTheme = localStorage.getItem('theme')
+            if (savedTheme === 'dark') {
+                htmlClasses.add('dark')
+                image.src = "https:\/\/habitkit.app\/image\/landing_dark.png";
+            } else {
+                htmlClasses.remove('dark')
+                image.src = "https:\/\/habitkit.app\/image\/landing_light.png";
+            }
+        })();
+
+        document.getElementById('switchTheme').addEventListener('click', function() {
+            let htmlClasses = document.querySelector('html').classList;
+            if(localStorage.theme == 'dark') {
+                htmlClasses.remove('dark')
+                localStorage.setItem('theme', 'light')
+                image.src = "https:\/\/habitkit.app\/image\/landing_light.png";
+
+            } else {
+                htmlClasses.add('dark')
+                localStorage.setItem('theme', 'dark')
+                image.src = "https:\/\/habitkit.app\/image\/landing_dark.png";
+            }
+        });
+    </script>
+</html>

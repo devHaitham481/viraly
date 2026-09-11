@@ -29,6 +29,9 @@ export const lookupUrl = (id: string) =>
 
 /** The subset of the 44 fields we actually read. Everything optional — Apple omits fields freely. */
 interface ItunesResult {
+  /** `software` for apps. This endpoint also returns songs, albums, podcasts and artists. */
+  wrapperType?: string;
+  kind?: string;
   trackId?: number;
   trackName?: string;
   sellerName?: string;
@@ -47,6 +50,11 @@ interface ItunesResult {
 // Apple serves these endpoints as text/javascript, so parsing the body text is deliberate.
 async function getJson(url: string, ctx: Ctx): Promise<{ results: ItunesResult[] }> {
   return JSON.parse(await ctx.fetchText(url));
+}
+
+/** Apple marks apps as `software`; everything else on this endpoint is a different product. */
+export function isApp(r: { wrapperType?: string; kind?: string }): boolean {
+  return /software/i.test(r.wrapperType ?? "") || /software/i.test(r.kind ?? "");
 }
 
 /** `2022-11-26T08:00:00Z` → `2022-11-26`. Returns null rather than inventing a date. */
@@ -115,6 +123,8 @@ export async function lookupApp(iosId: string, ctx: Ctx): Promise<ItunesCrawl> {
     founder: null,
     founder_source: null,
     artwork: null,
+    store_url: null,
+    handles: {},
   };
 
   let r: ItunesResult;
@@ -129,6 +139,22 @@ export async function lookupApp(iosId: string, ctx: Ctx): Promise<ItunesCrawl> {
       };
     }
     r = results[0];
+
+    // The lookup endpoint resolves ANY iTunes id — songs, albums, podcasts, artists. Without this
+    // check a music track id builds a perfectly-formed "app": a named target, a crawl, and six
+    // sources all reporting they found nothing. Observed: id 1596550178 is a song, and became one.
+    if (!isApp(r)) {
+      return {
+        app: empty,
+        events: [],
+        metrics: [],
+        coverage: {
+          source: "itunes",
+          status: "empty",
+          note: `id ${iosId} is a ${r.kind ?? r.wrapperType ?? "non-app"}, not an app`,
+        },
+      };
+    }
   } catch (err) {
     return {
       app: empty,
@@ -142,7 +168,9 @@ export async function lookupApp(iosId: string, ctx: Ctx): Promise<ItunesCrawl> {
     };
   }
 
-  const storeUrl = r.trackViewUrl ?? `https://apps.apple.com/app/id${iosId}`;
+  // Apple appends `?uo=4` (an affiliate/campaign param). Archived captures are keyed by the clean
+  // URL, so keeping it would silently find zero Wayback snapshots.
+  const storeUrl = (r.trackViewUrl ?? `https://apps.apple.com/app/id${iosId}`).split("?")[0];
   const developer = r.sellerName ?? r.artistName ?? null;
 
   const app: AppIdentity = {
@@ -155,6 +183,9 @@ export async function lookupApp(iosId: string, ctx: Ctx): Promise<ItunesCrawl> {
     founder: developer,
     founder_source: developer ? "itunes lookup sellerName" : null,
     artwork: r.artworkUrl100 ?? null,
+    store_url: storeUrl,
+    // Populated by handle resolution, which needs the domain this lookup just produced.
+    handles: {},
   };
 
   const events: Event[] = [];

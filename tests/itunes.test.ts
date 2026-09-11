@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { FIXTURE_DIR, replayCtx } from "../lib/fetcher.ts";
-import { lookupApp, searchApps, searchUrl } from "../lib/sources/itunes.ts";
+import { isApp, lookupApp, searchApps, searchUrl } from "../lib/sources/itunes.ts";
 import { FROZEN_NOW, GOLDEN, offlineCtx } from "./helpers.ts";
 
 describe("searchApps", () => {
@@ -78,6 +78,16 @@ describe("lookupApp", () => {
     const { metrics } = await lookupApp(GOLDEN.habitkit, await offlineCtx());
     assert.equal(metrics[0].date, FROZEN_NOW.slice(0, 10));
     assert.equal(metrics[0].metric, "ios_rating_count");
+  });
+
+  test("a non-app id is rejected rather than made into a target", () => {
+    // The lookup endpoint resolves ANY iTunes id. A song id (1596550178) once produced a fully
+    // formed "app" — named target, crawl row, six sources all reporting nothing found.
+    assert.equal(isApp({ wrapperType: "track", kind: "song" }), false);
+    assert.equal(isApp({ wrapperType: "artist" }), false);
+    assert.equal(isApp({ wrapperType: "software", kind: "software" }), true);
+    assert.equal(isApp({ kind: "mac-software" }), true);
+    assert.equal(isApp({}), false);
   });
 
   test("a missing app is `empty`, not `failed`", async () => {

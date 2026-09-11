@@ -7,8 +7,14 @@ Reconstructs how an app grew — a chronological, evidence-backed timeline built
 **Read first:** `PRD.md` is the spec · `EPICS.md` is the delivery plan · `DECISIONS.md` holds open
 questions · `shape.json` is the verified HabitKit fixture and the shape everything must produce.
 
-Currently at **E2** done. Postgres-backed queue, global per-host rate limiter, two sources
-(iTunes + Hacker News), async crawls with a polling UI. No LLM yet; Wayback is E3.
+**v1 (E0–E4) complete; E5 partial.** Six sources
+(iTunes · Wayback · App Store · blog · GitHub · Hacker News) and handle discovery.
+Reddit/YouTube/Product Hunt await API credentials.
+
+**v1 (E0–E4) is complete.** Postgres-backed queue, global per-host rate limiter, four sources
+(iTunes · Wayback · App Store · Hacker News), async crawls with a polling UI, annotated growth
+chart. **Still no LLM anywhere** — every source is deterministic, which is what keeps the golden
+eval suite meaningful. Next: E5 (founder identity / Axis B).
 
 ## Commands
 
@@ -66,3 +72,22 @@ not a rewrite.
 - **The store id is the only safe key.** Two unrelated apps are called HabitKit.
 - **Rating counts are live** and drift between calls — freeze fixtures, never assert against the network.
 - Apple serves the iTunes endpoints as `text/javascript`; parse the text, don't rely on `res.json()`.
+- **CDX routinely takes 12s+.** The 15s default timeout silently drops it; `workerCtx` uses 45s.
+- **Never strip tags with `/<[^>]+>/`.** Attributes contain `>` inside quotes (Alpine, htmx) and the
+  regex closes the tag early, spilling markup into extracted copy. Use `stripTags` in `wayback.ts`.
+- **Strip query params off `trackViewUrl`.** Apple appends `?uo=4`; archived captures are keyed by
+  the clean URL, so keeping it finds zero Wayback snapshots — silently.
+- **Restart `next dev` after changing `lib/`** if a route seems to ignore the change. Stale compiled
+  route code caused a source to be skipped for a field that the resolver was returning correctly.
+- **Archive captures embed OTHER apps' data.** A store page carries a `versionHistory` for every app
+  it links to (~16 per capture). Always scope extraction to the subject's id, or you build a
+  confident, fictional timeline out of unrelated apps' releases.
+- **Fetch with `id_`, link without it.** `id_` gives raw bytes for parsing; the plain replay URL is
+  what renders for a human. Linking `id_` shows an unstyled broken page.
+- **archive.org is slow AND variable** — the same trivial CDX query took 5s, then 17s, then timed out
+  entirely within one session. It gets a 90s budget in `HOST_TIMEOUT_MS`; everything else gets 15s.
+- **Crawls are cached in Postgres** (`http_cache`). A re-crawl is ~2s instead of ~2min. Dated Wayback
+  captures are cached forever because they are immutable; indexes and live lookups have short TTLs.
+  To force a refetch, delete the rows: `delete from http_cache where url like '%...%'`.
+- `npm run record` is incremental — it skips URLs already in the manifest. Use `--force` to redo all,
+  and think twice: that is 24 archive.org fetches.

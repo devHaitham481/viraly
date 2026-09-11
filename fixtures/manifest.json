@@ -2,57 +2,554 @@
   "565616b77deae47a": {
     "url": "https://itunes.apple.com/search?term=HabitKit&entity=software&country=us&limit=12",
     "file": "search-habitkit.565616b77deae47a.json",
-    "recorded_at": "2026-09-11T09:35:47.798Z",
+    "recorded_at": "2026-09-11T09:41:59.009Z",
     "status": 200,
     "bytes": 120044
   },
   "ddbc0ec39bf9ff97": {
     "url": "https://itunes.apple.com/search?term=ngl&entity=software&country=us&limit=12",
     "file": "search-ngl.ddbc0ec39bf9ff97.json",
-    "recorded_at": "2026-09-11T09:35:48.462Z",
+    "recorded_at": "2026-09-11T09:41:59.650Z",
     "status": 200,
     "bytes": 113027
   },
   "6c64847eae16f0a7": {
     "url": "https://itunes.apple.com/search?term=zzqxwvnothingapp&entity=software&country=us&limit=12",
     "file": "search-empty-ish.6c64847eae16f0a7.json",
-    "recorded_at": "2026-09-11T09:35:49.103Z",
+    "recorded_at": "2026-09-11T09:42:00.285Z",
     "status": 200,
     "bytes": 22779
   },
   "be77aad3ed01bdde": {
     "url": "https://itunes.apple.com/lookup?id=6443918070&country=us",
     "file": "lookup-habitkit.be77aad3ed01bdde.json",
-    "recorded_at": "2026-09-11T09:35:49.737Z",
+    "recorded_at": "2026-09-11T09:42:00.916Z",
     "status": 200,
     "bytes": 8877
   },
   "aa2cac9c5fef0622": {
     "url": "https://itunes.apple.com/lookup?id=6761298880&country=us",
     "file": "lookup-impostor.aa2cac9c5fef0622.json",
-    "recorded_at": "2026-09-11T09:35:50.376Z",
+    "recorded_at": "2026-09-11T09:42:01.546Z",
     "status": 200,
     "bytes": 11063
   },
   "956395e70c503155": {
     "url": "https://itunes.apple.com/lookup?id=1&country=us",
     "file": "lookup-missing.956395e70c503155.json",
-    "recorded_at": "2026-09-11T09:35:51.003Z",
+    "recorded_at": "2026-09-11T09:42:02.206Z",
     "status": 200,
     "bytes": 42
   },
   "04357fc95cb3bff1": {
     "url": "https://hn.algolia.com/api/v1/search?query=habitkit.app&restrictSearchableAttributes=url,title&hitsPerPage=50",
     "file": "hn-habitkit.04357fc95cb3bff1.json",
-    "recorded_at": "2026-09-11T09:35:51.934Z",
+    "recorded_at": "2026-09-11T09:42:03.173Z",
     "status": 200,
-    "bytes": 1135
+    "bytes": 1181
   },
   "5c9f996caa3bf668": {
     "url": "https://hn.algolia.com/api/v1/search?query=zzqxwv-no-such-domain.example&restrictSearchableAttributes=url,title&hitsPerPage=50",
     "file": "hn-nothing.5c9f996caa3bf668.json",
-    "recorded_at": "2026-09-11T09:35:52.842Z",
+    "recorded_at": "2026-09-11T09:42:04.091Z",
     "status": 200,
     "bytes": 472
+  },
+  "4510159b807afc32": {
+    "url": "http://web.archive.org/web/20210815131021id_/https://habitkit.app/",
+    "file": "wb-habitkit-00-20210815.4510159b807afc32.json",
+    "recorded_at": "2026-09-11T09:42:25.708Z",
+    "status": 200,
+    "bytes": 9471
+  },
+  "44b37c744839ddfc": {
+    "url": "http://web.archive.org/web/20221207061345id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-01-20221207.44b37c744839ddfc.json",
+    "recorded_at": "2026-09-11T09:42:28.076Z",
+    "status": 200,
+    "bytes": 5944
+  },
+  "1b73559cd1cf0791": {
+    "url": "http://web.archive.org/web/20230121005106id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-02-20230121.1b73559cd1cf0791.json",
+    "recorded_at": "2026-09-11T09:42:30.558Z",
+    "status": 200,
+    "bytes": 5944
+  },
+  "4030dfad9ccec099": {
+    "url": "http://web.archive.org/web/20230314191529id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-03-20230314.4030dfad9ccec099.json",
+    "recorded_at": "2026-09-11T09:42:33.103Z",
+    "status": 200,
+    "bytes": 5947
+  },
+  "09bb8749840b53a7": {
+    "url": "http://web.archive.org/web/20230403170518id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-04-20230403.09bb8749840b53a7.json",
+    "recorded_at": "2026-09-11T09:42:36.818Z",
+    "status": 200,
+    "bytes": 5947
+  },
+  "8cb7494fbfe62c97": {
+    "url": "http://web.archive.org/web/20231001074819id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-05-20231001.8cb7494fbfe62c97.json",
+    "recorded_at": "2026-09-11T09:42:39.929Z",
+    "status": 200,
+    "bytes": 17871
+  },
+  "213e9dcbc77268d1": {
+    "url": "http://web.archive.org/web/20231130203512id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-06-20231130.213e9dcbc77268d1.json",
+    "recorded_at": "2026-09-11T09:42:42.709Z",
+    "status": 200,
+    "bytes": 17871
+  },
+  "dc2289447cc26c60": {
+    "url": "http://web.archive.org/web/20240225181258id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-07-20240225.dc2289447cc26c60.json",
+    "recorded_at": "2026-09-11T09:42:45.313Z",
+    "status": 200,
+    "bytes": 17871
+  },
+  "606411cd96890398": {
+    "url": "http://web.archive.org/web/20240514231446id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-08-20240514.606411cd96890398.json",
+    "recorded_at": "2026-09-11T09:42:47.790Z",
+    "status": 200,
+    "bytes": 17899
+  },
+  "db95cb985c52b4a9": {
+    "url": "http://web.archive.org/web/20240614081836id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-09-20240614.db95cb985c52b4a9.json",
+    "recorded_at": "2026-09-11T09:42:50.220Z",
+    "status": 200,
+    "bytes": 25799
+  },
+  "ec436a6240c74830": {
+    "url": "http://web.archive.org/web/20240810131219id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-10-20240810.ec436a6240c74830.json",
+    "recorded_at": "2026-09-11T09:42:52.607Z",
+    "status": 200,
+    "bytes": 21843
+  },
+  "80fd9b21be3c44cc": {
+    "url": "http://web.archive.org/web/20240914154128id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-11-20240914.80fd9b21be3c44cc.json",
+    "recorded_at": "2026-09-11T09:42:54.993Z",
+    "status": 200,
+    "bytes": 21919
+  },
+  "def40c7228c8fb8d": {
+    "url": "http://web.archive.org/web/20241117165545id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-12-20241117.def40c7228c8fb8d.json",
+    "recorded_at": "2026-09-11T09:42:57.458Z",
+    "status": 200,
+    "bytes": 21943
+  },
+  "b5ebbe732663a58f": {
+    "url": "http://web.archive.org/web/20241204124553id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-13-20241204.b5ebbe732663a58f.json",
+    "recorded_at": "2026-09-11T09:43:00.014Z",
+    "status": 200,
+    "bytes": 21943
+  },
+  "5728a5fe54f33618": {
+    "url": "http://web.archive.org/web/20250207170702id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-14-20250207.5728a5fe54f33618.json",
+    "recorded_at": "2026-09-11T09:43:05.722Z",
+    "status": 200,
+    "bytes": 23045
+  },
+  "b581131f80d48052": {
+    "url": "http://web.archive.org/web/20250310190803id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-15-20250310.b581131f80d48052.json",
+    "recorded_at": "2026-09-11T09:43:08.406Z",
+    "status": 200,
+    "bytes": 23045
+  },
+  "739feab1fa8e5477": {
+    "url": "http://web.archive.org/web/20250516033340id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-16-20250516.739feab1fa8e5477.json",
+    "recorded_at": "2026-09-11T09:43:10.792Z",
+    "status": 200,
+    "bytes": 23045
+  },
+  "a0d510aa2c29e451": {
+    "url": "http://web.archive.org/web/20250704051347id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-17-20250704.a0d510aa2c29e451.json",
+    "recorded_at": "2026-09-11T09:43:13.250Z",
+    "status": 200,
+    "bytes": 23045
+  },
+  "8f9ea7b1b228d444": {
+    "url": "http://web.archive.org/web/20250812025106id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-18-20250812.8f9ea7b1b228d444.json",
+    "recorded_at": "2026-09-11T09:43:16.071Z",
+    "status": 200,
+    "bytes": 22869
+  },
+  "af59ae86e51b75ab": {
+    "url": "http://web.archive.org/web/20251101232409id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-19-20251101.af59ae86e51b75ab.json",
+    "recorded_at": "2026-09-11T09:43:18.606Z",
+    "status": 200,
+    "bytes": 23045
+  },
+  "d3025bf1fee95ec0": {
+    "url": "http://web.archive.org/web/20251213161625id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-20-20251213.d3025bf1fee95ec0.json",
+    "recorded_at": "2026-09-11T09:43:21.057Z",
+    "status": 200,
+    "bytes": 23343
+  },
+  "cffed0706e9a9518": {
+    "url": "http://web.archive.org/web/20260308072708id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-21-20260308.cffed0706e9a9518.json",
+    "recorded_at": "2026-09-11T09:43:23.554Z",
+    "status": 200,
+    "bytes": 23343
+  },
+  "74f5cafd1bcb5f1f": {
+    "url": "http://web.archive.org/web/20260412090608id_/https://www.habitkit.app/",
+    "file": "wb-habitkit-22-20260412.74f5cafd1bcb5f1f.json",
+    "recorded_at": "2026-09-11T09:43:26.007Z",
+    "status": 200,
+    "bytes": 23343
+  },
+  "b99206865e72f974": {
+    "url": "http://web.archive.org/web/20260905142804id_/https://habitkit.app/",
+    "file": "wb-habitkit-23-20260905.b99206865e72f974.json",
+    "recorded_at": "2026-09-11T09:43:28.730Z",
+    "status": 200,
+    "bytes": 175566
+  },
+  "a13c183fd6c83444": {
+    "url": "http://web.archive.org/cdx/search/cdx?url=habitkit.app&output=json&filter=statuscode:200&collapse=timestamp:6&fl=timestamp,original&limit=200",
+    "file": "wb-cdx-habitkit.a13c183fd6c83444.json",
+    "recorded_at": "2026-09-11T09:44:49.422Z",
+    "status": 200,
+    "bytes": 1795
+  },
+  "455777b2b7dee762": {
+    "url": "http://web.archive.org/cdx/search/cdx?url=apps.apple.com%2Fus%2Fapp%2Fhabit-tracker-habitkit%2Fid6443918070&output=json&filter=statuscode:200&collapse=timestamp:6&fl=timestamp,original&limit=200",
+    "file": "as-cdx-habitkit.455777b2b7dee762.json",
+    "recorded_at": "2026-09-11T10:22:43.571Z",
+    "status": 200,
+    "bytes": 2315
+  },
+  "772a1f7779efd66e": {
+    "url": "http://web.archive.org/web/20221129164616id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-00-20221129.772a1f7779efd66e.json",
+    "recorded_at": "2026-09-11T10:22:46.799Z",
+    "status": 200,
+    "bytes": 165627
+  },
+  "20968ddbbe64adfc": {
+    "url": "http://web.archive.org/web/20230201130835id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-01-20230201.20968ddbbe64adfc.json",
+    "recorded_at": "2026-09-11T10:22:50.440Z",
+    "status": 200,
+    "bytes": 252241
+  },
+  "c4edff29467c071d": {
+    "url": "http://web.archive.org/web/20230403170357id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-02-20230403.c4edff29467c071d.json",
+    "recorded_at": "2026-09-11T10:22:54.876Z",
+    "status": 200,
+    "bytes": 586082
+  },
+  "d3a558d15ad2529e": {
+    "url": "http://web.archive.org/web/20230520015110id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-03-20230520.d3a558d15ad2529e.json",
+    "recorded_at": "2026-09-11T10:22:59.492Z",
+    "status": 200,
+    "bytes": 547549
+  },
+  "e3eb8a09c25c58cc": {
+    "url": "http://web.archive.org/web/20240226195309id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-04-20240226.e3eb8a09c25c58cc.json",
+    "recorded_at": "2026-09-11T10:23:04.972Z",
+    "status": 200,
+    "bytes": 729992
+  },
+  "b1d9d0355e3b54f9": {
+    "url": "http://web.archive.org/web/20240826175122id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-05-20240826.b1d9d0355e3b54f9.json",
+    "recorded_at": "2026-09-11T10:23:08.209Z",
+    "status": 200,
+    "bytes": 393723
+  },
+  "17619ca1dced1006": {
+    "url": "http://web.archive.org/web/20241008115019id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-06-20241008.17619ca1dced1006.json",
+    "recorded_at": "2026-09-11T10:23:12.017Z",
+    "status": 200,
+    "bytes": 786428
+  },
+  "1d7c74d1d780d2b6": {
+    "url": "http://web.archive.org/web/20241117164641id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-07-20241117.1d7c74d1d780d2b6.json",
+    "recorded_at": "2026-09-11T10:23:15.711Z",
+    "status": 200,
+    "bytes": 788227
+  },
+  "9d8e642435dd4e44": {
+    "url": "http://web.archive.org/web/20250116153240id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-08-20250116.9d8e642435dd4e44.json",
+    "recorded_at": "2026-09-11T10:23:20.098Z",
+    "status": 200,
+    "bytes": 819626
+  },
+  "d8dd94fe57a4ed14": {
+    "url": "http://web.archive.org/web/20250207170700id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-09-20250207.d8dd94fe57a4ed14.json",
+    "recorded_at": "2026-09-11T10:23:24.348Z",
+    "status": 200,
+    "bytes": 770841
+  },
+  "3cf1f1f55baf34d0": {
+    "url": "http://web.archive.org/web/20250307191530id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-10-20250307.3cf1f1f55baf34d0.json",
+    "recorded_at": "2026-09-11T10:23:28.384Z",
+    "status": 200,
+    "bytes": 772479
+  },
+  "eea4f594dbdbed22": {
+    "url": "http://web.archive.org/web/20250401001323id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-11-20250401.eea4f594dbdbed22.json",
+    "recorded_at": "2026-09-11T10:23:32.544Z",
+    "status": 200,
+    "bytes": 829612
+  },
+  "17cfde973d6719b6": {
+    "url": "http://web.archive.org/web/20251005165843id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-12-20251005.17cfde973d6719b6.json",
+    "recorded_at": "2026-09-11T10:23:36.630Z",
+    "status": 200,
+    "bytes": 853269
+  },
+  "a0e02ce345bd4770": {
+    "url": "http://web.archive.org/web/20251117022841id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-13-20251117.a0e02ce345bd4770.json",
+    "recorded_at": "2026-09-11T10:23:40.035Z",
+    "status": 200,
+    "bytes": 626475
+  },
+  "1c153b0beabdc6d8": {
+    "url": "http://web.archive.org/web/20260129081728id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-14-20260129.1c153b0beabdc6d8.json",
+    "recorded_at": "2026-09-11T10:23:43.410Z",
+    "status": 200,
+    "bytes": 638407
+  },
+  "a9d604a3f8362bc0": {
+    "url": "http://web.archive.org/web/20260418211839id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-15-20260418.a9d604a3f8362bc0.json",
+    "recorded_at": "2026-09-11T10:23:47.321Z",
+    "status": 200,
+    "bytes": 646292
+  },
+  "6ca49043e3748323": {
+    "url": "http://web.archive.org/web/20260524003656id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-16-20260524.6ca49043e3748323.json",
+    "recorded_at": "2026-09-11T10:23:50.438Z",
+    "status": 200,
+    "bytes": 646398
+  },
+  "51c415e0dba54672": {
+    "url": "http://web.archive.org/web/20260624161047id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-17-20260624.51c415e0dba54672.json",
+    "recorded_at": "2026-09-11T10:23:53.728Z",
+    "status": 200,
+    "bytes": 619301
+  },
+  "0e1d9b3aecb72fd8": {
+    "url": "http://web.archive.org/web/20260801042429id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-18-20260801.0e1d9b3aecb72fd8.json",
+    "recorded_at": "2026-09-11T10:23:57.788Z",
+    "status": 200,
+    "bytes": 611967
+  },
+  "640f7060a86c3242": {
+    "url": "http://web.archive.org/web/20260901181708id_/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+    "file": "as-habitkit-19-20260901.640f7060a86c3242.json",
+    "recorded_at": "2026-09-11T10:24:00.648Z",
+    "status": 200,
+    "bytes": 548835
+  },
+  "df4d117aba3ff04a": {
+    "url": "https://habitkit.app/",
+    "file": "site-habitkit.df4d117aba3ff04a.json",
+    "recorded_at": "2026-09-11T11:18:30.120Z",
+    "status": 200,
+    "bytes": 175897
+  },
+  "521f44bfc3b62f07": {
+    "url": "https://habitkit.app/sitemap.xml",
+    "file": "sitemap-habitkit.521f44bfc3b62f07.json",
+    "recorded_at": "2026-09-11T11:18:30.792Z",
+    "status": 200,
+    "bytes": 1130
+  },
+  "b631b46e644b5b01": {
+    "url": "https://api.github.com/users/sebastianroehl/repos?per_page=100&sort=created",
+    "file": "gh-sebastianroehl.b631b46e644b5b01.json",
+    "recorded_at": "2026-09-11T11:18:31.717Z",
+    "status": 200,
+    "bytes": 2
+  },
+  "a90b4e71ddd5b5ff": {
+    "url": "https://habitkit.app/blog/five-habits-productivity-2025",
+    "file": "post-habitkit-00.a90b4e71ddd5b5ff.json",
+    "recorded_at": "2026-09-11T11:18:32.405Z",
+    "status": 200,
+    "bytes": 35017
+  },
+  "051f1b44a942db6a": {
+    "url": "https://habitkit.app/blog/ios-shortcuts-habit-tracker",
+    "file": "post-habitkit-01.051f1b44a942db6a.json",
+    "recorded_at": "2026-09-11T11:18:33.077Z",
+    "status": 200,
+    "bytes": 34201
+  },
+  "0d6868edecddb44b": {
+    "url": "https://habitkit.app/blog/marathon-habit-tracking",
+    "file": "post-habitkit-02.0d6868edecddb44b.json",
+    "recorded_at": "2026-09-11T11:18:33.750Z",
+    "status": 200,
+    "bytes": 34902
+  },
+  "8c2ae503d08b3d11": {
+    "url": "https://habitkit.app/blog/ios-home-screen-widgets-habit-tracker",
+    "file": "post-habitkit-03.8c2ae503d08b3d11.json",
+    "recorded_at": "2026-09-11T11:18:34.417Z",
+    "status": 200,
+    "bytes": 34289
+  },
+  "1ff344893cb8f97a": {
+    "url": "http://web.archive.org/cdx/search/cdx?url=play.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.roehl.habitkit&output=json&filter=statuscode:200&collapse=timestamp:6&fl=timestamp,original&limit=200",
+    "file": "play-cdx-habitkit.1ff344893cb8f97a.json",
+    "recorded_at": "2026-09-11T14:22:14.450Z",
+    "status": 200,
+    "bytes": 1854
+  },
+  "cdcbf8141fd27ae8": {
+    "url": "http://web.archive.org/web/20221208103810id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-00-20221208.cdcbf8141fd27ae8.json",
+    "recorded_at": "2026-09-11T14:22:18.930Z",
+    "status": 200,
+    "bytes": 765957
+  },
+  "2d61ee2984503314": {
+    "url": "http://web.archive.org/web/20230618062840id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-01-20230618.2d61ee2984503314.json",
+    "recorded_at": "2026-09-11T14:22:24.105Z",
+    "status": 200,
+    "bytes": 889699
+  },
+  "ea0b0cfb925c61c3": {
+    "url": "http://web.archive.org/web/20241008122254id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-02-20241008.ea0b0cfb925c61c3.json",
+    "recorded_at": "2026-09-11T14:22:29.617Z",
+    "status": 200,
+    "bytes": 1130596
+  },
+  "f3b1c9cac98a764c": {
+    "url": "http://web.archive.org/web/20241220190242id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-03-20241220.f3b1c9cac98a764c.json",
+    "recorded_at": "2026-09-11T14:22:34.213Z",
+    "status": 200,
+    "bytes": 1143205
+  },
+  "2b559205e90149b4": {
+    "url": "http://web.archive.org/web/20250125113908id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-04-20250125.2b559205e90149b4.json",
+    "recorded_at": "2026-09-11T14:22:38.753Z",
+    "status": 200,
+    "bytes": 1137520
+  },
+  "b291bd0b1c7dcdd8": {
+    "url": "http://web.archive.org/web/20250202095906id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-05-20250202.b291bd0b1c7dcdd8.json",
+    "recorded_at": "2026-09-11T14:22:49.141Z",
+    "status": 200,
+    "bytes": 1144344
+  },
+  "1ff4b10dc6b8b098": {
+    "url": "http://web.archive.org/web/20250326014602id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-06-20250326.1ff4b10dc6b8b098.json",
+    "recorded_at": "2026-09-11T14:22:54.082Z",
+    "status": 200,
+    "bytes": 1141179
+  },
+  "3cdabe4cd394498c": {
+    "url": "http://web.archive.org/web/20250411215115id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-07-20250411.3cdabe4cd394498c.json",
+    "recorded_at": "2026-09-11T14:23:00.334Z",
+    "status": 200,
+    "bytes": 1164994
+  },
+  "e68cd87be2ff8620": {
+    "url": "http://web.archive.org/web/20250506000123id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-08-20250506.e68cd87be2ff8620.json",
+    "recorded_at": "2026-09-11T14:23:05.112Z",
+    "status": 200,
+    "bytes": 1142662
+  },
+  "482b8ffd2780d1a2": {
+    "url": "http://web.archive.org/web/20250626204825id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-09-20250626.482b8ffd2780d1a2.json",
+    "recorded_at": "2026-09-11T14:23:09.243Z",
+    "status": 200,
+    "bytes": 1146601
+  },
+  "a0734c6122c7f994": {
+    "url": "http://web.archive.org/web/20250703075121id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-10-20250703.a0734c6122c7f994.json",
+    "recorded_at": "2026-09-11T14:23:13.080Z",
+    "status": 200,
+    "bytes": 1143364
+  },
+  "011af091dd945327": {
+    "url": "http://web.archive.org/web/20250919170450id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-11-20250919.011af091dd945327.json",
+    "recorded_at": "2026-09-11T14:23:16.770Z",
+    "status": 200,
+    "bytes": 1151569
+  },
+  "e044e79f0cc22b50": {
+    "url": "http://web.archive.org/web/20251009103140id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-12-20251009.e044e79f0cc22b50.json",
+    "recorded_at": "2026-09-11T14:23:20.516Z",
+    "status": 200,
+    "bytes": 1155737
+  },
+  "2469a97ff8feffb5": {
+    "url": "http://web.archive.org/web/20251104082012id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-13-20251104.2469a97ff8feffb5.json",
+    "recorded_at": "2026-09-11T14:23:24.352Z",
+    "status": 200,
+    "bytes": 1152496
+  },
+  "3572289fed9b4374": {
+    "url": "http://web.archive.org/web/20260102075918id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-14-20260102.3572289fed9b4374.json",
+    "recorded_at": "2026-09-11T14:23:28.518Z",
+    "status": 200,
+    "bytes": 1158099
+  },
+  "534aad421b20cecc": {
+    "url": "http://web.archive.org/web/20260215215427id_/https://play.google.com/store/apps/details?id=com.roehl.habitkit",
+    "file": "play-habitkit-15-20260215.534aad421b20cecc.json",
+    "recorded_at": "2026-09-11T14:23:33.466Z",
+    "status": 200,
+    "bytes": 1175987
+  },
+  "45f2637ff37cf362": {
+    "url": "https://play.google.com/store/apps/details?id=com.roehl.habitkit&hl=en&gl=US",
+    "file": "play-live-habitkit.45f2637ff37cf362.json",
+    "recorded_at": "2026-09-11T14:37:25.986Z",
+    "status": 200,
+    "bytes": 1293368
   }
 }

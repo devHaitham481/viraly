@@ -9,8 +9,10 @@ CREATE TABLE IF NOT EXISTS targets (
   founder         text,
   founder_source  text,
   artwork         text,
+  store_url       text,
   created_at      timestamptz NOT NULL DEFAULT now()
 );
+
 
 CREATE TABLE IF NOT EXISTS crawls (
   id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -71,3 +73,38 @@ CREATE TABLE IF NOT EXISTS host_buckets (
   refill_per_sec  double precision NOT NULL,
   updated_at      timestamptz NOT NULL DEFAULT now()
 );
+
+-- Fetched HTTP bodies, keyed by URL.
+--
+-- The product's founding observation: history is immutable. A Wayback capture at a fixed timestamp
+-- will never change, so it never needs fetching twice — which is what turns a re-crawl from 44
+-- rate-limited archive.org requests into two. Postgres TOASTs the body column, so the text is
+-- compressed on disk without any work here.
+CREATE TABLE IF NOT EXISTS http_cache (
+  url         text PRIMARY KEY,
+  body        text NOT NULL,
+  bytes       int  NOT NULL,
+  fetched_at  timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS http_cache_fetched ON http_cache (fetched_at);
+
+-- Worker liveness.
+--
+-- Deployed without a worker, every crawl sits at `queued` forever while the UI shows a spinner —
+-- indistinguishable from "this is slow". One row, updated on each poll, lets the app say so instead.
+CREATE TABLE IF NOT EXISTS worker_heartbeat (
+  id       int PRIMARY KEY DEFAULT 1,
+  beat_at  timestamptz NOT NULL DEFAULT now(),
+  CONSTRAINT single_row CHECK (id = 1)
+);
+
+-- Additive migrations, applied on every worker start (PRD §12.5).
+--
+-- These MUST come after every CREATE above. `ADD COLUMN IF NOT EXISTS` guards the column, not the
+-- table, and `applySchema` sends this file as a single multi-statement query that Postgres wraps in
+-- one implicit transaction — so an ALTER against a not-yet-created table rolls back the entire file
+-- and a fresh database ends up with almost no tables at all.
+ALTER TABLE targets ADD COLUMN IF NOT EXISTS store_url text;
+ALTER TABLE source_runs ADD COLUMN IF NOT EXISTS progress text;
+ALTER TABLE targets ADD COLUMN IF NOT EXISTS handles jsonb NOT NULL DEFAULT '{}'::jsonb;

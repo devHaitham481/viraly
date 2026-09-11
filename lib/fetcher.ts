@@ -14,6 +14,7 @@
  */
 
 import { createHash } from "node:crypto";
+import { gunzipSync } from "node:zlib";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -22,6 +23,11 @@ export interface Ctx {
   fetchText(url: string): Promise<string>;
   /** The current date, injectable so golden output stays stable. */
   now(): Date;
+  /**
+   * Report progress from inside a long source. Optional and fire-and-forget: a source must work
+   * identically when nobody is listening, which is how the offline suite stays deterministic.
+   */
+  progress?: (note: string) => void;
 }
 
 export const FIXTURE_DIR = path.join(process.cwd(), "fixtures");
@@ -41,27 +47,63 @@ export interface ManifestEntry {
 
 export type Manifest = Record<string, ManifestEntry>;
 
+/**
+ * Per-host request timeouts.
+ *
+ * archive.org's CDX endpoint answers the same trivial query in 5s or 17s depending on load, and a
+ * capture can be 800KB over a deliberately throttled connection. A single global timeout either
+ * strangles it or lets a dead iTunes call hang for a minute.
+ */
+export const HOST_TIMEOUT_MS: Record<string, number> = {
+  "web.archive.org": 90_000,
+  "archive.org": 90_000,
+};
+
 export interface LiveOptions {
   timeoutMs?: number;
+  progress?: (note: string) => void;
   /** Per-host rate limiting. Supplied by the worker; see lib/queue/limiter.ts. */
   acquire?: (host: string) => Promise<void>;
 }
 
 /** Real network, real clock. Used by the app and the worker. */
-export function liveCtx({ timeoutMs = 15_000, acquire }: LiveOptions = {}): Ctx {
+export function liveCtx({ timeoutMs = 15_000, acquire, progress }: LiveOptions = {}): Ctx {
+  const budgetFor = (host: string) => HOST_TIMEOUT_MS[host] ?? timeoutMs;
+
+  async function fetchOnce(url: string): Promise<string> {
+    const host = new URL(url).host;
+    // Global, cross-process. Two concurrent crawls must not 429 each other (PRD §9.9).
+    if (acquire) await acquire(host);
+
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(budgetFor(host)),
+      headers: { accept: "application/json, text/javascript, */*" },
+      cache: "no-store",
+    });
+    if (!res.ok) throw new Error(`${host} ${res.status} ${res.statusText} — ${url}`);
+
+    // Wayback's `id_` raw mode returns the ORIGINAL bytes — often gzipped, with no
+    // Content-Encoding header for fetch to act on. Sniff the magic number and inflate.
+    const buf = Buffer.from(await res.arrayBuffer());
+    const body = buf[0] === 0x1f && buf[1] === 0x8b ? gunzipSync(buf) : buf;
+    return body.toString("utf8");
+  }
+
   return {
     async fetchText(url) {
-      // Global, cross-process. Two concurrent crawls must not 429 each other (PRD §9.9).
-      if (acquire) await acquire(new URL(url).host);
-      const res = await fetch(url, {
-        signal: AbortSignal.timeout(timeoutMs),
-        headers: { accept: "application/json, text/javascript, */*" },
-        cache: "no-store",
-      });
-      if (!res.ok) throw new Error(`${new URL(url).host} ${res.status} ${res.statusText}`);
-      return res.text();
+      try {
+        return await fetchOnce(url);
+      } catch (err) {
+        // "The operation was aborted due to timeout" is useless in a coverage row — it names
+        // neither the host nor what we were reading. Say both.
+        if (err instanceof Error && /abort|timeout/i.test(err.message) && !err.message.includes(" — ")) {
+          throw new Error(`timeout after ${budgetFor(new URL(url).host) / 1000}s — ${url}`);
+        }
+        throw err;
+      }
     },
     now: () => new Date(),
+    progress,
   };
 }
 

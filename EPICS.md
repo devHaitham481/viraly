@@ -67,25 +67,163 @@ source, proving the machinery. Crawls are now async: identity resolves synchrono
 ~0.1s unthrottled, matching the predicted floor. 20 simultaneous `trySpend` calls granted exactly
 `capacity` — the UPDATE is atomic, no double-spend.
 
-### E3 — Wayback spine
+### E3 — Wayback spine ✅ done 2026-09-11
 Capture list → sampled captures → `turndown` → one batched LLM call with a schema → `product_change`
 events. Handle gzip, apex-vs-www, redirects, 429 backoff.
 **Gate:** reproduces the HabitKit positioning pivot (PRD §6.2) automatically, at zero cost.
 
-### E4 — Growth curve
+*Shipped — and no LLM.* A positioning change *is* a headline change, so extraction is deterministic:
+CDX index → sample ≤24 monthly captures → strip tags → diff the tagline. That keeps the output
+golden-testable (a model would break the eval) and the cost at zero, exactly as the gate asks. A
+model summarising *what* changed is polish, layered on later without touching this.
+
+*Gate verified:* reproduces all four eras — Aug 2021 "simple and social" (the social web app,
+15 months pre-iOS) → Dec 2022 "Consistency Tracker" → Jun 2024 "Change Your Life One Habit at a
+Time" → Sep 2026 "The Habit Tracker You Can Actually See". Full crawl: 8 events from 3 sources in
+49s, correctly throttled.
+
+*The timeline now tells a story the sources cannot tell alone:* the iOS release (2022-11-26) and the
+repositioning (2022-12-07) are **twelve days apart** — visible only where iTunes and Wayback interleave.
+
+*Two real bugs found and fixed:* a naive `/<[^>]+>/` closes early on `>` inside a quoted attribute
+(Alpine's `window.scrollY > 24`), spilling markup into the copy; and `liveCtx`'s 15s default silently
+dropped the CDX index, which routinely takes 12s+.
+
+### E4 — Growth curve ✅ done 2026-09-11
 **First task: verify JSON-LD survives archiving** (PRD §13.1 is UNVERIFIED and this epic depends on it).
 Then archived store pages → regex JSON-LD → `metrics` time series. Play install brackets.
 Try the availability-API A/B for the CDX timeout (PRD §9.9).
 **Gate:** ≥8 dated metric points for HabitKit; chart renders under the timeline.
 
-### ▶ v1 = E0–E4
+*The assumption held.* PRD §13.1's UNVERIFIED claim is now verified: Apple's server-rendered JSON-LD
+`aggregateRating` survives into Wayback captures. 19 reviews in Feb 2023, 288 in Jul 2024, 1,864 in
+Mar 2026. So the growth curve is a regex and a `JSON.parse` — **no browser, no DOM parser, no paid
+ranking API**.
+
+*And the CDX timeout was never a timeout.* The same query that "timed out at 40s" during research
+returns in **4.8s** now. It was archive.org throttling us, exactly as §9.9 suspected — the limiter
+built at E2 fixed a problem we had misdiagnosed as query cost.
+
+*Gate verified:* **21 dated points**, 1 review (launch week, 2022-11-29) → 2,410 today. Annotated
+SVG chart with event ticks, dashed where a date is approximate. Full four-source crawl: 8 events +
+21 metrics in ~124s, all sources `ok`.
+
+*Two bugs found:* `trackViewUrl` carries `?uo=4`, which matches no archived capture (silent zero
+results); and the Next dev server was serving pre-`store_url` code, which is why the first run
+skipped the source.
+
+### ▶ v1 = E0–E4 ✅ COMPLETE 2026-09-11
+
+*Deepened after first real use:* archived store pages were being downloaded whole (250–800KB) and
+mined for a single integer. They also carry `versionHistory` with Apple's own exact release dates,
+plus `name`, `description` and `offers.price`. Extracting those took **8 events → 25** with zero
+extra requests, and closed PRD §7's "App Store version history — no known free endpoint".
 One command, one target: real timeline + real growth curve + honest coverage report.
 Cost: zero. No API keys, no paid tier, no browser.
 **Exit review:** run against a second, non-HabitKit target before declaring v1.
 
-### E5 — Axis B (founder identity)
+### E6 — Review pass ✅ done 2026-09-11
+
+First independent review of the codebase, by the read-only `reviewer` agent defined at E0 and never
+run until now. Author and reviewer had been the same party for ~2,000 lines.
+
+**Two blockers, both confirmed empirically:**
+- `schema.sql` put `ALTER TABLE source_runs` *above* `CREATE TABLE source_runs`. `ADD COLUMN IF NOT
+  EXISTS` guards the column, not the table, and `applySchema` sends the file as one implicit
+  transaction — so a fresh database ended with **1 table out of 6** and the worker exited on startup.
+  It only ever worked here because this database predates the file.
+- `/api/resolve` built a `liveCtx` with no `acquire`, leaving the one endpoint a user can hammer from
+  a form entirely unthrottled.
+
+**Five correctness findings fixed**, all the same family — confident output where the honest answer
+is "we don't know":
+- Milestones asserted across unobserved gaps (the far edge of a 282-day hole reported as a
+  measurement). Now bracketed, with an exact figure only when the bracket is ≤45 days.
+- The year-one reading carried no staleness, so a 190-day-old number was labelled "after year 1".
+- `pre_launch_days` took the earliest event of *any* source — a founder's 2016 GitHub repo would have
+  rendered as "public 79 months before launch".
+- The "nearly flat" narrative asserted flatness from the growth multiple alone; it would have said it
+  of an app with 50,000 ratings in year one.
+- A transient iTunes failure **overwrote the stored identity for every past crawl** of that app.
+
+**New `blocked` coverage status** — "we had nothing to look *with*" — because `empty` already means
+"we looked and there is genuinely nothing", and collapsing the two reported "this founder has no
+GitHub" when the truth was a thirty-second outage.
+
+*The lesson worth keeping:* none of these were caught by 105 passing tests, and two were **encoded**
+by them. Tests pin behaviour; they do not tell you the behaviour is right.
+
+### E5.6 — Monetization ✅ done 2026-09-11
+
+*Where pricing actually lives for a mobile app.* Not a pricing page — most apps have none — but the
+**in-app purchase catalogue**, embedded in every archived App Store capture we already download.
+Tiers, prices, billing periods, subscription family names, scoped by `appAdamId`. Zero new requests.
+
+Extracts: the monetization `model` (free · freemium · paid · paid_plus_iap), every plan with its
+term, dated price metrics per billing period, and events for plans added, repriced, retired, or the
+model changing.
+
+*HabitKit's real history:* freemium from Feb 2024 at $0.99/mo · $5.99/yr · $14.99 lifetime, then in
+Aug 2024 a second SKU family at roughly double — $1.99/mo · $11.99/yr · $29.99 lifetime — with the
+originals left live.
+
+*Three bugs worth recording:*
+- The ISO billing period was read from a fixed window that overlaps the next offer, so one SKU read
+  as `lifetime` in one capture and `month` in another. The SKU suffix (`_lt`, `_1y`) travels with the
+  offer and now wins.
+- Captures where Apple drops the embedded blob produced **zero** offers. Comparing against those
+  would have emitted a fake "retired every plan" followed by a fake relaunch; they are now skipped
+  as unparseable.
+- Prices round-tripped through Postgres text and an integers-only numeric test left `"1.99"` and
+  `"4.85"` as strings, so every numeric consumer silently dropped them.
+
+### E5.5 — Insights & comparison ✅ done 2026-09-11
+
+Built after the first real question from a user: *what data actually interests someone launching an
+app?* The answer was not another source — it was arithmetic on rows already collected.
+
+`lib/insights.ts` derives benchmarks; `/compare` overlays apps **aligned at their own launch**, which
+is the only framing that answers "am I ahead or behind?". Log scale, because the first year is where
+the reader lives and a linear axis flattens it into the baseline.
+
+*The shape that justifies the feature:* HabitKit grew slowly for well over a year, shipped about
+every 57 days, wrote its first blog post on day 605, then compounded 11×. No event in the timeline
+explains it — the honest shape of most growth (PRD §9.5), and one no teardown publishes.
+
+> **Corrected 2026-09-11.** This section first claimed "**33 ratings at the end of year one**". That
+> was wrong: the reading was taken on day 175, *190 days before* the anniversary, and the archive has
+> a 282-day hole spanning the one-year mark. HabitKit's year-one figure is **unknown**; the nearest
+> reading is 184 on day 457. The qualitative story holds, the number did not. A test named
+> "year one is the number that matters" had pinned it — see the review findings below.
+
+*Two correctness bugs caught by real data:*
+- Early/late growth windows **overlapped** on short series, reporting 1.0× acceleration regardless of
+  what the app did. Now disjoint, and null when the series is too short to support the comparison.
+- Milestones were asserted beyond what is observable: Hinge came back as "3,896 days to 100 ratings"
+  because the archive holds no App Store captures from 2013 and our first reading is already at
+  759,323. Now reported as `already_passed` with an honest upper bound where one is useful, and
+  "before our data" where it is not.
+
+### E5 — Axis B (founder identity) ◐ partial 2026-09-11
 Reddit OAuth, YouTube, Product Hunt, GitHub keys. Enumerate the founder's accounts → `by_founder: true`.
-**Gate:** HabitKit founder's playbook, in order.
+**Gate:** HabitKit founder's playbook, in order. **Met — 29 events, 28 of them founder-side.**
+
+*Shipped keyless.* `lib/handles.ts` discovers accounts from the site footer during identity
+resolution (not as a queued source — everything on Axis B depends on it and the worker has no
+dependency ordering). Two new sources: `blog` (sitemap → per-post `datePublished` → `own_content`)
+and `github` (unauthenticated API, 60/hr).
+
+*Precision over recall in handle resolution.* A landing page links to far more than its own accounts;
+taking the most-linked GitHub URL on overcast.fm yields `yui`, a JS library, which would attribute a
+stranger's whole history to the founder. Candidates must now resemble the brand or the developer
+name. Cost: overcast.fm resolves nothing rather than something wrong. That is the right trade — a
+missing handle costs coverage, a wrong one silently corrupts the timeline.
+
+*Still blocked, needs credentials from the user:*
+- **Reddit** — `/user/*/submitted.json` returns **403** unauthenticated. Needs a free OAuth app. This
+  is the single highest-yield unclaimed source: one call returns a founder's entire posting history.
+- **YouTube** — the RSS feed works keyless (200), but resolving a channel id needs the Data API key.
+- **Product Hunt** — needs a free token.
 
 ### E6 — Axis A (open-web mentions)
 ListenNotes, Brave/SerpAPI, backlinks. Domain-anchored only. LLM relevance filter via Batch API.
@@ -96,9 +234,29 @@ Vendor `agent-computer/`. One-time manual X login through the live viewer. Ad li
 X is `coverage: partial` **by design**.
 **Gate:** X adds events without becoming a dependency — v1 must still pass with X disabled.
 
-### E8 — Freeze & incremental
+### E8 — Freeze & incremental ✅ done 2026-09-11
 Crawl-once storage, frozen history, moving-window re-crawl.
-**Gate:** a second run on the same target is near-free.
+**Gate:** a second run on the same target is near-free. **Met: 124s → 2.6s, ~48×.**
+
+*Shipped:* `lib/cache.ts` — a persistent HTTP cache in Postgres, wrapping the `Ctx` seam rather than
+replacing it, so the offline suite never sees it and the rate limiter still sits underneath.
+
+The TTL is decided by whether a URL *can* change, which is the founding observation of the whole
+project applied literally:
+- a dated Wayback capture → **immutable, cached forever**
+- a CDX index → new captures appear slowly, 7 days
+- iTunes lookups, HN, GitHub → hours to a day
+
+Cache sits **in front of** the limiter: a hit must not spend a token, or a fully cached re-crawl
+would still wait out two minutes of throttling for requests it never makes.
+
+*Verified:* three consecutive HabitKit crawls produced **identical output — 33 events, 68 metrics,
+0 violations** — cold and warm. wayback 25/25 cached, blog 5/5, hackernews 1/1. Cache holds 84 URLs
+/ 14 MB after two apps; Postgres TOASTs the body column so it compresses on disk for free.
+
+*Why it matters beyond speed:* archive.org throttled us twice in one day. A re-crawl now costs
+roughly two requests instead of forty-four, which is what makes crawling enough apps for `/compare`
+practical at all.
 
 ---
 

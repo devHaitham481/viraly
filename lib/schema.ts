@@ -27,9 +27,26 @@ export type SourceId =
   | "producthunt"
   | "reddit"
   | "podcast"
-  | "blog"
   | "appstore"
-  | "playstore";
+  | "playstore"
+  | "blog"
+  | "github";
+
+/**
+ * Accounts belonging to the product or its founder.
+ *
+ * Resolving these is Axis B's bottleneck: one handle unlocks a whole posting history, and until it
+ * is known every founder-side source is blocked (PRD §7).
+ */
+export interface Handles {
+  x?: string;
+  github?: string;
+  reddit?: string;
+  youtube?: string;
+  linkedin?: string;
+  instagram?: string;
+  mastodon?: string;
+}
 
 /** One thing that happened, on a date, with evidence. */
 export interface Event {
@@ -69,8 +86,20 @@ export interface Metric {
  */
 export interface Coverage {
   source: SourceId;
-  status: "ok" | "failed" | "partial" | "empty";
+  /**
+   * Five outcomes and two pending states, kept distinct because collapsing any pair produces a
+   * confident falsehood:
+   *   `ok` we looked and found things · `partial` we looked, some of it was unreadable ·
+   *   `empty` we looked and there is genuinely nothing · `failed` we could not look ·
+   *   `blocked` we had nothing to look *with* (a prerequisite never resolved) ·
+   *   `queued` / `running` we have not finished looking.
+   */
+  status: "queued" | "running" | "ok" | "failed" | "partial" | "empty" | "blocked";
   note?: string;
+  /** Live progress from a long-running source, e.g. "12/24 captures". */
+  progress?: string | null;
+  /** Seconds since this source started, while it is running. */
+  elapsed_s?: number | null;
 }
 
 /** The resolved subject. Everything else keys off this, so getting it wrong is the top risk (PRD §9.1). */
@@ -83,6 +112,10 @@ export interface AppIdentity {
   /** How the founder was resolved, so a wrong attribution is traceable. */
   founder_source: string | null;
   artwork: string | null;
+  /** Canonical App Store URL, from iTunes. The slug matters — archived captures are keyed by it. */
+  store_url: string | null;
+  /** Discovered accounts. Empty until handle resolution runs; see lib/handles.ts. */
+  handles: Handles;
 }
 
 /** One candidate in the disambiguation step (D3). Enough detail to tell two same-named apps apart. */

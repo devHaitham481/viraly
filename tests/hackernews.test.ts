@@ -10,6 +10,8 @@ const habitkit: AppIdentity = {
   name: "Habit Tracker - HabitKit", domain: "habitkit.app", ios_id: "6443918070",
   play_id: "com.roehl.habitkit", founder: "Sebastian Roehl",
   founder_source: "itunes lookup sellerName", artwork: null,
+  store_url: "https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+  handles: {},
 };
 
 describe("hackernews", () => {

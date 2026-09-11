@@ -5,9 +5,14 @@
  * report all pick it up without being touched — which is the only way ~15 of these stay consistent.
  */
 
-import type { AppIdentity, Coverage, Event, Metric, SourceId } from "../schema.ts";
+import type { AppIdentity, Coverage, Event, Handles, Metric, SourceId } from "../schema.ts";
 import type { Ctx } from "../fetcher.ts";
 import { hackernews } from "./hackernews.ts";
+import { wayback } from "./wayback.ts";
+import { appstore } from "./appstore.ts";
+import { blog } from "./blog.ts";
+import { github } from "./github.ts";
+import { playstore } from "./playstore.ts";
 
 export interface SourceResult {
   events: Event[];
@@ -27,6 +32,8 @@ export interface Source {
    * reason, never `failed`. "We had nothing to look with" is not "we looked and it broke".
    */
   needs?: (keyof AppIdentity)[];
+  /** A handle this source cannot work without, e.g. `github`. Same semantics as `needs`. */
+  needsHandle?: keyof Handles;
   collect(app: AppIdentity, ctx: Ctx): Promise<SourceResult>;
 }
 
@@ -34,13 +41,15 @@ export interface Source {
  * Queued sources. iTunes is deliberately absent: it is the *resolver*, runs synchronously at crawl
  * creation, and its events come free with the identity lookup.
  */
-export const SOURCES: Source[] = [hackernews];
+export const SOURCES: Source[] = [wayback, appstore, playstore, blog, github, hackernews];
 
 export function sourceById(id: string): Source | undefined {
   return SOURCES.find((s) => s.id === id);
 }
 
-/** Which identity fields are missing for this source, if any. */
+/** Which prerequisites are missing for this source, if any. */
 export function missingNeeds(s: Source, app: AppIdentity): string[] {
-  return (s.needs ?? []).filter((k) => !app[k]);
+  const missing: string[] = (s.needs ?? []).filter((k) => !app[k]);
+  if (s.needsHandle && !app.handles?.[s.needsHandle]) missing.push(`${s.needsHandle} handle`);
+  return missing;
 }

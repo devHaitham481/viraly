@@ -289,7 +289,7 @@ Logged-in scraping of X violates its ToS. That is an operational and compliance 
 | SerpAPI | paid key | UNVERIFIED | paid | Fallback / Google-specific verticals. |
 | Crunchbase | paid key | UNVERIFIED | expensive | Company-mode only. Likely out of scope for v1. |
 | App Store page (JSON-LD) | none | UNVERIFIED | free | **Embeds `aggregateRating` in server-rendered JSON-LD** — see §13.1. Source of the growth curve. |
-| App Store version history | none — no endpoint | n/a | free | No API. **Recovered as a sampled series** from release notes in archived captures (§13.1). |
+| App Store version history | none — no endpoint | n/a | free | **CLOSED.** `versionHistory[]` with exact `releaseDate` is embedded in every archived capture — no extra request. Scope by app id: a page carries ~16 other apps' histories. |
 | X / Twitter | **login + browse** | n/a | account risk | Tier 3, `partial` by design. See §7 X strategy. |
 
 ---

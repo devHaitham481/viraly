@@ -12,7 +12,8 @@
     "record": "node scripts/record.ts",
     "golden": "node scripts/golden.ts",
     "test:db": "node --test \"tests/db/*.test.ts\"",
-    "worker": "node worker/index.ts"
+    "worker": "node worker/index.ts",
+    "queue": "node scripts/queue.ts"
   },
   "dependencies": {
     "next": "^16.3.4",
