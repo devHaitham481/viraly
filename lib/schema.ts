@@ -30,7 +30,9 @@ export type SourceId =
   | "appstore"
   | "playstore"
   | "blog"
-  | "github";
+  | "github"
+  | "rdap"
+  | "structure";
 
 /**
  * Accounts belonging to the product or its founder.

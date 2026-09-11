@@ -155,6 +155,17 @@ export default function Home() {
             </dl>
           </section>
 
+          {/* A worker running older code claims runs it cannot execute. Name it. */}
+          {result.worker_missing.length > 0 && (
+            <div className="mt-6 rounded-lg border border-amber-600 px-4 py-3 text-sm">
+              <p className="font-medium text-amber-700">The worker is running older code</p>
+              <p className="mt-1 text-[var(--color-muted)]">
+                It does not know {result.worker_missing.join(", ")}, so those sources fail rather
+                than run. Restart it with <code className="font-mono">npm run worker</code>.
+              </p>
+            </div>
+          )}
+
           {/* Queued work with no worker is not slowness — it is never going to happen. Say so. */}
           {result.pending > 0 && !result.worker_alive && (
             <div className="mt-6 rounded-lg border border-[var(--color-accent)] px-4 py-3 text-sm">
@@ -199,7 +210,7 @@ export default function Home() {
             {result.pending === 0 && result.attribution && (
               <p className="mt-1 text-sm text-[var(--color-muted)]">{result.attribution}</p>
             )}
-            <Timeline entries={result.timeline} />
+            <Timeline steps={result.steps} />
           </section>
 
           {result.metrics.length > 0 && (

@@ -109,6 +109,21 @@ export function isPlausible(handle: string, brand: string, developer: string | n
   return false;
 }
 
+/**
+ * The Android package, taken from the product's own Play badge.
+ *
+ * `play_id` is otherwise copied from the iOS bundle id, which is a guess — NGL's bundle is
+ * `fun.ask`, a valid iOS identifier that 404s on Play. A site that links its own Play listing is
+ * stating the package outright, and this costs no extra request: the homepage is already fetched
+ * for handle discovery.
+ */
+export function playPackageFromHtml(html: string): string | null {
+  const m = /play\.google\.com\/store\/apps\/details\?(?:[^"'\s<>]*&(?:amp;)?)?id=([A-Za-z0-9_.]+)/.exec(html);
+  const pkg = m?.[1];
+  // Package names are dotted and reversed-domain; a bare word is a false positive.
+  return pkg && pkg.includes(".") && pkg.length <= 155 ? pkg : null;
+}
+
 export interface HandleScan {
   handles: Handles;
   /** Candidates that looked like accounts but matched neither brand nor developer. */
@@ -141,12 +156,19 @@ export function handlesFromHtml(html: string, brand: string, developer: string |
 /**
  * Discover handles for a domain. Never throws — a site that is down costs us Axis B, not the crawl.
  */
+export interface Discovery {
+  handles: Handles;
+  /** Android package, stated by the site's own Play badge. Beats the iOS-bundle guess. */
+  playPackage: string | null;
+}
+
 export async function discoverHandles(
   domain: string,
   ctx: Ctx,
   developer: string | null = null,
-): Promise<Handles> {
+): Promise<Discovery> {
   const found: Handles = {};
+  let playPackage: string | null = null;
   const brand = domain.split(".")[0];
 
   for (const path of CANDIDATE_PATHS) {
@@ -155,12 +177,13 @@ export async function discoverHandles(
       for (const [k, v] of Object.entries(handlesFromHtml(html, brand, developer).handles)) {
         if (!found[k as keyof Handles]) found[k as keyof Handles] = v;
       }
+      playPackage ??= playPackageFromHtml(html);
       // The homepage footer usually carries everything; stop early rather than spend more requests.
-      if (Object.keys(found).length >= 2) break;
+      if (Object.keys(found).length >= 2 && playPackage) break;
     } catch {
       // A missing /about is the norm, not an error.
     }
   }
 
-  return found;
+  return { handles: found, playPackage };
 }

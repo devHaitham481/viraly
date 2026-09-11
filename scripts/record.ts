@@ -18,6 +18,9 @@ import { sampleEvenly, storeCaptureUrl, storeCdxUrl } from "../lib/sources/appst
 import { postUrlsFromSitemap, sitemapUrls } from "../lib/sources/blog.ts";
 import { reposUrl } from "../lib/sources/github.ts";
 import { playCaptureUrl, playCdxUrl, playUrl } from "../lib/sources/playstore.ts";
+import { episodeSearchUrl } from "../lib/sources/podcast.ts";
+import { rdapUrl } from "../lib/sources/rdap.ts";
+import { structureCdxUrl } from "../lib/sources/structure.ts";
 
 /** Every URL the eval suite is allowed to see. Add a case here before writing a test for it. */
 const TARGETS: { label: string; url: string }[] = [
@@ -32,6 +35,10 @@ const TARGETS: { label: string; url: string }[] = [
   { label: "site-habitkit", url: "https://habitkit.app/" },
   { label: "sitemap-habitkit", url: sitemapUrls("habitkit.app")[0] },
   { label: "gh-sebastianroehl", url: reposUrl("sebastianroehl") },
+  { label: "rdap-habitkit", url: rdapUrl("habitkit.app") },
+  { label: "struct-habitkit", url: structureCdxUrl("habitkit.app") },
+  { label: "pod-habitkit", url: episodeSearchUrl("habitkit") },
+  { label: "pod-nothing", url: episodeSearchUrl("zzqxwvnothing") },
   { label: "play-live-habitkit", url: playUrl("com.roehl.habitkit") },
   { label: "play-cdx-habitkit", url: playCdxUrl("com.roehl.habitkit") },
 ];

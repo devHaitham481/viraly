@@ -17,6 +17,7 @@
 import type { Event, Metric } from "../schema.ts";
 import type { Ctx } from "../fetcher.ts";
 import type { Source, SourceResult } from "./registry.ts";
+import { scopedValue } from "./scope.ts";
 
 const CDX = "http://web.archive.org/cdx/search/cdx";
 
@@ -82,6 +83,9 @@ export interface StoreSnapshot {
   ts: string;
   original: string;
   name?: string;
+  /** App Store subtitle — a ranked ASO field, and the clearest statement of positioning. */
+  subtitle?: string;
+  languages?: string;
   description?: string;
   price?: number;
   currency?: string;
@@ -119,6 +123,14 @@ export function extractSnapshot(html: string, iosId: string): Omit<StoreSnapshot
       // Not every ld+json block is valid JSON; another may carry the rating.
     }
   }
+
+  // Both of these belong to a specific app on a page that carries many. See ./scope.ts.
+  // The blob is attribute-escaped AND JSON-escapes non-ASCII, so `&` arrives as \u0026.
+  const unescaped = html
+    .replace(/\\"/g, '"')
+    .replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+  out.subtitle = scopedValue(unescaped, iosId, /"subtitle":"([^"]{1,80})"/g) ?? undefined;
+  out.languages = extractLanguages(html) ?? undefined;
 
   out.versions = extractVersions(html, iosId);
   out.offers = extractOffers(html, iosId);
@@ -224,6 +236,19 @@ export function extractOffers(html: string, iosId: string): Offer[] {
  * tag, its nesting has changed across Apple's redesigns, and the newest captures drop it entirely.
  * Scanning degrades to "no versions found" instead of throwing.
  */
+/**
+ * Supported languages, from the rendered information list.
+ *
+ * Unlike the JSON fields this lives in markup, so it disappears whenever Apple restyles the page —
+ * two of twenty HabitKit captures return nothing. That is absence, not error.
+ */
+export function extractLanguages(html: string): string | null {
+  const m = /<dt[^>]*>\s*Languages?\s*<\/dt>[\s\S]{0,400}?<dd[^>]*>([\s\S]{0,600}?)<\/dd>/i.exec(html);
+  if (!m) return null;
+  const text = m[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return text.length > 1 && text.length < 400 ? text : null;
+}
+
 /** Apple's boilerplate for a release with nothing to announce. Repeating it adds no information. */
 const GENERIC_NOTES =
   /^(this (release|update|version) (includes|contains)|(important |minor )?bug ?fixes|performance|various|general improvements|stability|thank you|thanks for)/i;
@@ -373,6 +398,19 @@ export function deriveEvents(snaps: StoreSnapshot[], developer: string | null): 
         events.push({
           ...base(s), date: s.date, kind: "aso", date_exact: false,
           title: `App Store title changed to “${s.name}”`,
+        });
+      }
+      if (s.subtitle && prev.subtitle && s.subtitle !== prev.subtitle) {
+        // The subtitle is a ranked App Store field and the tersest statement of positioning there is.
+        events.push({
+          ...base(s), date: s.date, kind: "aso", date_exact: false,
+          title: `App Store subtitle changed to \u201C${s.subtitle}\u201D`,
+        });
+      }
+      if (s.languages && prev.languages && s.languages !== prev.languages) {
+        events.push({
+          ...base(s), date: s.date, kind: "product_change", date_exact: false,
+          title: `Languages changed to: ${s.languages.slice(0, 70)}`,
         });
       }
       if (s.description && prev.description && s.description !== prev.description) {

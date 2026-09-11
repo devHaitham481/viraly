@@ -5,7 +5,7 @@ import path from "node:path";
 import { FIXTURE_DIR, replayCtx } from "../lib/fetcher.ts";
 import {
   appstore, extractOffers, extractSnapshot, extractVersions, modelOf, periodOf, sampleEvenly,
-  summarizeOffers, type Offer,
+  summarizeOffers, extractLanguages, type Offer,
 } from "../lib/sources/appstore.ts";
 import { missingNeeds } from "../lib/sources/registry.ts";
 import { FROZEN_NOW, offlineCtx } from "./helpers.ts";
@@ -274,5 +274,41 @@ describe("extractOffers", () => {
     assert.ok(prices.length > 10);
     assert.ok(prices.every((m) => typeof m.value === "number"));
     assert.ok(new Set(prices.map((m) => m.metric)).size >= 2, "expected several billing periods");
+  });
+});
+
+describe("ASO fields", () => {
+  test("the subtitle belongs to our app, not a neighbour", async () => {
+    // Six HabitKit captures reported "Study & Routine Planner" — an unrelated app's subtitle — by
+    // taking the first match on a page that carries one per linked app.
+    const { events } = await appstore.collect(habitkit, await offlineCtx());
+    const subtitles = events.filter((e) => /subtitle changed/.test(e.title));
+    assert.ok(subtitles.length > 0, "no subtitle history extracted");
+    for (const e of subtitles) {
+      assert.ok(
+        /Streaks|Accountability|Consistency/i.test(e.title),
+        `foreign subtitle leaked in: ${e.title}`,
+      );
+    }
+  });
+
+  test("subtitle changes are ASO events, dated inexactly", async () => {
+    const { events } = await appstore.collect(habitkit, await offlineCtx());
+    const subs = events.filter((e) => /subtitle changed/.test(e.title));
+    assert.ok(subs.every((e) => e.kind === "aso"));
+    // A capture bounds when the change happened; it does not date it.
+    assert.ok(subs.every((e) => e.date_exact === false));
+  });
+
+  test("unicode escapes are decoded", async () => {
+    const { events } = await appstore.collect(habitkit, await offlineCtx());
+    assert.ok(!events.some((e) => e.title.includes("\\u00")), "raw \\uXXXX escape in a title");
+  });
+
+  test("extractLanguages reads the rendered list, or nothing", () => {
+    const html = `<dt class="x">Languages</dt><dd class="y"><p>English, German</p></dd>`;
+    assert.equal(extractLanguages(html), "English, German");
+    // Apple restyles the page periodically; two of twenty captures return nothing. Absence, not error.
+    assert.equal(extractLanguages("<p>no information list here</p>"), null);
   });
 });

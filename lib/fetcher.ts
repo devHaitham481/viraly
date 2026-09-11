@@ -54,6 +54,15 @@ export type Manifest = Record<string, ManifestEntry>;
  * capture can be 800KB over a deliberately throttled connection. A single global timeout either
  * strangles it or lets a dead iTunes call hang for a minute.
  */
+/**
+ * Identify the crawler honestly.
+ *
+ * Sending no User-Agent is not neutral — some services reject it outright. rdap.org returns 403 to a
+ * headerless request and 200 to an identified one. Naming ourselves also gives an operator something
+ * to block or contact if we misbehave, which a spoofed browser string does not.
+ */
+export const USER_AGENT = "viraly/0.1 (+https://github.com/devHaitham481/viraly)";
+
 export const HOST_TIMEOUT_MS: Record<string, number> = {
   "web.archive.org": 90_000,
   "archive.org": 90_000,
@@ -77,7 +86,10 @@ export function liveCtx({ timeoutMs = 15_000, acquire, progress }: LiveOptions =
 
     const res = await fetch(url, {
       signal: AbortSignal.timeout(budgetFor(host)),
-      headers: { accept: "application/json, text/javascript, */*" },
+      headers: {
+        accept: "application/json, text/javascript, */*",
+        "user-agent": USER_AGENT,
+      },
       cache: "no-store",
     });
     if (!res.ok) throw new Error(`${host} ${res.status} ${res.statusText} — ${url}`);

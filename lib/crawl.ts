@@ -16,7 +16,7 @@ import { SOURCES, missingNeeds } from "./sources/registry.ts";
 import type { AppIdentity, Coverage, CrawlResult, Event, Metric } from "./schema.ts";
 import { computeInsights, type Insights } from "./insights.ts";
 import { auditCrawl, type Violation } from "./audit.ts";
-import { attributionSummary, buildTimeline, type TimelineEntry } from "./impact.ts";
+import { attributionSummary, buildSteps, buildTimeline, type Step, type TimelineEntry } from "./impact.ts";
 
 // 45s, not the 15s default: archive.org's CDX endpoint routinely takes 12s+ and a tighter timeout
 // silently drops the capture index — which is how the first recording run lost it.
@@ -41,8 +41,12 @@ export interface CrawlProgress extends CrawlResult {
   violations: Violation[];
   /** False when no worker has checked in recently — queued work will never be picked up. */
   worker_alive: boolean;
+  /** Sources this app knows that the running worker does not — it is running older code. */
+  worker_missing: string[];
   /** Events with growth context attached. See lib/impact.ts. */
   timeline: TimelineEntry[];
+  /** The same events grouped into steps the growth data can actually distinguish. */
+  steps: Step[];
   /** What the timeline as a whole actually supports. */
   attribution: string;
 }
@@ -56,7 +60,12 @@ export async function createCrawl(iosId: string): Promise<string> {
 
   // Handle discovery runs here, not as a queued source: everything on Axis B depends on it, and the
   // worker has no dependency ordering. One extra fetch buys that simplicity (lib/handles.ts).
-  if (a.domain) a.handles = await discoverHandles(a.domain, ctx, a.founder);
+  if (a.domain) {
+    const found = await discoverHandles(a.domain, ctx, a.founder);
+    a.handles = found.handles;
+    // A package stated by the product's own Play badge beats one inferred from the iOS bundle id.
+    if (found.playPackage) a.play_id = found.playPackage;
+  }
 
   // A failed lookup returns a blank identity, and upserting it would overwrite the stored row for
   // *every past crawl* of this app — Monday's good crawl would start rendering with no name and no
@@ -167,8 +176,16 @@ export async function readCrawl(crawlId: string): Promise<CrawlProgress | null> 
         FROM source_runs WHERE crawl_id = ${crawlId} ORDER BY source`,
   ]);
 
-  const [beat] = await sql<{ alive: boolean }[]>`
-    SELECT (max(beat_at) > now() - interval '60 seconds') AS alive FROM worker_heartbeat`;
+  const [beat] = await sql<{ alive: boolean; sources: string[] | null }[]>`
+    SELECT beat_at > now() - interval '60 seconds' AS alive, sources
+      FROM worker_heartbeat WHERE id = 1`;
+
+  // A worker started before a source was added cannot run it. Name the gap rather than let the
+  // crawl report "unknown source".
+  const workerKnows = new Set(beat?.sources ?? []);
+  const workerMissing = beat?.sources?.length
+    ? SOURCES.map((s) => s.id).filter((id) => !workerKnows.has(id))
+    : [];
 
   const [{ ahead }] = await sql<{ ahead: number }[]>`
     SELECT count(*)::int AS ahead FROM source_runs
@@ -192,6 +209,7 @@ export async function readCrawl(crawlId: string): Promise<CrawlProgress | null> 
   })) as Metric[];
 
   const timeline = buildTimeline(eventRows, metricRows);
+  const steps = buildSteps(eventRows, metricRows);
 
   return {
     crawl_id: crawlId,
@@ -201,7 +219,8 @@ export async function readCrawl(crawlId: string): Promise<CrawlProgress | null> 
     insights: computeInsights(eventRows, metricRows),
     violations: auditCrawl(eventRows, metricRows),
     timeline,
-    attribution: attributionSummary(timeline),
+    steps,
+    attribution: attributionSummary(steps),
     // The queue IS the coverage report. Same rows, no second source of truth.
     coverage: runs.map((r) => ({
       source: r.source,
@@ -213,5 +232,6 @@ export async function readCrawl(crawlId: string): Promise<CrawlProgress | null> 
     pending: runs.filter((r) => r.status === "queued" || r.status === "running").length,
     queue_ahead: Number(ahead),
     worker_alive: beat?.alive === true,
+    worker_missing: workerMissing,
   };
 }

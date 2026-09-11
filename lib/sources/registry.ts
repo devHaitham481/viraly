@@ -13,6 +13,9 @@ import { appstore } from "./appstore.ts";
 import { blog } from "./blog.ts";
 import { github } from "./github.ts";
 import { playstore } from "./playstore.ts";
+import { podcast } from "./podcast.ts";
+import { rdap } from "./rdap.ts";
+import { structure } from "./structure.ts";
 
 export interface SourceResult {
   events: Event[];
@@ -41,7 +44,7 @@ export interface Source {
  * Queued sources. iTunes is deliberately absent: it is the *resolver*, runs synchronously at crawl
  * creation, and its events come free with the identity lookup.
  */
-export const SOURCES: Source[] = [wayback, appstore, playstore, blog, github, hackernews];
+export const SOURCES: Source[] = [rdap, wayback, structure, appstore, playstore, blog, podcast, github, hackernews];
 
 export function sourceById(id: string): Source | undefined {
   return SOURCES.find((s) => s.id === id);

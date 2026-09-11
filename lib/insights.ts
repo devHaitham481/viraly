@@ -192,10 +192,11 @@ export function computeInsights(events: Event[], metrics: Metric[]): Insights {
   const early = comparable ? ratePerMonth(afterLaunch.slice(0, window)) : null;
   const recent = comparable ? ratePerMonth(afterLaunch.slice(-window)) : null;
 
-  // The website's own first appearance — NOT the earliest event of any source. With GitHub enabled
-  // the oldest starred repo can predate the product by years, which rendered as
-  // "public 79 months before launch · site live before the store release".
-  const firstSiteEvent = evs.find((e) => e.source === "wayback")?.date ?? null;
+  // The project's own first trace — NOT the earliest event of any source. With GitHub enabled the
+  // oldest starred repo can predate the product by years, which rendered as "public 79 months
+  // before launch". Domain registration counts and usually predates the first capture.
+  const firstSiteEvent =
+    evs.find((e) => e.source === "rdap" || e.source === "wayback")?.date ?? null;
 
   // Pricing comes in as one metric series per billing period, e.g. `ios_price_month`.
   const priceSeries = new Map<string, { date: string; value: number }[]>();

@@ -108,3 +108,4 @@ CREATE TABLE IF NOT EXISTS worker_heartbeat (
 ALTER TABLE targets ADD COLUMN IF NOT EXISTS store_url text;
 ALTER TABLE source_runs ADD COLUMN IF NOT EXISTS progress text;
 ALTER TABLE targets ADD COLUMN IF NOT EXISTS handles jsonb NOT NULL DEFAULT '{}'::jsonb;
+ALTER TABLE worker_heartbeat ADD COLUMN IF NOT EXISTS sources text[] NOT NULL DEFAULT '{}';

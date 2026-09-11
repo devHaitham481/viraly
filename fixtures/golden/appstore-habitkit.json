@@ -75,6 +75,17 @@
       "date": "2023-04-03",
       "kind": "aso",
       "date_exact": false,
+      "title": "App Store subtitle changed to “Consistency & Streaks”"
+    },
+    {
+      "source": "appstore",
+      "by": "Sebastian Roehl",
+      "by_founder": true,
+      "number": null,
+      "url": "https://web.archive.org/web/20230403170357/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+      "date": "2023-04-03",
+      "kind": "aso",
+      "date_exact": false,
       "title": "App Store description rewritten"
     },
     {
@@ -109,6 +120,17 @@
       "kind": "product_change",
       "date_exact": false,
       "title": "Freemium — 3 plans: $0.99/month, $5.99/year, $14.99 lifetime"
+    },
+    {
+      "source": "appstore",
+      "by": "Sebastian Roehl",
+      "by_founder": true,
+      "number": null,
+      "url": "https://web.archive.org/web/20240226195309/https://apps.apple.com/us/app/habit-tracker-habitkit/id6443918070",
+      "date": "2024-02-26",
+      "kind": "aso",
+      "date_exact": false,
+      "title": "App Store subtitle changed to “Streaks & Accountability”"
     },
     {
       "source": "appstore",

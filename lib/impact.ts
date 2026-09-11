@@ -34,6 +34,25 @@ export interface Impact {
 
 export type TimelineEntry = Event & { impact: Impact };
 
+/** Events close enough together that the growth data cannot tell them apart. */
+export interface Step {
+  /** Date of the first event in the group. */
+  date: string;
+  /** True when every event in the group is dated inexactly. */
+  approximate: boolean;
+  events: Event[];
+  impact: Impact;
+}
+
+/**
+ * How near two events must be before the data stops distinguishing them.
+ *
+ * HabitKit's 2024-10-29 blog post and 2024-11-01 release are three days apart, so they share an
+ * identical before/after window and both reported "growth picked up, 19 → 151/month". Shown as two
+ * rows that reads as two independent confirmations; it is one measurement.
+ */
+const CLUSTER_DAYS = 14;
+
 const toTime = (d: string) => Date.parse(`${d}T00:00:00Z`);
 const days = (a: string, b: string) => (toTime(b) - toTime(a)) / 86_400_000;
 
@@ -105,8 +124,41 @@ export function buildTimeline(events: Event[], metrics: Metric[]): TimelineEntry
     .map((e) => ({ ...e, impact: impactOf(e, readings) }));
 }
 
+/**
+ * Collapse the timeline into steps, grouping events the growth data cannot separate.
+ *
+ * Impact is computed once per group, at its first event, because computing it per event would repeat
+ * one finding as many times as there are events near it.
+ */
+export function buildSteps(events: Event[], metrics: Metric[]): Step[] {
+  const readings: Reading[] = metrics
+    .filter((m) => m.metric === "ios_rating_count" && typeof m.value === "number")
+    .map((m) => ({ date: m.date, value: m.value as number }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const sorted = [...events].sort((a, b) => a.date.localeCompare(b.date));
+  const steps: Step[] = [];
+
+  for (const e of sorted) {
+    const open = steps[steps.length - 1];
+    if (open && days(open.date, e.date) <= CLUSTER_DAYS) {
+      open.events.push(e);
+      open.approximate &&= !e.date_exact;
+      continue;
+    }
+    steps.push({
+      date: e.date,
+      approximate: !e.date_exact,
+      events: [e],
+      impact: impactOf(e, readings),
+    });
+  }
+
+  return steps;
+}
+
 /** One-line summary of what the whole timeline supports, for the top of the page. */
-export function attributionSummary(timeline: TimelineEntry[]): string {
+export function attributionSummary(timeline: { impact: Impact }[]): string {
   const measurable = timeline.filter((e) => e.impact.verdict !== "unknown");
   const moved = measurable.filter((e) => e.impact.verdict === "accelerated");
 

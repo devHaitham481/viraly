@@ -18,7 +18,7 @@ import { acquire } from "../lib/queue/limiter.ts";
 import { writeResults } from "../lib/crawl.ts";
 import { liveCtx } from "../lib/fetcher.ts";
 import { cachedCtx, newStats } from "../lib/cache.ts";
-import { sourceById } from "../lib/sources/registry.ts";
+import { SOURCES, sourceById } from "../lib/sources/registry.ts";
 import type { AppIdentity } from "../lib/schema.ts";
 
 const IDLE_MS = 1_000;
@@ -61,7 +61,8 @@ async function runOne(job: Claim): Promise<void> {
   const source = sourceById(job.source);
 
   if (!source) {
-    await sql`UPDATE source_runs SET status='failed', note=${`unknown source ${job.source}`},
+    await sql`UPDATE source_runs SET status='failed',
+              note=${`this worker does not know the source "${job.source}" — it is probably running older code. Restart it.`},
               finished_at=now() WHERE id=${job.id}`;
     return;
   }
@@ -125,9 +126,13 @@ async function main() {
   for (;;) {
     // Liveness, not progress: the app needs to distinguish "nothing is processing this" from
     // "this is slow". Cheap enough to write on every poll.
+    // Publish which sources this process actually knows. The app enqueues from its own registry, so
+    // a worker started before a source existed will claim runs it cannot execute — reported as
+    // "unknown source rdap", which says nothing about the real cause.
+    const known = SOURCES.map((s) => s.id);
     await db()`
-      INSERT INTO worker_heartbeat (id, beat_at) VALUES (1, now())
-      ON CONFLICT (id) DO UPDATE SET beat_at = now()`.catch(() => {});
+      INSERT INTO worker_heartbeat (id, beat_at, sources) VALUES (1, now(), ${known})
+      ON CONFLICT (id) DO UPDATE SET beat_at = now(), sources = EXCLUDED.sources`.catch(() => {});
 
     const job = await claim();
     if (!job) {

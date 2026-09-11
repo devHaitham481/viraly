@@ -1,6 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { handleFromUrl, handlesFromHtml, isPlausible } from "../lib/handles.ts";
+import { handleFromUrl, handlesFromHtml, isPlausible, playPackageFromHtml } from "../lib/handles.ts";
 
 describe("handleFromUrl", () => {
   test("reads the common profile shapes", () => {
@@ -64,5 +64,31 @@ describe("handlesFromHtml", () => {
 
   test("no social links yields nothing rather than guessing", () => {
     assert.deepEqual(handlesFromHtml("<p>plain page</p>", "x", null).handles, {});
+  });
+});
+
+describe("playPackageFromHtml", () => {
+  test("reads the package from the product's own Play badge", () => {
+    // `play_id` is otherwise copied from the iOS bundle id, which is a guess: NGL's bundle is
+    // `fun.ask` and 404s on Play, while its real package is `com.nglreactnative`.
+    const html = `<a href="https://play.google.com/store/apps/details?id=com.nglreactnative&hl=en">Get it on Google Play</a>`;
+    assert.equal(playPackageFromHtml(html), "com.nglreactnative");
+  });
+
+  test("handles html-escaped query separators", () => {
+    const html = `<a href="https://play.google.com/store/apps/details?hl=en&amp;id=com.roehl.habitkit">Play</a>`;
+    assert.equal(playPackageFromHtml(html), "com.roehl.habitkit");
+  });
+
+  test("a site with no Play badge yields null, not a guess", () => {
+    // Bear is iOS and Mac only. Null is the correct answer, not a fabricated package.
+    assert.equal(playPackageFromHtml("<p>download on the app store</p>"), null);
+  });
+
+  test("rejects anything that is not a reversed-domain package", () => {
+    assert.equal(
+      playPackageFromHtml('<a href="https://play.google.com/store/apps/details?id=music">x</a>'),
+      null,
+    );
   });
 });
