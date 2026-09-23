@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth scroll-pt-24 bg-ink">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Privacy Policy · HabitKit</title>
+        <meta name="description" content="The privacy policy for the HabitKit app on iOS and Android: what data is processed, by whom, and your rights under the GDPR.">
+        <link rel="canonical" href="https://habitkit.app/privacy">
+        <meta name="theme-color" content="#0a0a0b">
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+        
+                    <meta name="apple-itunes-app" content="app-id=6443918070">
+        
+        
+        <script>
+            (function (agent) {
+                var crawler = /bot|crawler|spider|Google-InspectionTool/i.test(agent);
+                var store = crawler ? null : /iPhone|iPad|iPod/.test(agent) ? 'ios' : /Android/.test(agent) ? 'android' : null;
+
+                if (store) {
+                    document.documentElement.dataset.store = store;
+                }
+            })(navigator.userAgent);
+        </script>
+
+        
+        
+        <link rel="icon" href="https://habitkit.app/favicon.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://habitkit.app/favicon-96.png">
+        <link rel="apple-touch-icon" href="https://habitkit.app/apple-touch-icon.png">
+
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="HabitKit">
+        <meta property="og:title" content="Privacy Policy · HabitKit">
+        <meta property="og:description" content="The privacy policy for the HabitKit app on iOS and Android: what data is processed, by whom, and your rights under the GDPR.">
+        <meta property="og:url" content="https://habitkit.app/privacy">
+                <meta property="og:image" content="https://habitkit.app/images/og-image.jpg">
+        <meta property="og:image:alt" content="Privacy Policy · HabitKit">
+                    <meta property="og:image:type" content="image/jpeg">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="630">
+                <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Privacy Policy · HabitKit">
+        <meta name="twitter:description" content="The privacy policy for the HabitKit app on iOS and Android: what data is processed, by whom, and your rights under the GDPR.">
+        <meta name="twitter:image" content="https://habitkit.app/images/og-image.jpg">
+        <meta name="twitter:image:alt" content="Privacy Policy · HabitKit">
+                    <meta name="twitter:creator" content="@SebastianRoehl">
+        
+        
+                    <script async src="https://plausible.habitkit.app/js/pa-0rJ6zplCdItL34Xrh_DjA.js"></script>
+            <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+        
+        <link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-700-normal-CYfAanHo.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-700-normal-Dort48En.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-800-normal-Dz8SOQK_.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2" type="font/woff2" crossorigin="anonymous" />
+<style>
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-D1W7dsQl.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B9e8oLYv.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-CYfAanHo.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-DfAjL1vF.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-DCPiXYsF.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-CX4K8MRt.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-Dort48En.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-OcDqTBcA.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-Dz8SOQK_.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-D-J0wlBY.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-6-qcROiO.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  --font-instrument-sans: "Instrument Sans";
+  --font-instrument-sans-italic: "Instrument Sans";
+  --font-nunito: "Nunito";
+  --font-jetbrains-mono: "JetBrains Mono";
+}
+
+.font-instrument-sans {
+  font-family: var(--font-instrument-sans);
+}
+
+.font-instrument-sans-italic {
+  font-family: var(--font-instrument-sans-italic);
+}
+
+.font-nunito {
+  font-family: var(--font-nunito);
+}
+
+.font-jetbrains-mono {
+  font-family: var(--font-jetbrains-mono);
+}
+</style>
+        <link rel="preload" as="style" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><link rel="modulepreload" as="script" href="https://habitkit.app/build/assets/app-COsKpmZK.js" /><link rel="stylesheet" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><script type="module" src="https://habitkit.app/build/assets/app-COsKpmZK.js"></script>    </head>
+    <body class="min-h-screen bg-ink font-sans text-foam antialiased">
+        <div class="flex min-h-screen flex-col">
+        <div class="mx-auto box-border w-full max-w-[1200px] flex-1">
+            <header
+    x-data="{ scrolled: false, open: false }"
+    x-init="scrolled = window.scrollY > 24"
+    @scroll.window="scrolled = window.scrollY > 24"
+    class="sticky top-0 z-50 px-5 py-3 sm:px-8"
+>
+    
+    
+    <div
+        class="nav-shell @container mx-auto flex items-center justify-between gap-4 rounded-2xl border backdrop-blur-xl"
+        style="max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)"
+        :style="scrolled ? 'max-width:48rem;padding:0.5rem 1rem;border-color:rgba(255,255,255,0.25);background-color:rgba(10,10,11,0.85);box-shadow:0 16px 34px rgba(0,0,0,0.45)' : 'max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)'"
+    >
+        <a href="https://habitkit.app" aria-label="HabitKit" class="flex items-center gap-2.5">
+            <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-8 rounded-[9px]"
+    width="32"
+    height="32"
+>
+            <span class="hidden font-display text-[19px] font-extrabold text-foam @min-[21rem]:inline">Habit<span class="text-accent-soft">Kit</span></span>
+        </a>
+
+        
+        <nav class="hidden items-center gap-1 text-[13.5px] font-medium md:flex">
+                            <a
+                    href="https://habitkit.app#features"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Features</a>
+                            <a
+                    href="https://habitkit.app#reviews"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Reviews</a>
+                            <a
+                    href="https://habitkit.app/help"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Guides</a>
+                    </nav>
+
+        <div class="flex items-center gap-2">
+            <button
+                type="button"
+                @click="open = ! open"
+                aria-expanded="false"
+                :aria-expanded="open.toString()"
+                aria-label="Toggle navigation menu"
+                class="flex size-9 cursor-pointer items-center justify-center rounded-[10px] border border-white/12 bg-white/5 text-steel transition-colors hover:text-foam md:hidden"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-show="! open">
+    <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" />
+</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-cloak="x-cloak" x-show="open">
+    <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+</svg>
+            </button>
+            
+            <a
+                href="https://habitkit.app#download"
+                x-data="{ store: JSON.parse('{\u0022ios\u0022:\u0022https:\\\/\\\/apps.apple.com\\\/app\\\/id6443918070\u0022,\u0022android\u0022:\u0022https:\\\/\\\/play.google.com\\\/store\\\/apps\\\/details?id=com.roehl.habitkit\u0022}')[document.documentElement.dataset.store] }"
+                x-init="store && ($el.href = store)"
+                class="flex h-9 shrink-0 items-center gap-[7px] rounded-[10px] bg-foam px-4 text-[13.5px] font-semibold whitespace-nowrap text-ink transition-colors hover:bg-white">
+                Get the app
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[14px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="absolute inset-x-5 top-full grid transition-[grid-template-rows,opacity] duration-300 ease-out sm:inset-x-8 md:hidden"
+        style="grid-template-rows: 0fr; opacity: 0"
+        :style="open ? 'grid-template-rows: 1fr; opacity: 1' : 'grid-template-rows: 0fr; opacity: 0'"
+    >
+        <div class="overflow-hidden">
+            <div class="mt-2 flex flex-col gap-1 rounded-2xl border border-white/12 bg-ink/90 px-3 py-3 text-[14px] font-medium backdrop-blur-xl">
+                                    <a
+                        href="https://habitkit.app#features"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Features</a>
+                                    <a
+                        href="https://habitkit.app#reviews"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Reviews</a>
+                                    <a
+                        href="https://habitkit.app/help"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Guides</a>
+                            </div>
+        </div>
+    </div>
+</header>
+            <main class="px-5 pt-14 pb-28 sm:px-8">
+                <div class="mx-auto flex w-full flex-col gap-6 max-w-[680px]">
+                    
+                    <h1 class="font-display text-[34px] leading-[1.12] font-extrabold tracking-[-0.02em] text-balance md:text-[42px] capitalize">Privacy policy<span class="text-accent">.</span></h1>
+                    <div class="text-[15px] leading-[1.75] text-muted [&amp;_ul]:list-disc [&amp;_ul]:pl-5 [&amp;_strong]:font-semibold [&amp;_strong]:text-foam [&amp;_a]:text-accent-soft [&amp;_a]:transition-colors [&amp;_a:hover]:text-accent flex flex-col gap-9 [&amp;_section]:flex [&amp;_section]:flex-col [&amp;_section]:gap-3 [&amp;_ul]:flex [&amp;_ul]:flex-col [&amp;_ul]:gap-2.5 [&amp;_h2]:font-display [&amp;_h2]:text-[19px] [&amp;_h2]:font-bold [&amp;_h2]:capitalize [&amp;_h2]:text-foam">
+    <section>
+            <h2>1) Information about the collection of personal data and contact details of the person responsible</h2>
+            <p>1.1 We are pleased that you are using our application (hereinafter "app"). In the following we inform you about the handling of your personal data when using our app. Personal data is all data with which you can be personally identified.</p>
+            <p>1.2 Responsible for data processing regarding this app within the meaning of the General Data Protection Regulation (GDPR) is Sebastian Röhl, Scherpenbergerstraße 112, 47443 Moers, Germany, Tel.: 015752566276, email: <a href="mailto:sebaroehl@gmail.com">sebaroehl@gmail.com</a>. The person responsible for the processing of personal data is the natural or legal person who alone or jointly with others decides on the purposes and means of the processing of personal data.</p>
+        </section>
+
+        <section>
+            <h2>2) Contact</h2>
+            <p>When contacting us (e.g. via contact form or e-mail), personal data is collected. Which data is collected when using a contact form can be seen from the respective contact form in the app. This data is stored and used exclusively for the purpose of answering your request or for contacting you and the associated technical administration. The legal basis for the processing of this data is our legitimate interest in answering your request in accordance with Article 6 (1) (f) GDPR. If your contact is aimed at concluding a contract, the additional legal basis for processing is Art. 6 (1) (b) GDPR. Your data will be deleted once your request has been processed. This is the case if it can be inferred from the circumstances that the facts in question have been finally clarified and provided that there are no legal storage obligations to the contrary.</p>
+        </section>
+
+        <section>
+            <h2>3) Data processing for contract processing</h2>
+            <p>3.1 For the processing of contracts concluded via the app, we work together with the following service provider(s), who support us in whole or in part in the implementation of concluded contracts. Certain personal data is transmitted to these service providers in accordance with the following information.</p>
+            <p>The personal data collected by us will be passed on to the transport company commissioned with the delivery as part of the contract, insofar as this is necessary for the delivery of the goods. We pass on your payment data to the commissioned credit institute as part of the payment process, provided this is necessary for the payment process. If payment service providers are used, we will explicitly inform you of this below. The legal basis for the transfer of data is Article 6 (1) (b) GDPR.</p>
+            <p><strong>3.2 - RevenueCat</strong></p>
+            <p>In the case of in-app payments, payment is made via RevenueCat Inc., 300 Euclid Avenue San Francisco, CA 94118, USA. to whom we pass on the information you provided during the ordering process together with the information about your order. Your data will be passed on in accordance with Article 6 Paragraph 1 Letter b GDPR exclusively for the purpose of payment processing and only to the extent that it is necessary for this. We have concluded an order processing contract with RevenueCat Inc., with which we oblige the provider to protect the data of the app users and not to pass it on to third parties.</p>
+            <p>Further information on data protection by RevenueCat can be found here: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">https://www.revenuecat.com/privacy</a></p>
+        </section>
+
+        <section>
+            <h2>4) Firebase Crashlytics</h2>
+            <p>To create anonymous crash reports, we use "Firebase Crashlytics", a service provided by Google Ireland Ltd., Google Building Gordon House, Barrow Street, Dublin 4, Ireland, to improve the stability and reliability of our app. If the app crashes, anonymous information will only be transmitted to the Google servers on the basis of your express consent in accordance with Article 6(1)(a) GDPR (app status at the time of the crash, installation UUID, crash trace, manufacturer and operating system of the mobile phone, last log messages). Also transfers to Google LLC. In the US are possible. This information does not contain any personal data. You can give or revoke consent in the app settings. You can withdraw your consent at any time by disabling the "Crash Reporting" feature in the app's settings. For more information on data protection, see the Firebase Crashlytics privacy policy at <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></p>
+        </section>
+
+        <section>
+            <h2>5) Website analytics</h2>
+            <p>This website (habitkit.app) measures visits with Plausible Analytics, which we host on a Hostinger VPS in Germany. It sets no cookies and stores nothing in your browser for analytics. We use aggregate reports about page views, referring websites, browser and device types, and clicks on links to the app stores.</p>
+            <p>Requests reach our analytics server over an encrypted HTTPS connection. Plausible processes the connection IP address and request information to derive approximate location and a visitor hash using a salt that changes daily. The raw IP address is not stored in Plausible's analytics event records. We do not use these reports to identify individual visitors or combine them with RevenueCat customer records.</p>
+            <p>The legal basis for the processing of personal data involved in operating website analytics is our legitimate interest in understanding how the website is used, Art. 6 (1) (f) GDPR. Hostinger provides the server infrastructure. The website does not display an analytics cookie banner because this analytics service uses no cookies or browser storage.</p>
+        </section>
+
+        <section>
+            <h2>6) App usage analytics</h2>
+            <p>Starting with HabitKit 1.18.1, the app uses anonymized usage tracking through the same self-hosted Plausible Analytics service on a Hostinger VPS in Germany. These statistics help us understand onboarding, first habit creation, returns to the app, Pro offer views and plan choices, purchase categories, access to Pro features, and openings of the share sheet. We use aggregate event counts to improve HabitKit, not to identify individual users. The service stores event records to produce these aggregate reports.</p>
+            <p>Events include the app version, iOS or Android platform, broad first-launch week and app-age groups, and relevant plan, offering or Pro-access categories. We do not send habit names, notes, check-ins or completion history, account or installation identifiers, transaction identifiers, or share destinations to Plausible. We do not combine these analytics records with RevenueCat customer records.</p>
+            <p>As with website analytics, the service receives the connection IP address over HTTPS and uses it to derive approximate location and a visitor hash using a salt that changes daily. The raw IP address is not stored in Plausible's analytics event records. Analytics state on your device is kept separate from habit backups.</p>
+            <p>We rely on our legitimate interest in understanding and improving HabitKit, Art. 6 (1) (f) GDPR, for the processing of personal data involved in operating this service. Hostinger provides the server infrastructure. This usage measurement is separate from purchase processing through RevenueCat and the optional Crash Reporting feature.</p>
+        </section>
+
+        <section>
+            <h2>7) Apple Ads measurement on iOS</h2>
+            <p>Starting with HabitKit 1.18.1, HabitKit uses Apple's Standard AdServices attribution to measure which Apple Ads campaigns lead to installs and Pro purchases. The app sends an Apple-provided attribution token to RevenueCat. RevenueCat uses it to request campaign information from Apple and associates the result with its existing customer and purchase record. This lets us compare campaign performance.</p>
+            <p>This measurement does not include habit names, notes or check-in history. We do not request Apple's tracking permission or collect the advertising identifier (IDFA) for this integration. RevenueCat does not send subscription lifecycle events to Apple Ads through this integration.</p>
+            <p>Apple Ads measurement is separate from anonymized Plausible usage statistics. Campaign information is linked to the pseudonymous customer record RevenueCat uses for your purchases. We use it to understand campaign performance, not to identify you by name. The legal basis for this measurement is our legitimate interest in understanding which advertising campaigns lead to installs and purchases, Art. 6 (1) (f) GDPR.</p>
+        </section>
+
+        <section>
+            <h2>8) Rights of the data subject</h2>
+            <p>8.1 The applicable data protection law grants you comprehensive data subject rights (rights to information and intervention) vis-à-vis the person responsible for the processing of your personal data, about which we will inform you below:</p>
+            <ul>
+                <li>Right to information in accordance with Art. 15 GDPR: In particular, you have a right to information about your personal data processed by us, the processing purposes, the categories of personal data processed, the recipients or categories of recipients to whom your data was or will be disclosed, planned storage period or the criteria for determining the storage period, the existence of a right to correction, deletion, restriction of processing, objection to processing, complaint to a supervisory authority, the origin of your data if they were not collected from you by us, the existence of automated decision-making including profiling and, if applicable, meaningful information about the logic involved and the scope and intended effects of such processing on you, as well as your right to be informed which guarantees pursuant to Art. 46 GDPR when your data is forwarded to third countries exist;</li>
+                <li>Right to rectification in accordance with Art. 16 GDPR: You have the right to immediate rectification of incorrect data concerning you and/or completion of your incomplete data stored by us;</li>
+                <li>Right to deletion according to Art. 17 GDPR: You have the right to request the deletion of your personal data if the requirements of Art. 17 Para. 1 GDPR are met. However, this right does not apply in particular if the processing is necessary to exercise the right to freedom of expression and information, to fulfill a legal obligation, for reasons of public interest or to assert, exercise or defend legal claims;</li>
+                <li>Right to restriction of processing in accordance with Art. 18 GDPR: You have the right to request the restriction of the processing of your personal data as long as the accuracy of your data, which you dispute, is being checked, if you refuse to delete your data because of inadmissible data processing and instead request the restriction of the processing of your data if you need your data to assert, exercise or defend legal claims after we no longer need this data after the purpose has been achieved or if you have lodged an objection for reasons of your particular situation, as long as it is not yet clear whether our legitimate reasons prevail;</li>
+                <li>Right to information in accordance with Art. 19 GDPR: If you have asserted the right to correction, deletion or restriction of processing against the person responsible, he is obliged to inform all recipients to whom the personal data concerning you have been disclosed of this correction or deletion of the data or restriction of processing, unless this proves impossible or involves a disproportionate effort. You have the right to be informed about these recipients.</li>
+                <li>Right to data portability in accordance with Art. 20 GDPR: You have the right to receive your personal data that you have provided to us in a structured, common and machine-readable format or to request transmission to another person responsible, insofar as this is technically feasible;</li>
+                <li>Right to revoke granted consent in accordance with Art. 7 Para. 3 DSGVO: You have the right to revoke your consent to the processing of data at any time with effect for the future. In the event of revocation, we will delete the data concerned immediately, unless further processing can be based on a legal basis for processing without consent. The revocation of the consent does not affect the legality of the processing carried out on the basis of the consent up to the point of revocation;</li>
+                <li>Right to lodge a complaint pursuant to Art. 77 GDPR: If you believe that the processing of your personal data violates the GDPR, you have - without prejudice to any other administrative or judicial remedy - the right to lodge a complaint with a supervisory authority, in particular in the Member State where you live, work or where the alleged infringement took place.</li>
+            </ul>
+            <p class="mt-3 font-semibold text-foam">8.2 RIGHT TO OBJECT</p>
+            <p>IF WE PROCESS YOUR PERSONAL DATA ON THE BASIS OF A BALANCING OF INTERESTS, YOU HAVE THE RIGHT AT ANY TIME TO OBJECT TO THIS PROCESSING FOR REASONS RESULTING FROM YOUR PARTICULAR SITUATION WITH EFFECT FOR THE FUTURE.</p>
+            <p>IF YOU EXERCISE YOUR RIGHT TO OBJECT, WE WILL STOP THE PROCESSING OF THE DATA INVOLVED. HOWEVER, FURTHER PROCESSING REMAINS RESERVED IF WE CAN PROVE COMPREHENSIVE REASONS FOR PROCESSING THAT OVERRIDE YOUR INTERESTS, FUNDAMENTAL RIGHTS AND FUNDAMENTAL FREEDOMS, OR IF THE PROCESSING IS FOR THE CERTIFICATION, EXERCISE OR DEFENSE OF LEGAL CLAIMS.</p>
+            <p>IF YOUR PERSONAL DATA IS PROCESSED BY US FOR DIRECT ADVERTISING PURPOSES, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME TO THE PROCESSING OF YOUR PERSONAL DATA FOR THE PURPOSES OF SUCH ADVERTISING. YOU MAY OBJECT AS DESCRIBED ABOVE.</p>
+            <p>IF YOU EXERCISE YOUR RIGHT TO OBJECT, WE WILL STOP THE PROCESSING OF THE DATA INVOLVED FOR DIRECT MARKETING PURPOSES.</p>
+        </section>
+</div>
+                </div>
+            </main>
+        </div>
+        <div class="mx-auto box-border w-full max-w-[1200px]">
+            <footer class="relative flex flex-col gap-10 px-5 py-12 text-[13px] text-dim sm:px-8">
+    <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
+        <div class="flex max-w-[280px] flex-col gap-3">
+            <a href="https://habitkit.app" class="flex items-center gap-2">
+                <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-6 rounded-[7px]"
+    width="24"
+    height="24"
+>
+                <span class="font-display text-[14px] font-bold text-foam">HabitKit</span>
+            </a>
+            <p class="text-[13px] leading-[1.6] text-dim text-pretty">
+                Track habits. Build streaks. See your progress. Free on iOS and Android.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 sm:gap-14">
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">PRODUCT</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#features"
+                                                                        class="transition-colors hover:text-foam"
+                                >Features</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#reviews"
+                                                                        class="transition-colors hover:text-foam"
+                                >Reviews</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#download"
+                                                                        class="transition-colors hover:text-foam"
+                                >Download</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">RESOURCES</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help"
+                                                                        class="transition-colors hover:text-foam"
+                                >Help center</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help/guides"
+                                                                        class="transition-colors hover:text-foam"
+                                >Guides</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help#faq"
+                                                                        class="transition-colors hover:text-foam"
+                                >FAQ</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/changelog"
+                                                                        class="transition-colors hover:text-foam"
+                                >Changelog</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/support"
+                                                                        class="transition-colors hover:text-foam"
+                                >Support</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/about"
+                                                                        class="transition-colors hover:text-foam"
+                                >About</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">LEGAL</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/privacy"
+                                                                        class="transition-colors hover:text-foam"
+                                >Privacy</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/terms"
+                                                                        class="transition-colors hover:text-foam"
+                                >Terms</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">ELSEWHERE</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://tryfocuskit.com"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >FocusKit</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://roehl.dev"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >roehl.dev</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </div>
+
+    <span class="font-mono text-[11px]">© 2026 HABITKIT</span>
+</footer>
+        </div>
+    </div>
+    </body>
+</html>

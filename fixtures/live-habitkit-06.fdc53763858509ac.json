@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth scroll-pt-24 bg-ink">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Guides And Advice · HabitKit</title>
+        <meta name="description" content="Long reads on what the research into habits actually shows, and stories from people who kept a habit going.">
+        <link rel="canonical" href="https://habitkit.app/help/guides">
+        <meta name="theme-color" content="#0a0a0b">
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+        
+                    <meta name="apple-itunes-app" content="app-id=6443918070">
+        
+        
+        <script>
+            (function (agent) {
+                var crawler = /bot|crawler|spider|Google-InspectionTool/i.test(agent);
+                var store = crawler ? null : /iPhone|iPad|iPod/.test(agent) ? 'ios' : /Android/.test(agent) ? 'android' : null;
+
+                if (store) {
+                    document.documentElement.dataset.store = store;
+                }
+            })(navigator.userAgent);
+        </script>
+
+        
+        
+        <link rel="icon" href="https://habitkit.app/favicon.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://habitkit.app/favicon-96.png">
+        <link rel="apple-touch-icon" href="https://habitkit.app/apple-touch-icon.png">
+
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="HabitKit">
+        <meta property="og:title" content="Guides And Advice · HabitKit">
+        <meta property="og:description" content="Long reads on what the research into habits actually shows, and stories from people who kept a habit going.">
+        <meta property="og:url" content="https://habitkit.app/help/guides">
+                <meta property="og:image" content="https://habitkit.app/images/og-image.jpg">
+        <meta property="og:image:alt" content="Guides And Advice · HabitKit">
+                    <meta property="og:image:type" content="image/jpeg">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="630">
+                <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Guides And Advice · HabitKit">
+        <meta name="twitter:description" content="Long reads on what the research into habits actually shows, and stories from people who kept a habit going.">
+        <meta name="twitter:image" content="https://habitkit.app/images/og-image.jpg">
+        <meta name="twitter:image:alt" content="Guides And Advice · HabitKit">
+                    <meta name="twitter:creator" content="@SebastianRoehl">
+        
+        
+                    <script async src="https://plausible.habitkit.app/js/pa-0rJ6zplCdItL34Xrh_DjA.js"></script>
+            <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+        
+        <link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-700-normal-CYfAanHo.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-700-normal-Dort48En.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-800-normal-Dz8SOQK_.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2" type="font/woff2" crossorigin="anonymous" />
+<style>
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-D1W7dsQl.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B9e8oLYv.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-CYfAanHo.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-DfAjL1vF.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-DCPiXYsF.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-CX4K8MRt.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-Dort48En.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-OcDqTBcA.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-Dz8SOQK_.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-D-J0wlBY.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-6-qcROiO.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  --font-instrument-sans: "Instrument Sans";
+  --font-instrument-sans-italic: "Instrument Sans";
+  --font-nunito: "Nunito";
+  --font-jetbrains-mono: "JetBrains Mono";
+}
+
+.font-instrument-sans {
+  font-family: var(--font-instrument-sans);
+}
+
+.font-instrument-sans-italic {
+  font-family: var(--font-instrument-sans-italic);
+}
+
+.font-nunito {
+  font-family: var(--font-nunito);
+}
+
+.font-jetbrains-mono {
+  font-family: var(--font-jetbrains-mono);
+}
+</style>
+        <link rel="preload" as="style" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><link rel="modulepreload" as="script" href="https://habitkit.app/build/assets/app-COsKpmZK.js" /><link rel="stylesheet" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><script type="module" src="https://habitkit.app/build/assets/app-COsKpmZK.js"></script>    </head>
+    <body class="min-h-screen bg-ink font-sans text-foam antialiased">
+        <div class="flex min-h-screen flex-col">
+        <div class="mx-auto box-border w-full max-w-[1200px] flex-1">
+            <header
+    x-data="{ scrolled: false, open: false }"
+    x-init="scrolled = window.scrollY > 24"
+    @scroll.window="scrolled = window.scrollY > 24"
+    class="sticky top-0 z-50 px-5 py-3 sm:px-8"
+>
+    
+    
+    <div
+        class="nav-shell @container mx-auto flex items-center justify-between gap-4 rounded-2xl border backdrop-blur-xl"
+        style="max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)"
+        :style="scrolled ? 'max-width:48rem;padding:0.5rem 1rem;border-color:rgba(255,255,255,0.25);background-color:rgba(10,10,11,0.85);box-shadow:0 16px 34px rgba(0,0,0,0.45)' : 'max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)'"
+    >
+        <a href="https://habitkit.app" aria-label="HabitKit" class="flex items-center gap-2.5">
+            <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-8 rounded-[9px]"
+    width="32"
+    height="32"
+>
+            <span class="hidden font-display text-[19px] font-extrabold text-foam @min-[21rem]:inline">Habit<span class="text-accent-soft">Kit</span></span>
+        </a>
+
+        
+        <nav class="hidden items-center gap-1 text-[13.5px] font-medium md:flex">
+                            <a
+                    href="https://habitkit.app#features"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Features</a>
+                            <a
+                    href="https://habitkit.app#reviews"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Reviews</a>
+                            <a
+                    href="https://habitkit.app/help"
+                     aria-current="true"                     class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-accent"
+                >Guides</a>
+                    </nav>
+
+        <div class="flex items-center gap-2">
+            <button
+                type="button"
+                @click="open = ! open"
+                aria-expanded="false"
+                :aria-expanded="open.toString()"
+                aria-label="Toggle navigation menu"
+                class="flex size-9 cursor-pointer items-center justify-center rounded-[10px] border border-white/12 bg-white/5 text-steel transition-colors hover:text-foam md:hidden"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-show="! open">
+    <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" />
+</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-cloak="x-cloak" x-show="open">
+    <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+</svg>
+            </button>
+            
+            <a
+                href="https://habitkit.app#download"
+                x-data="{ store: JSON.parse('{\u0022ios\u0022:\u0022https:\\\/\\\/apps.apple.com\\\/app\\\/id6443918070\u0022,\u0022android\u0022:\u0022https:\\\/\\\/play.google.com\\\/store\\\/apps\\\/details?id=com.roehl.habitkit\u0022}')[document.documentElement.dataset.store] }"
+                x-init="store && ($el.href = store)"
+                class="flex h-9 shrink-0 items-center gap-[7px] rounded-[10px] bg-foam px-4 text-[13.5px] font-semibold whitespace-nowrap text-ink transition-colors hover:bg-white">
+                Get the app
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[14px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="absolute inset-x-5 top-full grid transition-[grid-template-rows,opacity] duration-300 ease-out sm:inset-x-8 md:hidden"
+        style="grid-template-rows: 0fr; opacity: 0"
+        :style="open ? 'grid-template-rows: 1fr; opacity: 1' : 'grid-template-rows: 0fr; opacity: 0'"
+    >
+        <div class="overflow-hidden">
+            <div class="mt-2 flex flex-col gap-1 rounded-2xl border border-white/12 bg-ink/90 px-3 py-3 text-[14px] font-medium backdrop-blur-xl">
+                                    <a
+                        href="https://habitkit.app#features"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Features</a>
+                                    <a
+                        href="https://habitkit.app#reviews"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Reviews</a>
+                                    <a
+                        href="https://habitkit.app/help"
+                        @click="open = false"
+                         aria-current="true"                         class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-accent"
+                    >Guides</a>
+                            </div>
+        </div>
+    </div>
+</header>
+            <main class="relative px-5 pt-10 pb-24 sm:px-8 sm:pt-14">
+                
+                <div class="pointer-events-none absolute -top-[160px] left-1/2 h-[420px] w-full max-w-[900px] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(62,211,240,0.1),transparent)]"></div>
+                <div class="relative mx-auto w-full max-w-[1056px]">
+                    <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-[11px] tracking-[0.13em] uppercase">
+                                
+            <a href="https://habitkit.app" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Home</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            
+            <a href="https://habitkit.app/help" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Help center</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            <span class="text-foam"  aria-current="page" >Guides</span>
+            </nav>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://habitkit.app"},{"@type":"ListItem","position":2,"name":"Help center","item":"https://habitkit.app/help"},{"@type":"ListItem","position":3,"name":"Guides","item":"https://habitkit.app/help/guides"}]}</script>
+
+    <header class="mt-8 max-w-[620px] sm:mt-9">
+        <h1 class="font-display text-[34px] leading-[1.05] font-extrabold tracking-[-0.02em] capitalize text-balance sm:text-[42px] md:text-[48px]">Guides and advice<span class="text-accent">.</span></h1>
+        <p class="mt-4 text-[16.5px] leading-[1.65] text-muted text-pretty">Long reads on what the research into habits actually shows, and stories from people who kept a habit going.</p>
+    </header>
+
+    <nav aria-label="Choose a guide" class="mt-8 rounded-2xl border border-white/10 bg-panel p-5 sm:p-6">
+        <h2 class="font-display text-[20px] font-bold capitalize">Where would you like to start?</h2>
+        <ul class="mt-4 grid list-none gap-3 sm:grid-cols-2">
+                            <li><a href="https://habitkit.app/help/guides/start-smaller-than-feels-worthwhile" class="block rounded-lg border border-white/8 px-4 py-3 text-[14px] font-semibold text-silver hover:border-accent/40 hover:text-accent focus-ring">Choose a habit you can repeat</a></li>
+                            <li><a href="https://habitkit.app/help/guides/choosing-a-cue-you-will-actually-notice" class="block rounded-lg border border-white/8 px-4 py-3 text-[14px] font-semibold text-silver hover:border-accent/40 hover:text-accent focus-ring">Remember at the right moment</a></li>
+                            <li><a href="https://habitkit.app/help/guides/what-one-missed-day-does-to-a-habit" class="block rounded-lg border border-white/8 px-4 py-3 text-[14px] font-semibold text-silver hover:border-accent/40 hover:text-accent focus-ring">Get back to it after a missed day</a></li>
+                            <li><a href="https://habitkit.app/help/guides/how-long-it-really-takes-to-form-a-habit" class="block rounded-lg border border-white/8 px-4 py-3 text-[14px] font-semibold text-silver hover:border-accent/40 hover:text-accent focus-ring">Understand how long it takes</a></li>
+                    </ul>
+        <p class="mt-5 text-[14px] leading-relaxed text-muted">Choosing a tracker? <a href="https://habitkit.app/help/billing-and-premium/what-habitkit-pro-unlocks" class="font-semibold text-accent hover:text-accent-soft focus-ring">Compare HabitKit free and Pro</a>. Already using it? <a href="https://habitkit.app/help" class="font-semibold text-accent hover:text-accent-soft focus-ring">Browse app help</a>.</p>
+    </nav>
+
+    <ul class="mt-8 grid gap-4 sm:mt-9 sm:grid-cols-2 lg:grid-cols-3">
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/a-streak-is-not-a-consistency-score.webp"
+            alt="A long row of glowing amber tiles with one dark gap near the end and three tiles raised after it"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#F5A04C">No 01 · Field notes</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/a-streak-is-not-a-consistency-score" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">Habit Streaks Vs Consistency: How To Read Your Progress</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">A streak measures a current run, not your whole history. Learn how to read your HabitKit grid, plan days off and interpret completion rate.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">7 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/choosing-a-cue-you-will-actually-notice.webp"
+            alt="Two identical green tiles, one resting on a dark block and one floating above a thin ring"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#57D29A">No 02 · Guide</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/choosing-a-cue-you-will-actually-notice" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">How To Choose A Habit Cue: Examples And Reminders</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Choose a reliable routine or time cue, write an if-then plan and use reminders as support. Examples and the evidence behind habit cues.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">9 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/how-a-behaviour-becomes-automatic.webp"
+            alt="A curve of glowing cyan tiles rising and levelling off, with a few dark tiles on the ground beneath it"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#3ED3F0">No 03 · Habit science</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/how-a-behaviour-becomes-automatic" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">How Habits Become Automatic</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Repeating an action is different from doing it automatically. Learn how habit cues work and what a habit tracker can and cannot measure.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">6 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/how-long-it-really-takes-to-form-a-habit.webp"
+            alt="A long line of tiles fading into the distance, lit cyan only at the near end, with one upright tile where the light stops"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#3ED3F0">No 04 · Habit science</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/how-long-it-really-takes-to-form-a-habit" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">How Long Does It Take To Form A Habit?</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Habit formation takes time and varies widely. Understand the 21- and 66-day claims, what the studies measured, and how to plan your own habit.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">8 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/most-habit-advice-was-only-tested-while-someone-was-watching.webp"
+            alt="Two identical clusters of tiles, one with half its tiles lit amber, the other with only a few lit"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#F5A04C">No 05 · Field notes</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/most-habit-advice-was-only-tested-while-someone-was-watching" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">How To Keep A Habit Going After The First Few Weeks</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Starting a habit and maintaining it are different problems. Review your cue, target and progress, with evidence on what lasts after an intervention.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">7 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/start-smaller-than-feels-worthwhile.webp"
+            alt="One small bright green tile in focus in front of large dark blurred blocks"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#57D29A">No 06 · Guide</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/start-smaller-than-feels-worthwhile" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">How To Start A Small Habit You Can Repeat</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Choose a small, repeatable action, set a realistic goal and review what gets in the way. Practical examples with the limits of the research.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">6 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/the-willpower-story-is-wrong.webp"
+            alt="A wide field of amber tiles stretching to the horizon, most of them lit"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#F5A04C">No 07 · Field notes</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/the-willpower-story-is-wrong" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">Habits And Willpower: Make Starting Easier</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Make habits easier to start with reliable cues and less setup. What self-control research supports, and why willpower is not a simple fuel tank.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">4 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/what-one-missed-day-does-to-a-habit.webp"
+            alt="A complete block of glowing cyan tiles with one dark empty slot near the middle"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#3ED3F0">No 08 · Habit science</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/what-one-missed-day-does-to-a-habit" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">What Happens When You Miss A Day Of A Habit?</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">One missed day does not erase your progress. Learn what the research found, how to resume and how to plan days off in HabitKit.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">8 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/when-to-start-and-why-january-is-oversold.webp"
+            alt="A tall stack of green tiles stepping down into a low flat line that runs to the right edge"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#57D29A">No 09 · Guide</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/when-to-start-and-why-january-is-oversold" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">When Is The Best Time To Start A New Habit?</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">You do not need to wait for January to start a habit. Choose a workable cue and small action, and understand what fresh-start research actually shows.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">7 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/five-habits-productivity-2025.webp"
+            alt="A block of glowing green tiles with a narrow strip of dark tiles along its right edge"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#57D29A">No 10 · Guide</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/five-habits-productivity-2025" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">Five Habits For A More Focused Working Week</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">Five practical habits for planning, focused work and weekly reflection, with a HabitKit setup for each.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">4 min read · Oct 2024</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29Add"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#57D29A88"></span>
+    </div>
+    </div>
+</article>
+            </li>
+                    <li class="flex">
+                <article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[18px]" data-reveal="data-reveal">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/marathon-habit-tracking.webp"
+            alt="A curved path of purple tiles growing brighter toward a small arch of tiles at the far end"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:170px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-[9px] px-5 pt-5 pb-[22px] sm:px-[22px]">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#8B85F4">No 11 · Story</p>
+        <h2 class="font-display text-[17px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/marathon-habit-tracking" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">From Couch To Marathon: Tracking My Training</a>
+        </h2>
+                    <p class="text-[13.5px] leading-[1.6] text-muted text-pretty">How I recorded running and strength training during ten months of marathon preparation, and what a filled tile could not tell me.</p>
+                <p class="mt-auto text-[12.5px] font-bold text-muted">4 min read · Jul 2024</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F488"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F444"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#8B85F4dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+    </div>
+    </div>
+</article>
+            </li>
+            </ul>
+
+    <div class="flex flex-wrap rounded-[20px] border border-white/7 bg-panel flex-col items-center gap-[14px] px-6 py-9 text-center sm:px-8 mt-12 sm:mt-16">
+    <div class="flex flex-col gap-1.5 items-center">
+        <h2 class="font-display font-extrabold capitalize text-[22px]">Start your own grid<span class="text-accent">.</span></h2>
+        <p class="max-w-[380px] text-[14px] leading-[1.6] text-muted text-pretty">Free on iOS and Android. Private, offline, no account.</p>
+    </div>
+
+    
+    <div class="flex flex-wrap items-center gap-3 mt-1.5 justify-center">
+                <a href="https://habitkit.app#download" class="flex items-center gap-1.5 rounded-full bg-foam px-5 py-[11px] text-[14px] font-bold text-ink transition-colors hover:bg-accent focus-ring">
+            Get the app
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[14px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+        </a>
+                    <a href="https://habitkit.app/help" class="rounded-full border border-white/14 px-5 py-[11px] text-[14px] font-bold text-silver transition-colors hover:border-white/30 hover:text-foam focus-ring">Browse help center</a>
+            </div>
+</div>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://habitkit.app/help/guides#guides","name":"Guides and advice","url":"https://habitkit.app/help/guides","description":"Long reads on what the research into habits actually shows, and stories from people who kept a habit going.","inLanguage":"en","dateModified":"2026-09-14","isPartOf":{"@id":"https://habitkit.app/help#help"},"publisher":{"@id":"https://habitkit.app#sebastian"},"mainEntity":{"@type":"ItemList","name":"Guides and advice","numberOfItems":11,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://habitkit.app/help/guides/a-streak-is-not-a-consistency-score","name":"Habit Streaks Vs Consistency: How To Read Your Progress"},{"@type":"ListItem","position":2,"url":"https://habitkit.app/help/guides/choosing-a-cue-you-will-actually-notice","name":"How To Choose A Habit Cue: Examples And Reminders"},{"@type":"ListItem","position":3,"url":"https://habitkit.app/help/guides/how-a-behaviour-becomes-automatic","name":"How Habits Become Automatic"},{"@type":"ListItem","position":4,"url":"https://habitkit.app/help/guides/how-long-it-really-takes-to-form-a-habit","name":"How Long Does It Take To Form A Habit?"},{"@type":"ListItem","position":5,"url":"https://habitkit.app/help/guides/most-habit-advice-was-only-tested-while-someone-was-watching","name":"How To Keep A Habit Going After The First Few Weeks"},{"@type":"ListItem","position":6,"url":"https://habitkit.app/help/guides/start-smaller-than-feels-worthwhile","name":"How To Start A Small Habit You Can Repeat"},{"@type":"ListItem","position":7,"url":"https://habitkit.app/help/guides/the-willpower-story-is-wrong","name":"Habits And Willpower: Make Starting Easier"},{"@type":"ListItem","position":8,"url":"https://habitkit.app/help/guides/what-one-missed-day-does-to-a-habit","name":"What Happens When You Miss A Day Of A Habit?"},{"@type":"ListItem","position":9,"url":"https://habitkit.app/help/guides/when-to-start-and-why-january-is-oversold","name":"When Is The Best Time To Start A New Habit?"},{"@type":"ListItem","position":10,"url":"https://habitkit.app/help/guides/five-habits-productivity-2025","name":"Five Habits For A More Focused Working Week"},{"@type":"ListItem","position":11,"url":"https://habitkit.app/help/guides/marathon-habit-tracking","name":"From Couch To Marathon: Tracking My Training"}]}}</script>
+                </div>
+            </main>
+        </div>
+        <div class="mx-auto box-border w-full max-w-[1200px]">
+            <footer class="relative flex flex-col gap-10 px-5 py-12 text-[13px] text-dim sm:px-8">
+    <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
+        <div class="flex max-w-[280px] flex-col gap-3">
+            <a href="https://habitkit.app" class="flex items-center gap-2">
+                <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-6 rounded-[7px]"
+    width="24"
+    height="24"
+>
+                <span class="font-display text-[14px] font-bold text-foam">HabitKit</span>
+            </a>
+            <p class="text-[13px] leading-[1.6] text-dim text-pretty">
+                Track habits. Build streaks. See your progress. Free on iOS and Android.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 sm:gap-14">
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">PRODUCT</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#features"
+                                                                        class="transition-colors hover:text-foam"
+                                >Features</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#reviews"
+                                                                        class="transition-colors hover:text-foam"
+                                >Reviews</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#download"
+                                                                        class="transition-colors hover:text-foam"
+                                >Download</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">RESOURCES</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help"
+                                                                        class="transition-colors hover:text-foam"
+                                >Help center</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help/guides"
+                                                                        class="transition-colors hover:text-foam"
+                                >Guides</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help#faq"
+                                                                        class="transition-colors hover:text-foam"
+                                >FAQ</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/changelog"
+                                                                        class="transition-colors hover:text-foam"
+                                >Changelog</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/support"
+                                                                        class="transition-colors hover:text-foam"
+                                >Support</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/about"
+                                                                        class="transition-colors hover:text-foam"
+                                >About</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">LEGAL</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/privacy"
+                                                                        class="transition-colors hover:text-foam"
+                                >Privacy</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/terms"
+                                                                        class="transition-colors hover:text-foam"
+                                >Terms</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">ELSEWHERE</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://tryfocuskit.com"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >FocusKit</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://roehl.dev"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >roehl.dev</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </div>
+
+    <span class="font-mono text-[11px]">© 2026 HABITKIT</span>
+</footer>
+        </div>
+    </div>
+    </body>
+</html>

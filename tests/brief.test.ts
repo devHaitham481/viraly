@@ -111,3 +111,20 @@ describe("the brief states quality against scale", () => {
     assert.match(all, /Play publishes installs in brackets/);
   });
 });
+
+describe("the brief names what was dropped", () => {
+  test("a removed page is stated, with what proves it", () => {
+    const e = (over: Partial<Event>): Event => ev("2021-08-15", { source: "structure", date_exact: false, ...over });
+    const events = [e({ title: "Published /sebsn — since removed (404 today)" })];
+    const b = buildBrief("X", events, [], computeInsights(events, []), buildSteps(events, []));
+    const all = b.paragraphs.join(" ");
+    assert.match(all, /1 page they put up has since come down — \/sebsn/);
+    assert.match(all, /the live site returns 404/);
+  });
+
+  test("nothing removed means no sentence about removals", () => {
+    const events = [ev("2023-01-01", { kind: "launch" })];
+    const b = buildBrief("X", events, [], computeInsights(events, []), buildSteps(events, []));
+    assert.equal(/come down|404/.test(b.paragraphs.join(" ")), false);
+  });
+});

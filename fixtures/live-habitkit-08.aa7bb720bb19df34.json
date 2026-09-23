@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth scroll-pt-24 bg-ink">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>From Couch To Marathon: Tracking My Training · HabitKit Guides</title>
+        <meta name="description" content="How I recorded running and strength training during ten months of marathon preparation, and what a filled tile could not tell me.">
+        <link rel="canonical" href="https://habitkit.app/help/guides/marathon-habit-tracking">
+        <meta name="theme-color" content="#0a0a0b">
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+        
+                    <meta name="apple-itunes-app" content="app-id=6443918070">
+        
+        
+        <script>
+            (function (agent) {
+                var crawler = /bot|crawler|spider|Google-InspectionTool/i.test(agent);
+                var store = crawler ? null : /iPhone|iPad|iPod/.test(agent) ? 'ios' : /Android/.test(agent) ? 'android' : null;
+
+                if (store) {
+                    document.documentElement.dataset.store = store;
+                }
+            })(navigator.userAgent);
+        </script>
+
+                    <link rel="preload" as="image" href="https://habitkit.app/blog-assets/title/marathon-habit-tracking.webp" type="image/webp" fetchpriority="high">
+        
+        
+        <link rel="icon" href="https://habitkit.app/favicon.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://habitkit.app/favicon-96.png">
+        <link rel="apple-touch-icon" href="https://habitkit.app/apple-touch-icon.png">
+
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="HabitKit">
+        <meta property="og:title" content="From Couch To Marathon: Tracking My Training · HabitKit Guides">
+        <meta property="og:description" content="How I recorded running and strength training during ten months of marathon preparation, and what a filled tile could not tell me.">
+        <meta property="og:url" content="https://habitkit.app/help/guides/marathon-habit-tracking">
+                    <meta property="article:published_time" content="2024-07-24T00:00:00+00:00">
+                <meta property="og:image" content="https://habitkit.app/blog-assets/title/marathon-habit-tracking.webp">
+        <meta property="og:image:alt" content="A curved path of purple tiles growing brighter toward a small arch of tiles at the far end">
+                    <meta property="og:image:type" content="image/webp">
+            <meta property="og:image:width" content="1600">
+            <meta property="og:image:height" content="900">
+                <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="From Couch To Marathon: Tracking My Training · HabitKit Guides">
+        <meta name="twitter:description" content="How I recorded running and strength training during ten months of marathon preparation, and what a filled tile could not tell me.">
+        <meta name="twitter:image" content="https://habitkit.app/blog-assets/title/marathon-habit-tracking.webp">
+        <meta name="twitter:image:alt" content="A curved path of purple tiles growing brighter toward a small arch of tiles at the far end">
+                    <meta name="twitter:creator" content="@SebastianRoehl">
+        
+        
+                    <script async src="https://plausible.habitkit.app/js/pa-0rJ6zplCdItL34Xrh_DjA.js"></script>
+            <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+        
+        <link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-700-normal-CYfAanHo.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-700-normal-Dort48En.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-800-normal-Dz8SOQK_.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2" type="font/woff2" crossorigin="anonymous" />
+<style>
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-D1W7dsQl.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B9e8oLYv.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-CYfAanHo.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-DfAjL1vF.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-DCPiXYsF.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-CX4K8MRt.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-Dort48En.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-OcDqTBcA.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-Dz8SOQK_.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-D-J0wlBY.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-6-qcROiO.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  --font-instrument-sans: "Instrument Sans";
+  --font-instrument-sans-italic: "Instrument Sans";
+  --font-nunito: "Nunito";
+  --font-jetbrains-mono: "JetBrains Mono";
+}
+
+.font-instrument-sans {
+  font-family: var(--font-instrument-sans);
+}
+
+.font-instrument-sans-italic {
+  font-family: var(--font-instrument-sans-italic);
+}
+
+.font-nunito {
+  font-family: var(--font-nunito);
+}
+
+.font-jetbrains-mono {
+  font-family: var(--font-jetbrains-mono);
+}
+</style>
+        <link rel="preload" as="style" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><link rel="modulepreload" as="script" href="https://habitkit.app/build/assets/app-COsKpmZK.js" /><link rel="stylesheet" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><script type="module" src="https://habitkit.app/build/assets/app-COsKpmZK.js"></script>    </head>
+    <body class="min-h-screen bg-ink font-sans text-foam antialiased">
+        <div class="flex min-h-screen flex-col">
+        <div class="mx-auto box-border w-full max-w-[1200px] flex-1">
+            <header
+    x-data="{ scrolled: false, open: false }"
+    x-init="scrolled = window.scrollY > 24"
+    @scroll.window="scrolled = window.scrollY > 24"
+    class="sticky top-0 z-50 px-5 py-3 sm:px-8"
+>
+    
+    
+    <div
+        class="nav-shell @container mx-auto flex items-center justify-between gap-4 rounded-2xl border backdrop-blur-xl"
+        style="max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)"
+        :style="scrolled ? 'max-width:48rem;padding:0.5rem 1rem;border-color:rgba(255,255,255,0.25);background-color:rgba(10,10,11,0.85);box-shadow:0 16px 34px rgba(0,0,0,0.45)' : 'max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)'"
+    >
+        <a href="https://habitkit.app" aria-label="HabitKit" class="flex items-center gap-2.5">
+            <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-8 rounded-[9px]"
+    width="32"
+    height="32"
+>
+            <span class="hidden font-display text-[19px] font-extrabold text-foam @min-[21rem]:inline">Habit<span class="text-accent-soft">Kit</span></span>
+        </a>
+
+        
+        <nav class="hidden items-center gap-1 text-[13.5px] font-medium md:flex">
+                            <a
+                    href="https://habitkit.app#features"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Features</a>
+                            <a
+                    href="https://habitkit.app#reviews"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Reviews</a>
+                            <a
+                    href="https://habitkit.app/help"
+                     aria-current="true"                     class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-accent"
+                >Guides</a>
+                    </nav>
+
+        <div class="flex items-center gap-2">
+            <button
+                type="button"
+                @click="open = ! open"
+                aria-expanded="false"
+                :aria-expanded="open.toString()"
+                aria-label="Toggle navigation menu"
+                class="flex size-9 cursor-pointer items-center justify-center rounded-[10px] border border-white/12 bg-white/5 text-steel transition-colors hover:text-foam md:hidden"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-show="! open">
+    <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" />
+</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-cloak="x-cloak" x-show="open">
+    <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+</svg>
+            </button>
+            
+            <a
+                href="https://habitkit.app#download"
+                x-data="{ store: JSON.parse('{\u0022ios\u0022:\u0022https:\\\/\\\/apps.apple.com\\\/app\\\/id6443918070\u0022,\u0022android\u0022:\u0022https:\\\/\\\/play.google.com\\\/store\\\/apps\\\/details?id=com.roehl.habitkit\u0022}')[document.documentElement.dataset.store] }"
+                x-init="store && ($el.href = store)"
+                class="flex h-9 shrink-0 items-center gap-[7px] rounded-[10px] bg-foam px-4 text-[13.5px] font-semibold whitespace-nowrap text-ink transition-colors hover:bg-white">
+                Get the app
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[14px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="absolute inset-x-5 top-full grid transition-[grid-template-rows,opacity] duration-300 ease-out sm:inset-x-8 md:hidden"
+        style="grid-template-rows: 0fr; opacity: 0"
+        :style="open ? 'grid-template-rows: 1fr; opacity: 1' : 'grid-template-rows: 0fr; opacity: 0'"
+    >
+        <div class="overflow-hidden">
+            <div class="mt-2 flex flex-col gap-1 rounded-2xl border border-white/12 bg-ink/90 px-3 py-3 text-[14px] font-medium backdrop-blur-xl">
+                                    <a
+                        href="https://habitkit.app#features"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Features</a>
+                                    <a
+                        href="https://habitkit.app#reviews"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Reviews</a>
+                                    <a
+                        href="https://habitkit.app/help"
+                        @click="open = false"
+                         aria-current="true"                         class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-accent"
+                    >Guides</a>
+                            </div>
+        </div>
+    </div>
+</header>
+            <main class="relative px-5 pt-10 pb-24 sm:px-8 sm:pt-14">
+                
+                <div class="pointer-events-none absolute -top-[160px] left-1/2 h-[420px] w-full max-w-[900px] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(62,211,240,0.1),transparent)]"></div>
+                <div class="relative mx-auto w-full max-w-[696px]">
+                    <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-[11px] tracking-[0.13em] uppercase">
+                                
+            <a href="https://habitkit.app" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Home</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            
+            <a href="https://habitkit.app/help" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Help center</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            
+            <a href="https://habitkit.app/help/guides" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Guides</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            <span class="text-foam"  aria-current="page" >From Couch To Marathon: Tracking My Training</span>
+            </nav>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://habitkit.app"},{"@type":"ListItem","position":2,"name":"Help center","item":"https://habitkit.app/help"},{"@type":"ListItem","position":3,"name":"Guides","item":"https://habitkit.app/help/guides"},{"@type":"ListItem","position":4,"name":"From Couch To Marathon: Tracking My Training","item":"https://habitkit.app/help/guides/marathon-habit-tracking"}]}</script>
+
+    <article>
+        <header class="mt-8 sm:mt-10">
+            <p class="font-mono text-[11px] tracking-[0.16em] uppercase" style="color:#8B85F4">No 11 · Story</p>
+            <h1 class="mt-4 font-display text-[30px] leading-[1.14] font-extrabold tracking-[-0.01em] text-pretty sm:text-[38px] md:text-[44px] md:leading-[1.1]">From Couch To Marathon: Tracking My Training</h1>
+            <div class="flex flex-col gap-2 text-[13px] leading-relaxed text-muted mt-4">
+    <p>By <a href="https://habitkit.app/about" rel="author" class="font-semibold text-silver hover:text-accent focus-ring">Sebastian Röhl</a>, creator of HabitKit</p>
+    <p class="flex flex-wrap gap-x-3 gap-y-1">
+        <span>4 min read</span>
+        <span>Published <time datetime="2024-07-24">Jul 2024</time></span>
+                    <span>Updated <time datetime="2026-09-14">Sep 2026</time></span>
+                    </p>
+</div>
+        </header>
+
+        <div class="help-body guide-lead mt-8 sm:mt-9"><p>I used one habit called <strong>Sport</strong> to record running and strength training during roughly ten months of preparation for my first marathon. The grid helped me see whether I was showing up across weeks, including periods when illness interrupted training.</p>
+<p>I am Sebastian, the creator of HabitKit. This is my own training record and experience with the app I build, not a training plan or evidence that using a tracker improves race performance.</p>
+</div>
+
+        <details class="rounded-xl border border-white/10 bg-panel px-4 py-3 mt-6">
+        <summary class="cursor-pointer text-[14px] font-semibold text-silver focus-ring">On this page</summary>
+        <nav aria-label="Article contents" class="mt-3">
+            <ul class="flex list-none flex-col gap-1">
+                                    <li><a href="#the-goal-i-was-preparing-for" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">The Goal I Was Preparing For</a></li>
+                                    <li><a href="#my-habitkit-setup" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">My HabitKit Setup</a></li>
+                                    <li><a href="#what-a-training-week-contained" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">What A Training Week Contained</a></li>
+                                    <li><a href="#what-the-grid-could-not-tell-me" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">What The Grid Could Not Tell Me</a></li>
+                                    <li><a href="#set-up-a-record-for-your-own-goal" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">Set Up A Record For Your Own Goal</a></li>
+                            </ul>
+        </nav>
+    </details>
+
+        
+                    <img
+                src="https://habitkit.app/blog-assets/title/marathon-habit-tracking.webp"
+                alt="A curved path of purple tiles growing brighter toward a small arch of tiles at the far end"
+                width="1600"
+                height="900"
+                class="mx-auto mt-7 h-auto max-h-[340px] w-auto rounded-[18px] border border-white/8 sm:mt-8"
+            >
+        
+                    <section id="the-goal-i-was-preparing-for" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">The Goal I Was Preparing For</h2>
+
+    <div class="help-body mt-[18px]"><p>As I approached my thirtieth birthday, I wanted to do something I had spent years putting off. Much of my twenties had been spent gaming and staying at home. My target was the Westenergie Marathon in Essen, Germany, on 15 October 2023.</p>
+<p>I had around ten months to prepare. The question I used HabitKit for was straightforward: had I done a session today? The record gave me a view across the training block instead of leaving me to remember how regular the last few weeks had been.</p>
+</div>
+</section>
+                    <section id="my-habitkit-setup" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">My HabitKit Setup</h2>
+
+    <div class="help-body mt-[18px]"><p>I kept running and strength work together in one habit:</p>
+<ul>
+<li><strong>Name:</strong> Sport</li>
+<li><strong>Description:</strong> Weightlifting, running or similar</li>
+<li><strong>Streak goal:</strong> six times per week</li>
+<li><strong>Reminders:</strong> Monday to Saturday at 07:00</li>
+</ul>
+<p>That was my personal target at the time, not a suggested starting schedule. A single habit meant that either a run or a strength session could fill the day's tile.</p>
+<p><img src="https://habitkit.app/blog-assets/charcoal-marathon.webp" alt="My Sport habit grid from marathon preparation, combining running and strength sessions" width="1600" height="900" loading="lazy" decoding="async"></p>
+<p><em>My original Sport record, presented in the site's charcoal layout. A filled day could be running, weightlifting or a similar activity; it does not represent a particular distance or intensity.</em></p>
+</div>
+</section>
+                    <section id="what-a-training-week-contained" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">What A Training Week Contained</h2>
+
+    <div class="help-body mt-[18px]"><p>My usual week included an interval run on Monday, a marathon-pace run on Wednesday and a longer run at the weekend. Other sessions included weightlifting and bodyweight training.</p>
+<p>I found the growing grid motivating. During weeks when illness slowed me down, seeing the earlier work helped me keep the longer preparation period in view. A gap did not replace the sessions already recorded.</p>
+</div>
+</section>
+                    <section id="what-the-grid-could-not-tell-me" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">What The Grid Could Not Tell Me</h2>
+
+    <div class="help-body mt-[18px]"><p>The same filled tile could stand for very different sessions. It could not tell me whether a run was appropriately paced, whether I was recovering well, or whether my training was enough for the race.</p>
+<p>Combining activities made the record simple, but it also meant the Sport grid could not answer “How many days did I run?” without more detail. That is the tradeoff to consider when choosing one broad habit or separate habits for different activities.</p>
+<p>The useful distinction is between a record of showing up and a plan for what to do. HabitKit gave me the first. <a href="/help/guides/a-streak-is-not-a-consistency-score">Reading streaks alongside a longer history</a> explains why both views matter.</p>
+</div>
+</section>
+                    <section id="set-up-a-record-for-your-own-goal" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">Set Up A Record For Your Own Goal</h2>
+
+    <div class="help-body mt-[18px]"><p>Choose what you want a filled day to mean before choosing a target. For a reading habit, that might mean reading one page. For an existing exercise routine, it could mean completing the session you had planned.</p>
+<ol>
+<li>Create a <strong>Build A Habit</strong> and name the action.</li>
+<li>Choose <strong>Yes / No</strong> if one check-in is enough. Use <strong>Count</strong> or <strong>Measure</strong> if quantities would answer a more useful question.</li>
+<li>Set <strong>Streak Goal</strong> to a schedule that fits your own routine. A weekly target counts successful days, not a named set of weekdays.</li>
+<li>Record what actually happened. Use a day note to explain a change or interruption if that helps you review it later.</li>
+</ol>
+<p>These instructions describe HabitKit 1.18.0. The controls have changed since my 2023 preparation; the original Sport record above is retained as it was.</p>
+<p>The free tier supports four active habits and day notes. <a href="/help/getting-started/install-habitkit-and-create-your-first-habit">Create your first habit</a> covers the controls, and <a href="/help/habits-and-streaks/take-a-day-off-without-breaking-your-streak">planning days off</a> explains weekly goals. Choose the record that helps you make a decision, rather than copying my six-day target.</p>
+</div>
+</section>
+        
+        
+        
+        
+    </article>
+
+    <section class="mt-12 sm:mt-16" aria-labelledby="more-guides">
+        <div class="flex items-end justify-between gap-5">
+            <h2 id="more-guides" class="font-display text-[22px] font-extrabold capitalize sm:text-[26px]">More guides<span class="text-accent">.</span></h2>
+            <a
+                href="https://habitkit.app/help/guides"
+                class="flex shrink-0 items-center gap-1.5 text-[14px] font-bold text-accent transition-colors hover:text-accent-soft focus-ring focus-visible:outline-offset-4"
+            >
+                All guides
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[13px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+            </a>
+        </div>
+
+        <ul class="mt-5 grid grid-cols-1 gap-3.5 sm:grid-cols-3">
+                            <li class="flex"><article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[16px]">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/a-streak-is-not-a-consistency-score.webp"
+            alt="A long row of glowing amber tiles with one dark gap near the end and three tiles raised after it"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:150px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-2 px-5 pt-[18px] pb-5">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#F5A04C">No 01 · Field notes</p>
+        <h3 class="font-display text-[16px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/a-streak-is-not-a-consistency-score" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">Habit Streaks Vs Consistency: How To Read Your Progress</a>
+        </h3>
+                <p class="mt-auto text-[13px] text-muted">7 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1.5"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+    </div>
+    </div>
+</article>
+</li>
+                            <li class="flex"><article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[16px]">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/what-one-missed-day-does-to-a-habit.webp"
+            alt="A complete block of glowing cyan tiles with one dark empty slot near the middle"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:150px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-2 px-5 pt-[18px] pb-5">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#3ED3F0">No 08 · Habit science</p>
+        <h3 class="font-display text-[16px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/what-one-missed-day-does-to-a-habit" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">What Happens When You Miss A Day Of A Habit?</a>
+        </h3>
+                <p class="mt-auto text-[13px] text-muted">8 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1.5"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F088"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F0dd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#3ED3F044"></span>
+    </div>
+    </div>
+</article>
+</li>
+                            <li class="flex"><article class="relative flex w-full flex-col overflow-hidden border border-white/7 bg-panel transition-colors hover:border-accent/40 has-[a:focus-visible]:border-accent/60 rounded-[16px]">
+    
+            <img
+            src="https://habitkit.app/blog-assets/title/most-habit-advice-was-only-tested-while-someone-was-watching.webp"
+            alt="Two identical clusters of tiles, one with half its tiles lit amber, the other with only a few lit"
+            width="1600"
+            height="900"
+            loading="lazy"
+            class="w-full border-b border-white/6 object-cover"
+            style="height:150px"
+        >
+    
+    <div class="flex flex-1 flex-col gap-2 px-5 pt-[18px] pb-5">
+        <p class="font-mono text-[10.5px] tracking-[0.14em] uppercase" style="color:#F5A04C">No 05 · Field notes</p>
+        <h3 class="font-display text-[16px] leading-[1.35] font-extrabold text-pretty">
+            <a href="https://habitkit.app/help/guides/most-habit-advice-was-only-tested-while-someone-was-watching" class="outline-offset-4 after:absolute after:inset-0 after:content-['']">How To Keep A Habit Going After The First Few Weeks</a>
+        </h3>
+                <p class="mt-auto text-[13px] text-muted">7 min read · Aug 2026</p>
+        <div
+    aria-hidden="true"
+    class="grid overflow-hidden mt-1.5"
+    style="grid-template-columns:repeat(26,minmax(0,1fr));gap:var(--tile-gap,2px)"
+>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C44"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:rgba(255,255,255,0.06)"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04C88"></span>
+            <span class="rounded-tile-sm aspect-square" style="background:#F5A04Cdd"></span>
+    </div>
+    </div>
+</article>
+</li>
+                    </ul>
+    </section>
+
+    <div class="flex flex-wrap rounded-[20px] border border-white/7 bg-panel flex-col items-center gap-[14px] px-6 py-9 text-center sm:px-8 mt-10 sm:mt-14">
+    <div class="flex flex-col gap-1.5 items-center">
+        <h2 class="font-display font-extrabold capitalize text-[22px]">Start your own grid<span class="text-accent">.</span></h2>
+        <p class="max-w-[380px] text-[14px] leading-[1.6] text-muted text-pretty">Free on iOS and Android. Private, offline, no account.</p>
+    </div>
+
+    
+    <div class="flex flex-wrap items-center gap-3 mt-1.5 justify-center">
+                <a href="https://habitkit.app#download" class="flex items-center gap-1.5 rounded-full bg-foam px-5 py-[11px] text-[14px] font-bold text-ink transition-colors hover:bg-accent focus-ring">
+            Get the app
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[14px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+        </a>
+                    <a href="https://habitkit.app/help" class="rounded-full border border-white/14 px-5 py-[11px] text-[14px] font-bold text-silver transition-colors hover:border-white/30 hover:text-foam focus-ring">Browse help center</a>
+            </div>
+</div>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"From Couch To Marathon: Tracking My Training","description":"How I recorded running and strength training during ten months of marathon preparation, and what a filled tile could not tell me.","image":"https://habitkit.app/blog-assets/title/marathon-habit-tracking.webp","articleSection":"Story","datePublished":"2024-07-24T00:00:00+00:00","dateModified":"2026-09-14","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://habitkit.app/help/guides/marathon-habit-tracking"},"isPartOf":{"@type":"CollectionPage","name":"Guides and advice","url":"https://habitkit.app/help/guides"},"author":{"@id":"https://habitkit.app#sebastian"},"publisher":{"@id":"https://habitkit.app#sebastian"}}</script>
+                </div>
+            </main>
+        </div>
+        <div class="mx-auto box-border w-full max-w-[1200px]">
+            <footer class="relative flex flex-col gap-10 px-5 py-12 text-[13px] text-dim sm:px-8">
+    <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
+        <div class="flex max-w-[280px] flex-col gap-3">
+            <a href="https://habitkit.app" class="flex items-center gap-2">
+                <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-6 rounded-[7px]"
+    width="24"
+    height="24"
+>
+                <span class="font-display text-[14px] font-bold text-foam">HabitKit</span>
+            </a>
+            <p class="text-[13px] leading-[1.6] text-dim text-pretty">
+                Track habits. Build streaks. See your progress. Free on iOS and Android.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 sm:gap-14">
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">PRODUCT</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#features"
+                                                                        class="transition-colors hover:text-foam"
+                                >Features</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#reviews"
+                                                                        class="transition-colors hover:text-foam"
+                                >Reviews</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#download"
+                                                                        class="transition-colors hover:text-foam"
+                                >Download</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">RESOURCES</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help"
+                                                                        class="transition-colors hover:text-foam"
+                                >Help center</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help/guides"
+                                                                        class="transition-colors hover:text-foam"
+                                >Guides</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help#faq"
+                                                                        class="transition-colors hover:text-foam"
+                                >FAQ</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/changelog"
+                                                                        class="transition-colors hover:text-foam"
+                                >Changelog</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/support"
+                                                                        class="transition-colors hover:text-foam"
+                                >Support</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/about"
+                                                                        class="transition-colors hover:text-foam"
+                                >About</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">LEGAL</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/privacy"
+                                                                        class="transition-colors hover:text-foam"
+                                >Privacy</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/terms"
+                                                                        class="transition-colors hover:text-foam"
+                                >Terms</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">ELSEWHERE</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://tryfocuskit.com"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >FocusKit</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://roehl.dev"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >roehl.dev</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </div>
+
+    <span class="font-mono text-[11px]">© 2026 HABITKIT</span>
+</footer>
+        </div>
+    </div>
+    </body>
+</html>

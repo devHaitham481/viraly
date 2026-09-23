@@ -9,13 +9,18 @@
  * content pages in 2024, one since. That is a strategic fact a founder weighing "should I invest in
  * content" actually wants, and no other source here carries it.
  *
+ * The inverse is rarer and worth more. A path the archive holds that the live site now 404s is an
+ * experiment that was tried and dropped — a pricing page that vanished, a section deleted, a landing
+ * page for a feature that never shipped. Nobody publishes their retreats, and there is no other way
+ * to see them.
+ *
  * It is also the honest slice of the influencer question. Whether a team *paid* creators is not
  * publicly determinable — sponsorship disclosure is inconsistent and most platforms are login-walled
  * — but an `/affiliates` or `/creators` page is direct, dated evidence that a programme existed.
  */
 
 import type { Event, Metric } from "../schema.ts";
-import type { Ctx } from "../fetcher.ts";
+import { httpStatus, type Ctx } from "../fetcher.ts";
 import type { Source, SourceResult } from "./registry.ts";
 
 const CDX = "http://web.archive.org/cdx/search/cdx";
@@ -25,7 +30,7 @@ export const structureCdxUrl = (domain: string) =>
   `&collapse=urlkey&fl=timestamp,original&limit=2000`;
 
 /** Files that are not pages. Counting them would make an icon refresh look like a content push. */
-const ASSET = /\.(png|jpe?g|gif|svg|webp|ico|css|js|mjs|woff2?|ttf|eot|map|xml|txt|json|zip|pdf|mp4|webm)$/i;
+const ASSET = /\.(png|jpe?g|gif|svg|webp|avif|ico|css|js|mjs|woff2?|ttf|eot|map|xml|txt|json|webmanifest|wasm|rss|atom|zip|pdf|mp4|webm)$/i;
 
 /**
  * Sections whose first appearance is a marketing decision worth dating.
@@ -49,9 +54,25 @@ const CONTENT = /^\/(blog|articles?|guides?|posts?|resources|learn)\//i;
 const PSEO_PAGES = 12;
 const PSEO_WINDOW_DAYS = 45;
 
+/** How many of the site's own pages we will probe for removal. Politeness, not correctness. */
+const MAX_LIVE_CHECKS = 15;
+
 export interface PathFirstSeen {
   path: string;
   date: string;
+}
+
+/** The live page, on the apex host, for the removal check. */
+export const livePageUrl = (domain: string, p: string) => `https://${domain}${p}`;
+
+/**
+ * Pages worth asking the live site about.
+ *
+ * Assets are excluded — a rotated hero image is not a strategy — and so is the root, which is
+ * checked separately as the proof that the site answers at all.
+ */
+export function retirementCandidates(paths: PathFirstSeen[]): PathFirstSeen[] {
+  return paths.filter((p) => p.path !== "/" && !ASSET.test(p.path)).slice(0, MAX_LIVE_CHECKS);
 }
 
 /**
@@ -149,6 +170,53 @@ export const structure: Source = {
         }
       }
 
+      // ---- what they tried and dropped ---------------------------------------
+      // The live site is asked, not the archive's sampling. "Not captured lately" is a fact about
+      // how often archive.org crawls; a 404 is the site itself saying the page is gone.
+      //
+      // The event is dated at the page's *first* capture, because that is the date we actually
+      // have. When it came down is unknown and is not guessed at — putting a removal on the
+      // timeline at the edge of an observation window is the false-precision trap this project
+      // keeps having to undo.
+      let checked = 0;
+      let retired = 0;
+      let inconclusive = 0;
+      let liveSite = false;
+      try {
+        await ctx.fetchText(livePageUrl(domain, "/"));
+        liveSite = true;
+      } catch {
+        // Unreachable site, parked domain, DNS gone. Without this guard every path 404s and the
+        // crawl reports that they deleted their entire website.
+      }
+
+      if (liveSite) {
+        const candidates = retirementCandidates(paths);
+        for (const cand of candidates) {
+          // Counted here, not inside the `progress?.()` argument: an optional call skips its
+          // arguments entirely when nobody is listening, so the count stayed at zero offline.
+          checked++;
+          ctx.progress?.(`checking ${checked}/${candidates.length} pages`);
+          try {
+            await ctx.fetchText(livePageUrl(domain, cand.path));
+          } catch (err) {
+            // Only the server saying "gone" counts. A timeout or a 5xx is a bad minute, and
+            // reading it as a deletion would invent a retreat the team never made.
+            const status = httpStatus(err);
+            if (status === null || status < 400 || status >= 500) {
+              inconclusive++;
+              continue;
+            }
+            retired++;
+            events.push({
+              ...make(cand.date, `Published ${cand.path} — since removed (404 today)`, "product_change"),
+              // The archived copy is the evidence that it ever existed.
+              url: `https://web.archive.org/web/*/${domain}${cand.path}`,
+            });
+          }
+        }
+      }
+
       // Cumulative page count — how the site's surface area grew.
       const metrics: Metric[] = [];
       const pages = paths.filter((p) => !ASSET.test(p.path));
@@ -169,7 +237,13 @@ export const structure: Source = {
         events, metrics,
         coverage: {
           status: events.length ? "ok" : "empty",
-          note: `${rows.length - 1} archived URLs, ${pages.length} pages, ${events.length} structural events`,
+          note:
+            `${rows.length - 1} archived URLs, ${pages.length} pages, ${events.length} structural events` +
+            // Say which it is. "0 removed" and "we never looked" are different claims.
+            (liveSite
+              ? `, ${retired}/${checked} live pages now 404` +
+                (inconclusive ? ` (${inconclusive} unreachable, not counted)` : "")
+              : `, removals not assessed — ${domain} did not answer`),
         },
       };
     } catch (err) {

@@ -111,9 +111,47 @@ Needs: Exa `find-similar` to build the cohort, or a manual seed list to start.
 
 ## Recommended order
 
-1. **A1 + A4** — surface what is already collected. Hours, not days.
-2. **D1 synthesis** — the largest single jump in perceived value, and all inputs exist.
-3. **A3 abandoned pages** — cheap, and genuinely unavailable anywhere else.
+1. ~~**A1 + A4** — surface what is already collected.~~ ✅ done 2026-09-24.
+2. ~~**D1 synthesis**~~ ✅ done 2026-09-14 — `lib/brief.ts`.
+3. ~~**A3 abandoned pages**~~ ✅ done 2026-09-24.
 4. **Reddit**, once the key exists — still the highest-yield unclaimed source.
 5. **D2 cohort** — needs a seed list; the infrastructure is ready.
 6. **A2 tooling** — build when the first SaaS target lands, where it will actually pay.
+
+
+---
+
+## What building A1/A3/A4 actually cost — 2026-09-24
+
+Three corrections to the assessment above, found while implementing it.
+
+**A4 was not "trivial". `play_rating_count` had never contained anything.** The extractor looked for
+a quoted, comma-only integer before the word "reviews"; Play's headline reads `8.61K reviews` in
+plain text. Nothing threw, no coverage row said `empty`, and the metric simply did not exist — for
+every crawl, since the source was written. Eleven captures now yield ten monotonic readings,
+5,470 → 10,100. `play_rating_count` joined the monotonic invariants and a new `play_no_reviews`
+check fires when install readings arrive with no review count beside them.
+
+The ratio itself is reported as a **range**: `500,000+` means under 1,000,000, so dividing by the
+floor overstates the rate by up to 5×. HabitKit lands at 10–20 reviews per 1,000 installs.
+
+**A3 was not "zero new requests".** The structure CDX query uses `collapse=urlkey`, which returns
+the *first* capture per path and no last-seen date, so disappearance is not derivable from what was
+already fetched. Worse, "not captured lately" is a fact about how often archive.org crawls, not
+about the site.
+
+The better evidence turned out to be cheaper: **ask the live site.** A page the archive holds that
+the domain now 404s is unambiguous, costs one request each against a host nobody is throttling, and
+required no second archive query. HabitKit has exactly one — `/sebsn`, the founder's own page, up
+in Aug 2021 and gone since. The removal date stays unknown and is not guessed at; the event is
+dated at the page's first capture, which is the date we hold.
+
+This needed the fixture system to learn that a 404 is a recordable fact (`file: null` + `status`),
+because offline a real 404 and an unrecorded URL were the same thing: a throw.
+
+**A1 was as advertised** — 20 readings already in the database. HabitKit held 4.9 while its rating
+count went 1 → 2,385. The verdict treats a 0.1 move as `held`: Apple publishes one decimal, so a
+single step is a rounding boundary, and flagging it would fire on every app that crosses one.
+
+**Still open, unchanged:** Reddit (needs a key), D2 cohort (needs a seed list), A2 tooling (build
+when a SaaS target lands).

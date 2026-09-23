@@ -30,6 +30,20 @@ export interface Ctx {
   progress?: (note: string) => void;
 }
 
+/**
+ * The HTTP status carried by a thrown fetch error, or `null` when it carries none.
+ *
+ * The distinction matters wherever absence is evidence. A 404 is the server stating that a URL is
+ * gone; a timeout, a 5xx, a DNS failure or a missing fixture are all "we could not look" wearing
+ * the same `catch` block. Treating the second group as the first turns every bad minute into a
+ * confident claim that a page was deleted.
+ */
+export function httpStatus(err: unknown): number | null {
+  const message = err instanceof Error ? err.message : String(err);
+  const m = /\s([1-5]\d\d)\s/.exec(message);
+  return m ? Number(m[1]) : null;
+}
+
 export const FIXTURE_DIR = path.join(process.cwd(), "fixtures");
 
 /** Fixtures are keyed by a hash of the URL — URLs contain characters filenames should not. */
@@ -39,10 +53,19 @@ export function fixtureKey(url: string): string {
 
 export interface ManifestEntry {
   url: string;
-  file: string;
+  /** `null` when what was recorded is a refusal — there is no body to serve. */
+  file: string | null;
   recorded_at: string;
   status: number;
   bytes: number;
+  /**
+   * The error a recorded non-2xx produced, replayed verbatim.
+   *
+   * A 404 is a fact about the site, not a gap in the fixtures, and the two were previously
+   * indistinguishable offline: both surfaced as "no fixture". Anything that reasons about a page
+   * being *gone* needs to tell them apart.
+   */
+  error?: string;
 }
 
 export type Manifest = Record<string, ManifestEntry>;
@@ -134,6 +157,11 @@ export function replayCtx(manifest: Manifest, frozenNow: string, dir = FIXTURE_D
           `no fixture for ${url}\n` +
             `  This test tried to reach the network. Record it with: npm run record`,
         );
+      }
+      // A recorded refusal is replayed as one. Serving a body here, or reporting "no fixture",
+      // would both tell a source that a page it can prove is gone merely went unrecorded.
+      if (entry.file === null || entry.status < 200 || entry.status >= 300) {
+        throw new Error(entry.error ?? `${new URL(url).host} ${entry.status} — ${url}`);
       }
       return readFile(path.join(dir, entry.file), "utf8");
     },

@@ -89,5 +89,24 @@ not a rewrite.
 - **Crawls are cached in Postgres** (`http_cache`). A re-crawl is ~2s instead of ~2min. Dated Wayback
   captures are cached forever because they are immutable; indexes and live lookups have short TTLs.
   To force a refetch, delete the rows: `delete from http_cache where url like '%...%'`.
+- **Play's headline count is abbreviated plain text** — `8.61K reviews`, not a quoted integer. A
+  pattern requiring `"8610"` matches nothing Play has ever served, and `play_rating_count` was
+  silently empty on every crawl until 2026-09-24. Parse `K`/`M` (`parseCount`).
+- **An install bracket is an interval.** `500,000+` means under 1,000,000, so any ratio taken
+  against its floor is overstated by up to 5×. Use `bracketCeiling` and report a range.
+- **Never `toLocaleString()` without a locale.** This box is de-DE, so 2,385 rendered as "2.385" —
+  wrong for English copy, and in Next.js the server and the hydrating browser can disagree. Always
+  `toLocaleString("en-US")`, matching the existing `toLocaleDateString("en-US")`.
+- **`ctx.progress?.(…)` does not evaluate its argument** when nobody is listening. A counter
+  incremented inside the call stays at zero offline — the coverage note read "1/0 pages".
+- **Absence is only evidence when the server says so.** A 404 is a fact; a timeout, a 5xx, a DNS
+  failure and a missing fixture are all "we could not look" wearing the same `catch`. Use
+  `httpStatus(err)` and act only on 4xx, or a bad minute becomes a confident claim that a page was
+  deleted. The same guard is why `structure` checks the site root first: without it an unreachable
+  domain reports that the team deleted their entire website.
+- **A recorded 404 is a fixture too.** `manifest.json` entries carry `file: null` + `status`, and
+  `replayCtx` replays the refusal, so "this page is gone" is testable offline.
 - `npm run record` is incremental — it skips URLs already in the manifest. Use `--force` to redo all,
-  and think twice: that is 24 archive.org fetches.
+  and think twice: that is 24 archive.org fetches. Enumeration is cache-first: the six indexes it
+  reads to decide what to sample come off disk when already recorded, so adding one fixture no
+  longer depends on archive.org answering six times without a 504.

@@ -579,5 +579,84 @@
     "recorded_at": "2026-09-11T15:21:05.860Z",
     "status": 200,
     "bytes": 7149
+  },
+  "60260766c0977bf0": {
+    "url": "https://habitkit.app/sebsn",
+    "file": null,
+    "recorded_at": "2026-09-23T22:18:40.803Z",
+    "status": 404,
+    "bytes": 0,
+    "error": "habitkit.app 404  — https://habitkit.app/sebsn"
+  },
+  "2800cc528c00ca1c": {
+    "url": "https://habitkit.app/site.webmanifest",
+    "file": null,
+    "recorded_at": "2026-09-23T22:18:41.443Z",
+    "status": 404,
+    "bytes": 0,
+    "error": "habitkit.app 404  — https://habitkit.app/site.webmanifest"
+  },
+  "42cd303ab20d78fb": {
+    "url": "https://habitkit.app/contact/",
+    "file": "live-habitkit-02.42cd303ab20d78fb.json",
+    "recorded_at": "2026-09-23T22:18:42.124Z",
+    "status": 200,
+    "bytes": 27329
+  },
+  "de48ba696f168322": {
+    "url": "https://habitkit.app/privacy/",
+    "file": "live-habitkit-03.de48ba696f168322.json",
+    "recorded_at": "2026-09-23T22:18:42.810Z",
+    "status": 200,
+    "bytes": 39179
+  },
+  "c501d904fc48fa41": {
+    "url": "https://habitkit.app/tos/",
+    "file": "live-habitkit-04.c501d904fc48fa41.json",
+    "recorded_at": "2026-09-23T22:18:43.484Z",
+    "status": 200,
+    "bytes": 37066
+  },
+  "8d1285e8e30a7ea1": {
+    "url": "https://habitkit.app/changelog/",
+    "file": "live-habitkit-05.8d1285e8e30a7ea1.json",
+    "recorded_at": "2026-09-23T22:18:44.170Z",
+    "status": 200,
+    "bytes": 67443
+  },
+  "fdc53763858509ac": {
+    "url": "https://habitkit.app/blog/",
+    "file": "live-habitkit-06.fdc53763858509ac.json",
+    "recorded_at": "2026-09-23T22:18:44.960Z",
+    "status": 200,
+    "bytes": 132854
+  },
+  "a5839970f339e5e3": {
+    "url": "https://habitkit.app/blog/ios-shortcuts-habit-tracker/",
+    "file": "live-habitkit-07.a5839970f339e5e3.json",
+    "recorded_at": "2026-09-23T22:18:45.785Z",
+    "status": 200,
+    "bytes": 55064
+  },
+  "aa7bb720bb19df34": {
+    "url": "https://habitkit.app/blog/marathon-habit-tracking/",
+    "file": "live-habitkit-08.aa7bb720bb19df34.json",
+    "recorded_at": "2026-09-23T22:18:46.576Z",
+    "status": 200,
+    "bytes": 65126
+  },
+  "cddd1f2852a8e2d7": {
+    "url": "https://habitkit.app/blog/ios-home-screen-widgets-habit-tracker/",
+    "file": "live-habitkit-09.cddd1f2852a8e2d7.json",
+    "recorded_at": "2026-09-23T22:18:47.426Z",
+    "status": 200,
+    "bytes": 52802
+  },
+  "7c81783cbdcf2ebb": {
+    "url": "https://habitkit.app/blog/five-habits-productivity-2025/",
+    "file": "live-habitkit-10.7c81783cbdcf2ebb.json",
+    "recorded_at": "2026-09-23T22:18:48.179Z",
+    "status": 200,
+    "bytes": 65611
   }
 }

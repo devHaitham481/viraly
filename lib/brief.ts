@@ -142,6 +142,20 @@ export function buildBrief(
     paragraphs.push(`On distribution they ${dist.join(", ")}.`);
   }
 
+  // ---- what they tried and dropped -----------------------------------------
+  // The only part of the record that shows a retreat. Everything else a team publishes about
+  // itself is a thing that worked.
+  const removed = evs
+    .map((e) => (e.source === "structure" ? /^Published (\S+) — since removed/.exec(e.title) : null))
+    .filter((m): m is RegExpExecArray => m !== null);
+  if (removed.length) {
+    paragraphs.push(
+      `${plural(removed.length, "page")} they put up ${removed.length === 1 ? "has" : "have"} since ` +
+        `come down — ${removed.map((m) => m[1]).join(", ")}. The archive holds ` +
+        `${removed.length === 1 ? "it" : "them"}; the live site returns 404.`,
+    );
+  }
+
   // ---- quality under scale -------------------------------------------------
   // The finding is the pairing: a rating average alone is a vanity number, and a rating count alone
   // says nothing about whether the product survived the users it gained.

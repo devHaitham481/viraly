@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth scroll-pt-24 bg-ink">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Complete Habits With Siri And iOS Shortcuts · HabitKit Help</title>
+        <meta name="description" content="Use HabitKit&#039;s seven iOS Shortcuts actions to log amounts and notes, edit past days, read progress or open a habit. Run them with Siri or automations.">
+        <link rel="canonical" href="https://habitkit.app/help/widgets/complete-habits-with-siri-and-ios-shortcuts">
+        <meta name="theme-color" content="#0a0a0b">
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+
+        
+                    <meta name="apple-itunes-app" content="app-id=6443918070">
+        
+        
+        <script>
+            (function (agent) {
+                var crawler = /bot|crawler|spider|Google-InspectionTool/i.test(agent);
+                var store = crawler ? null : /iPhone|iPad|iPod/.test(agent) ? 'ios' : /Android/.test(agent) ? 'android' : null;
+
+                if (store) {
+                    document.documentElement.dataset.store = store;
+                }
+            })(navigator.userAgent);
+        </script>
+
+        
+        
+        <link rel="icon" href="https://habitkit.app/favicon.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://habitkit.app/favicon-96.png">
+        <link rel="apple-touch-icon" href="https://habitkit.app/apple-touch-icon.png">
+
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:site_name" content="HabitKit">
+        <meta property="og:title" content="Complete Habits With Siri And iOS Shortcuts · HabitKit Help">
+        <meta property="og:description" content="Use HabitKit&#039;s seven iOS Shortcuts actions to log amounts and notes, edit past days, read progress or open a habit. Run them with Siri or automations.">
+        <meta property="og:url" content="https://habitkit.app/help/widgets/complete-habits-with-siri-and-ios-shortcuts">
+                    <meta property="article:published_time" content="2026-08-26">
+                <meta property="og:image" content="https://habitkit.app/images/og-image.jpg">
+        <meta property="og:image:alt" content="Complete Habits With Siri And iOS Shortcuts · HabitKit Help">
+                    <meta property="og:image:type" content="image/jpeg">
+            <meta property="og:image:width" content="1200">
+            <meta property="og:image:height" content="630">
+                <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Complete Habits With Siri And iOS Shortcuts · HabitKit Help">
+        <meta name="twitter:description" content="Use HabitKit&#039;s seven iOS Shortcuts actions to log amounts and notes, edit past days, read progress or open a habit. Run them with Siri or automations.">
+        <meta name="twitter:image" content="https://habitkit.app/images/og-image.jpg">
+        <meta name="twitter:image:alt" content="Complete Habits With Siri And iOS Shortcuts · HabitKit Help">
+                    <meta name="twitter:creator" content="@SebastianRoehl">
+        
+        
+                    <script async src="https://plausible.habitkit.app/js/pa-0rJ6zplCdItL34Xrh_DjA.js"></script>
+            <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+        
+        <link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/instrument-sans-700-normal-CYfAanHo.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-700-normal-Dort48En.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/nunito-800-normal-Dz8SOQK_.woff2" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="font" href="https://habitkit.app/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2" type="font/woff2" crossorigin="anonymous" />
+<style>
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-DRC__1Mx.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-normal-D1W7dsQl.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Dk9ku72i.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-500-normal-Z6ESRlEs.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B7fBEWYG.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-600-normal-B9e8oLYv.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-CYfAanHo.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-700-normal-DfAjL1vF.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-DCPiXYsF.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/instrument-sans-400-italic-CX4K8MRt.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-Dort48En.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/build/assets/nunito-700-normal-OcDqTBcA.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-Dz8SOQK_.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/build/assets/nunito-800-normal-D-J0wlBY.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-V6pRDFza.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/build/assets/jetbrains-mono-400-normal-6-qcROiO.woff") format("woff");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+  --font-instrument-sans: "Instrument Sans";
+  --font-instrument-sans-italic: "Instrument Sans";
+  --font-nunito: "Nunito";
+  --font-jetbrains-mono: "JetBrains Mono";
+}
+
+.font-instrument-sans {
+  font-family: var(--font-instrument-sans);
+}
+
+.font-instrument-sans-italic {
+  font-family: var(--font-instrument-sans-italic);
+}
+
+.font-nunito {
+  font-family: var(--font-nunito);
+}
+
+.font-jetbrains-mono {
+  font-family: var(--font-jetbrains-mono);
+}
+</style>
+        <link rel="preload" as="style" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><link rel="modulepreload" as="script" href="https://habitkit.app/build/assets/app-COsKpmZK.js" /><link rel="stylesheet" href="https://habitkit.app/build/assets/app-D1V8XnzN.css" /><script type="module" src="https://habitkit.app/build/assets/app-COsKpmZK.js"></script>    </head>
+    <body class="min-h-screen bg-ink font-sans text-foam antialiased">
+        <div class="flex min-h-screen flex-col">
+        <div class="mx-auto box-border w-full max-w-[1200px] flex-1">
+            <header
+    x-data="{ scrolled: false, open: false }"
+    x-init="scrolled = window.scrollY > 24"
+    @scroll.window="scrolled = window.scrollY > 24"
+    class="sticky top-0 z-50 px-5 py-3 sm:px-8"
+>
+    
+    
+    <div
+        class="nav-shell @container mx-auto flex items-center justify-between gap-4 rounded-2xl border backdrop-blur-xl"
+        style="max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)"
+        :style="scrolled ? 'max-width:48rem;padding:0.5rem 1rem;border-color:rgba(255,255,255,0.25);background-color:rgba(10,10,11,0.85);box-shadow:0 16px 34px rgba(0,0,0,0.45)' : 'max-width:56rem;padding:0.75rem 1.25rem;border-color:rgba(255,255,255,0.12);background-color:rgba(10,10,11,0.7);box-shadow:0 12px 30px rgba(0,0,0,0.35)'"
+    >
+        <a href="https://habitkit.app" aria-label="HabitKit" class="flex items-center gap-2.5">
+            <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-8 rounded-[9px]"
+    width="32"
+    height="32"
+>
+            <span class="hidden font-display text-[19px] font-extrabold text-foam @min-[21rem]:inline">Habit<span class="text-accent-soft">Kit</span></span>
+        </a>
+
+        
+        <nav class="hidden items-center gap-1 text-[13.5px] font-medium md:flex">
+                            <a
+                    href="https://habitkit.app#features"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Features</a>
+                            <a
+                    href="https://habitkit.app#reviews"
+                                        class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                >Reviews</a>
+                            <a
+                    href="https://habitkit.app/help"
+                     aria-current="true"                     class="rounded-lg px-3 py-[7px] transition-colors hover:bg-white/5 text-accent"
+                >Guides</a>
+                    </nav>
+
+        <div class="flex items-center gap-2">
+            <button
+                type="button"
+                @click="open = ! open"
+                aria-expanded="false"
+                :aria-expanded="open.toString()"
+                aria-label="Toggle navigation menu"
+                class="flex size-9 cursor-pointer items-center justify-center rounded-[10px] border border-white/12 bg-white/5 text-steel transition-colors hover:text-foam md:hidden"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-show="! open">
+    <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" />
+</svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[17px]" x-cloak="x-cloak" x-show="open">
+    <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+</svg>
+            </button>
+            
+            <a
+                href="https://habitkit.app#download"
+                x-data="{ store: JSON.parse('{\u0022ios\u0022:\u0022https:\\\/\\\/apps.apple.com\\\/app\\\/id6443918070\u0022,\u0022android\u0022:\u0022https:\\\/\\\/play.google.com\\\/store\\\/apps\\\/details?id=com.roehl.habitkit\u0022}')[document.documentElement.dataset.store] }"
+                x-init="store && ($el.href = store)"
+                class="flex h-9 shrink-0 items-center gap-[7px] rounded-[10px] bg-foam px-4 text-[13.5px] font-semibold whitespace-nowrap text-ink transition-colors hover:bg-white">
+                Get the app
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[14px]">
+    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+</svg>
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="absolute inset-x-5 top-full grid transition-[grid-template-rows,opacity] duration-300 ease-out sm:inset-x-8 md:hidden"
+        style="grid-template-rows: 0fr; opacity: 0"
+        :style="open ? 'grid-template-rows: 1fr; opacity: 1' : 'grid-template-rows: 0fr; opacity: 0'"
+    >
+        <div class="overflow-hidden">
+            <div class="mt-2 flex flex-col gap-1 rounded-2xl border border-white/12 bg-ink/90 px-3 py-3 text-[14px] font-medium backdrop-blur-xl">
+                                    <a
+                        href="https://habitkit.app#features"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Features</a>
+                                    <a
+                        href="https://habitkit.app#reviews"
+                        @click="open = false"
+                                                class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-muted hover:text-foam"
+                    >Reviews</a>
+                                    <a
+                        href="https://habitkit.app/help"
+                        @click="open = false"
+                         aria-current="true"                         class="rounded-lg px-3 py-2 transition-colors hover:bg-white/5 text-accent"
+                    >Guides</a>
+                            </div>
+        </div>
+    </div>
+</header>
+            <main class="relative px-5 pt-10 pb-24 sm:px-8 sm:pt-14">
+                
+                <div class="pointer-events-none absolute -top-[160px] left-1/2 h-[420px] w-full max-w-[900px] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(62,211,240,0.1),transparent)]"></div>
+                <div class="relative mx-auto w-full max-w-[1016px]">
+                    <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-[11px] tracking-[0.13em] uppercase">
+                                
+            <a href="https://habitkit.app" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Home</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            
+            <a href="https://habitkit.app/help" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Help center</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            
+            <a href="https://habitkit.app/help/widgets" class="-my-1 py-1 text-muted transition-colors hover:text-foam focus-ring">Widgets &amp; Shortcuts</a>
+                                <span class="text-faint" aria-hidden="true">/</span>
+                            <span class="text-foam"  aria-current="page" >Complete Habits With Siri And iOS Shortcuts</span>
+            </nav>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://habitkit.app"},{"@type":"ListItem","position":2,"name":"Help center","item":"https://habitkit.app/help"},{"@type":"ListItem","position":3,"name":"Widgets & Shortcuts","item":"https://habitkit.app/help/widgets"},{"@type":"ListItem","position":4,"name":"Complete Habits With Siri And iOS Shortcuts","item":"https://habitkit.app/help/widgets/complete-habits-with-siri-and-ios-shortcuts"}]}</script>
+
+    <div class="mt-8 grid gap-12 sm:mt-9 lg:grid-cols-[minmax(0,1fr)_216px] lg:items-start lg:gap-16">
+        <div class="max-w-[680px]">
+            <article>
+                
+                <a
+                    href="https://habitkit.app/help/widgets"
+                    style="--topic:#8B85F4"
+                    class="inline-flex items-center gap-[7px] rounded-full border border-[var(--topic)]/40 px-3 py-[5px] font-mono text-[10.5px] tracking-[0.13em] text-[var(--topic)] uppercase transition-colors hover:border-[var(--topic)] focus-ring"
+                >
+                    <span class="size-[7px] shrink-0 rounded-tile-sm bg-[var(--topic)]" aria-hidden="true"></span>
+                    Widgets &amp; Shortcuts
+                </a>
+
+                
+                <h1 class="mt-4 font-display text-[30px] leading-[1.15] font-extrabold tracking-[-0.01em] text-pretty sm:text-[38px]">Complete Habits With Siri And iOS Shortcuts</h1>
+
+                <div class="flex flex-col gap-2 text-[13px] leading-relaxed text-muted mt-4">
+    <p>By <a href="https://habitkit.app/about" rel="author" class="font-semibold text-silver hover:text-accent focus-ring">Sebastian Röhl</a>, creator of HabitKit</p>
+    <p class="flex flex-wrap gap-x-3 gap-y-1">
+        <span>7 min read</span>
+        <span>Published <time datetime="2026-08-26">Aug 2026</time></span>
+                    <span>Updated <time datetime="2026-09-21">Sep 2026</time></span>
+                            <span>Instructions for HabitKit 1.18.0</span>
+            </p>
+</div>
+
+                
+                <div class="help-body help-lead mt-6"><p>HabitKit adds seven actions to the Shortcuts app on iOS. Complete a build habit, clear a log, add an amount, write a note, read progress or open a habit. You can run them yourself, ask Siri, or add them to an automation such as finishing a workout.</p>
+<p>All seven need iOS 17 or later. <strong>Log Amount</strong>, <strong>Log Habit Note</strong> and <strong>Get Habit Progress</strong> also accept a <strong>Date</strong>; leave it empty to use today.</p>
+<p><img src="https://habitkit.app/help-assets/charcoal-ios-shortcuts.webp" alt="Shortcuts app panels showing HabitKit shortcuts and workout automations" width="1600" height="900" loading="lazy" decoding="async"></p>
+<p><em>The screenshots show an older action list. The seven actions and current English labels are listed below; labels follow your language settings.</em></p>
+</div>
+
+                <details class="rounded-xl border border-white/10 bg-panel px-4 py-3 mt-6 lg:hidden">
+        <summary class="cursor-pointer text-[14px] font-semibold text-silver focus-ring">On this page</summary>
+        <nav aria-label="Article contents" class="mt-3">
+            <ul class="flex list-none flex-col gap-1">
+                                    <li><a href="#what-you-need" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">What You Need</a></li>
+                                    <li><a href="#the-seven-habitkit-actions-in-shortcuts" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">The Seven HabitKit Actions In Shortcuts</a></li>
+                                    <li><a href="#log-an-amount-or-note-for-a-past-day" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">Log An Amount Or Note For A Past Day</a></li>
+                                    <li><a href="#complete-a-habit-automatically-after-a-workout" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">Complete A Habit Automatically After A Workout</a></li>
+                                    <li><a href="#ask-siri-to-complete-a-habit" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">Ask Siri To Complete A Habit</a></li>
+                                    <li><a href="#sec-faq" class="block rounded py-2 text-[14px] leading-relaxed text-muted hover:text-accent focus-ring">Related Questions</a></li>
+                            </ul>
+        </nav>
+    </details>
+
+                                    <section id="what-you-need" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">What You Need</h2>
+
+    <div class="help-body mt-[18px]"><ul>
+<li><strong>iOS 17 or later.</strong> If HabitKit's actions do not appear, check your iOS version first.</li>
+<li><strong>The Shortcuts app</strong>, which ships with iOS.</li>
+<li><strong>At least one habit</strong>, and not an archived one. Archived habits are left out of everything Shortcuts can see.</li>
+<li><strong>Open HabitKit after creating or restoring a habit</strong>, so the Shortcuts picker receives the updated habit list.</li>
+</ul>
+<p>HabitKit does not have an equivalent Android automation integration. To log from an Android home screen, <a href="/help/widgets/add-a-habitkit-widget-to-your-home-screen">add a habit tracker widget</a>.</p>
+<p>HabitKit has no Apple Watch app. A workout automation uses Apple's workout trigger to run a HabitKit action on iPhone.</p>
+</div>
+</section>
+                                    <section id="the-seven-habitkit-actions-in-shortcuts" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">The Seven HabitKit Actions In Shortcuts</h2>
+
+    <div class="help-body mt-[18px]"><ul>
+<li><strong>Mark Habit As Completed</strong> brings a build habit up to today's goal without reducing progress already above it. It cannot complete a quit habit; use Log Amount to record a slip or Clear Habit Log to clear one.</li>
+<li><strong>Clear Habit Log</strong> clears today's recorded amount, including slips on a quit habit. It keeps the day's note.</li>
+<li><strong>Increment Completion Of Habit</strong> adds a whole-number amount to today, defaulting to 1. Its shortcut tile is called <strong>Increment Habit</strong>. The <strong>Amount Of Completions</strong> field keeps working in existing automations.</li>
+<li><strong>Log Amount</strong> adds an amount or sets the day's total. Choose <strong>Add</strong> or <strong>Set</strong> under <strong>Mode</strong>. It supports decimal measurements and an optional Date. On a quit habit, the amount records slips or the quantity you want to stay below.</li>
+<li><strong>Log Habit Note</strong> writes a note without changing the recorded amount. Choose <strong>Append</strong> or <strong>Replace</strong> under Mode, and optionally choose a Date.</li>
+<li><strong>Get Habit Progress</strong> reads the amount, goal, remaining amount, note, completion status, unit and date. Use its output in another action or a Shortcuts condition. It reads today unless you choose a Date; it does not return a streak count.</li>
+<li><strong>Open Habit</strong> opens the selected habit in HabitKit.</li>
+</ul>
+<p>Every action has a <strong>Habit</strong> field. Choose the habit when building an automation so it can run without asking you. If you leave the field empty, the action asks which habit to use when it runs.</p>
+<p>The first three actions always act on today. Increment uses the habit's existing goal rules; use Log Amount when you want to enter a precise total, a decimal measurement or an amount beyond the goal. Clear Habit Log sets the amount to zero without deleting the habit or its history.</p>
+<p>If a habit stops appearing in the picker, open HabitKit and check whether it was archived or deleted. <a href="/help/data-backup-and-sync/automatic-backups-and-recovery">Automatic backups, and how to restore one</a> covers restoring an archived habit.</p>
+</div>
+</section>
+                                    <section id="log-an-amount-or-note-for-a-past-day" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">Log An Amount Or Note For A Past Day</h2>
+
+    <div class="help-body mt-[18px]"><ol>
+<li>Add <strong>Log Amount</strong> and choose the Habit.</li>
+<li>Enter the <strong>Amount</strong> in the habit's saved unit. For a Measure habit, you can enter a decimal such as 2.5. Do not use thousands separators.</li>
+<li>Choose <strong>Add</strong> to increase the recorded amount, or <strong>Set</strong> to replace the day's total. For example, Add 2.5 adds another 2.5; Set 2.5 makes the total 2.5.</li>
+<li>Choose the <strong>Date</strong> you want to correct. Leave it empty for today.</li>
+</ol>
+<p>Use <strong>Log Habit Note</strong> with the same Date to add a reflection without changing the amount. Append keeps the existing note and adds the new text; Replace overwrites the note for that day.</p>
+<p>Future days cannot be logged. Amounts in locked quit-habit history cannot be changed through Shortcuts either, although notes remain editable there. For the calendar controls and historical limits, see <a href="/help/getting-started/log-a-completion-and-fix-a-past-day">log a completion and fix a past day</a>.</p>
+</div>
+</section>
+                                    <section id="complete-a-habit-automatically-after-a-workout" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">Complete A Habit Automatically After A Workout</h2>
+
+    <div class="help-body mt-[18px]"><ol>
+<li>Open <strong>Shortcuts</strong> and tap <strong>Automation</strong> at the bottom of the screen.</li>
+<li>Tap <strong>+</strong> to create a new automation, then choose a trigger. <strong>Workout</strong> is the one for a running or gym habit.</li>
+<li>Set the details. For a run: workout type Running, and <strong>Ends</strong> rather than <strong>Starts</strong>. Turn on <strong>Run Immediately</strong> if you do not want to confirm it every time.</li>
+<li>Tap <strong>Next</strong>, then <strong>New Blank Automation</strong>.</li>
+<li>Tap <strong>Add Action</strong>, search for HabitKit, and choose <strong>Mark Habit As Completed</strong>.</li>
+<li>Tap the <strong>Habit</strong> field and pick your habit.</li>
+<li>Tap <strong>Done</strong>.</li>
+</ol>
+<p><img src="https://habitkit.app/help-assets/charcoal-ios-shortcut-new.webp" alt="The Shortcuts screen offering New Blank Automation under Get Started" width="1600" height="900" loading="lazy" decoding="async"></p>
+<p><img src="https://habitkit.app/help-assets/charcoal-ios-shortcut-action.webp" alt="The finished automation holding Mark Habit As Completed with the Habit field set to Sport" width="1600" height="900" loading="lazy" decoding="async"></p>
+<aside class="md-callout"><span class="md-callout-label">Note</span><div><p>the labels in those steps are Apple's, not ours, and Apple moves them between iOS versions. The screenshots are from an older iOS. If a button has been renamed or moved, the shape is still the same: pick a trigger, choose a blank automation, add a HabitKit action, set the habit.</p></div></aside>
+<p>The same structure works for any trigger Shortcuts offers. A time of day, arriving somewhere, opening an app, plugging in a charger. The HabitKit half of it never changes.</p>
+</div>
+</section>
+                                    <section id="ask-siri-to-complete-a-habit" data-article-section class="mt-10 scroll-mt-4 sm:mt-11">
+    
+    <h2 class="font-display text-[20px] font-extrabold text-pretty sm:text-[22px]">Ask Siri To Complete A Habit</h2>
+
+    <div class="help-body mt-[18px]"><p>The actions include spoken phrases. Try one of these, replacing Reading with your habit's name where needed:</p>
+<ul>
+<li>&quot;Check off a habit in HabitKit&quot;</li>
+<li>&quot;Add a completion to my habits in HabitKit&quot;</li>
+<li>&quot;Check off habit Reading in HabitKit&quot;</li>
+<li>&quot;Clear the log for Reading in HabitKit&quot;</li>
+<li>&quot;Increment a completion for Reading in HabitKit&quot;</li>
+<li>&quot;Log an amount for Reading in HabitKit&quot;</li>
+<li>&quot;Log a note for Reading in HabitKit&quot;</li>
+<li>&quot;Get progress for Reading in HabitKit&quot;</li>
+<li>&quot;Open Reading in HabitKit&quot;</li>
+</ul>
+<p>Siri reports the updated amount after a change, or the current progress when you ask for it. Quit-habit responses describe recorded slips. If you leave the habit out, Siri asks which one you mean.</p>
+<p>If an action runs without the expected change, open HabitKit and check that the habit is active, then select it again in the action's <strong>Habit</strong> field. Mark Habit As Completed leaves an already-completed build habit unchanged, including progress above its goal. For a quit habit, use Log Amount or Clear Habit Log instead. If the problem continues, <a href="/help/troubleshooting/habitkit-will-not-open-or-shows-an-error">write in</a> with the action name, habit type and expected result.</p>
+</div>
+</section>
+                
+                                    <section id="sec-faq" data-article-section class="mt-12 scroll-mt-4 sm:mt-[52px]">
+                        <h2 class="font-display text-[20px] font-extrabold sm:text-[22px]">Related Questions</h2>
+
+                        <div class="mt-[18px] flex flex-col gap-2.5">
+                                                            <details class="group rounded-[14px] border border-white/7 bg-panel px-5"  open >
+                                    
+                                    <summary class="flex list-none cursor-pointer items-center justify-between gap-4 py-4 text-[15px] font-bold text-foam focus-ring">
+                                        <span class="text-pretty">Why can&#039;t I find &quot;Complete Habit&quot; in Shortcuts?</span>
+                                        
+                                        <span aria-hidden="true" class="text-[18px] leading-none text-dim group-open:rotate-45 motion-safe:transition-transform">+</span>
+                                    </summary>
+                                    <p class="pb-[18px] text-[14.5px] leading-[1.7] text-muted text-pretty">Search for Mark Habit As Completed for a build habit. To clear today&#039;s logged amount, use Clear Habit Log, the current name of the old clearing action. Existing saved shortcuts keep working.</p>
+                                </details>
+                                                            <details class="group rounded-[14px] border border-white/7 bg-panel px-5" >
+                                    
+                                    <summary class="flex list-none cursor-pointer items-center justify-between gap-4 py-4 text-[15px] font-bold text-foam focus-ring">
+                                        <span class="text-pretty">Can a Shortcut log a past day?</span>
+                                        
+                                        <span aria-hidden="true" class="text-[18px] leading-none text-dim group-open:rotate-45 motion-safe:transition-transform">+</span>
+                                    </summary>
+                                    <p class="pb-[18px] text-[14.5px] leading-[1.7] text-muted text-pretty">Yes. Choose a Date in Log Amount or Log Habit Note to edit a past day. Get Habit Progress can read a chosen day too. The complete, clear and increment actions still act on today. Future days cannot be logged, and locked historical amounts remain read-only.</p>
+                                </details>
+                                                            <details class="group rounded-[14px] border border-white/7 bg-panel px-5" >
+                                    
+                                    <summary class="flex list-none cursor-pointer items-center justify-between gap-4 py-4 text-[15px] font-bold text-foam focus-ring">
+                                        <span class="text-pretty">Is there anything like this on Android?</span>
+                                        
+                                        <span aria-hidden="true" class="text-[18px] leading-none text-dim group-open:rotate-45 motion-safe:transition-transform">+</span>
+                                    </summary>
+                                    <p class="pb-[18px] text-[14.5px] leading-[1.7] text-muted text-pretty">HabitKit&#039;s Shortcuts and Siri actions are iOS only. On Android, use a home screen widget to log a habit outside the app.</p>
+                                </details>
+                                                    </div>
+
+                    </section>
+                            </article>
+
+                            <nav aria-label="More in Widgets &amp; Shortcuts" class="mt-12 grid gap-3 sm:mt-[52px] sm:grid-cols-2">
+                                            <a href="https://habitkit.app/help/widgets/widgets-are-not-updating" class="flex flex-col gap-1.5 px-5 py-4 rounded-[14px] border border-white/7 bg-panel transition-colors hover:border-white/20 focus-ring">
+                            <span class="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.13em] text-dim uppercase">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 size-[11px]">
+    <path d="m12 19-7-7 7-7" /><path d="M19 12H5" />
+</svg>
+                                Previous
+                            </span>
+                            <span class="text-[14px] font-bold text-silver text-pretty">Widget Not Updating: How To Refresh It</span>
+                        </a>
+                    
+                                    </nav>
+                    </div>
+
+        <aside aria-label="Article sidebar" class="flex flex-col gap-6 lg:sticky lg:top-24">
+            
+            <nav
+    aria-label="On this page"
+    x-data="{
+        active: 'what-you-need',
+        observer: null,
+
+        init() {
+            const sections = Array.from(document.querySelectorAll('[data-article-section]'));
+            const inView = new Set();
+
+            this.observer = new IntersectionObserver((records) => {
+                records.forEach((record) => {
+                    if (record.isIntersecting) {
+                        inView.add(record.target.id);
+                    } else {
+                        inView.delete(record.target.id);
+                    }
+                });
+
+                const current = sections.find((section) => inView.has(section.id));
+
+                if (current) {
+                    this.active = current.id;
+                }
+            }, { rootMargin: '-112px 0px -55% 0px' });
+
+            sections.forEach((section) => this.observer.observe(section));
+        },
+
+        destroy() {
+            this.observer?.disconnect();
+        },
+    }"
+    class="hidden lg:block"
+>
+    <p class="font-mono text-[10.5px] tracking-[0.14em] text-dim uppercase">On this page</p>
+
+    <ul class="mt-3 flex list-none flex-col gap-0.5 border-l border-white/8">
+                    <li>
+                <a
+                    href="#what-you-need"
+                     aria-current="location"                     :aria-current="active === 'what-you-need' ? 'location' : false"
+                    class="-ml-px block border-l-2 py-1.5 pl-3.5 text-[13px] transition-colors hover:text-foam focus-ring border-accent font-bold text-silver"
+                    :class="{
+                        'border-accent font-bold text-silver': active === 'what-you-need',
+                        'border-transparent font-semibold text-muted': active !== 'what-you-need',
+                    }"
+                >What You Need</a>
+            </li>
+                    <li>
+                <a
+                    href="#the-seven-habitkit-actions-in-shortcuts"
+                                        :aria-current="active === 'the-seven-habitkit-actions-in-shortcuts' ? 'location' : false"
+                    class="-ml-px block border-l-2 py-1.5 pl-3.5 text-[13px] transition-colors hover:text-foam focus-ring border-transparent font-semibold text-muted"
+                    :class="{
+                        'border-accent font-bold text-silver': active === 'the-seven-habitkit-actions-in-shortcuts',
+                        'border-transparent font-semibold text-muted': active !== 'the-seven-habitkit-actions-in-shortcuts',
+                    }"
+                >The Seven HabitKit Actions In Shortcuts</a>
+            </li>
+                    <li>
+                <a
+                    href="#log-an-amount-or-note-for-a-past-day"
+                                        :aria-current="active === 'log-an-amount-or-note-for-a-past-day' ? 'location' : false"
+                    class="-ml-px block border-l-2 py-1.5 pl-3.5 text-[13px] transition-colors hover:text-foam focus-ring border-transparent font-semibold text-muted"
+                    :class="{
+                        'border-accent font-bold text-silver': active === 'log-an-amount-or-note-for-a-past-day',
+                        'border-transparent font-semibold text-muted': active !== 'log-an-amount-or-note-for-a-past-day',
+                    }"
+                >Log An Amount Or Note For A Past Day</a>
+            </li>
+                    <li>
+                <a
+                    href="#complete-a-habit-automatically-after-a-workout"
+                                        :aria-current="active === 'complete-a-habit-automatically-after-a-workout' ? 'location' : false"
+                    class="-ml-px block border-l-2 py-1.5 pl-3.5 text-[13px] transition-colors hover:text-foam focus-ring border-transparent font-semibold text-muted"
+                    :class="{
+                        'border-accent font-bold text-silver': active === 'complete-a-habit-automatically-after-a-workout',
+                        'border-transparent font-semibold text-muted': active !== 'complete-a-habit-automatically-after-a-workout',
+                    }"
+                >Complete A Habit Automatically After A Workout</a>
+            </li>
+                    <li>
+                <a
+                    href="#ask-siri-to-complete-a-habit"
+                                        :aria-current="active === 'ask-siri-to-complete-a-habit' ? 'location' : false"
+                    class="-ml-px block border-l-2 py-1.5 pl-3.5 text-[13px] transition-colors hover:text-foam focus-ring border-transparent font-semibold text-muted"
+                    :class="{
+                        'border-accent font-bold text-silver': active === 'ask-siri-to-complete-a-habit',
+                        'border-transparent font-semibold text-muted': active !== 'ask-siri-to-complete-a-habit',
+                    }"
+                >Ask Siri To Complete A Habit</a>
+            </li>
+                    <li>
+                <a
+                    href="#sec-faq"
+                                        :aria-current="active === 'sec-faq' ? 'location' : false"
+                    class="-ml-px block border-l-2 py-1.5 pl-3.5 text-[13px] transition-colors hover:text-foam focus-ring border-transparent font-semibold text-muted"
+                    :class="{
+                        'border-accent font-bold text-silver': active === 'sec-faq',
+                        'border-transparent font-semibold text-muted': active !== 'sec-faq',
+                    }"
+                >Related Questions</a>
+            </li>
+            </ul>
+</nav>
+
+            <div class="flex flex-col gap-3 rounded-2xl border border-white/7 bg-panel px-5 py-[18px]">
+                <p class="font-display text-[14.5px] leading-[1.4] font-bold text-foam">Still need help?</p>
+                <p class="text-[13px] leading-relaxed text-muted">Send your app version, device and what happened so I can help you find the next step.</p>
+                <a href="https://habitkit.app/support" class="rounded-full bg-foam px-4 py-2.5 text-center text-[13px] font-semibold text-ink transition-colors hover:bg-accent focus-ring">Contact support</a>
+            </div>
+        </aside>
+    </div>
+
+    <section class="mt-16 sm:mt-[72px]">
+        <h2 class="font-display text-[24px] font-extrabold capitalize sm:text-[26px]">Keep reading<span class="text-accent">.</span></h2>
+
+        <div class="mt-5 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+                            <article>
+                    <a href="https://habitkit.app/help/widgets/add-a-habitkit-widget-to-your-home-screen" class="flex h-full flex-col gap-2 px-5 py-[18px] rounded-[14px] border border-white/7 bg-panel transition-colors hover:border-white/20 focus-ring">
+                        <span class="flex items-center gap-[7px] font-mono text-[10px] tracking-[0.13em] text-dim uppercase">
+                            <span class="size-[7px] shrink-0 rounded-tile-sm" style="background:#8B85F4" aria-hidden="true"></span>
+                            Widgets &amp; Shortcuts
+                        </span>
+                        <h3 class="font-display text-[14.5px] leading-[1.4] font-bold text-foam text-pretty">Add A Habit Tracker Widget To Your Home Screen</h3>
+                    </a>
+                </article>
+                            <article>
+                    <a href="https://habitkit.app/help/getting-started/log-a-completion-and-fix-a-past-day" class="flex h-full flex-col gap-2 px-5 py-[18px] rounded-[14px] border border-white/7 bg-panel transition-colors hover:border-white/20 focus-ring">
+                        <span class="flex items-center gap-[7px] font-mono text-[10px] tracking-[0.13em] text-dim uppercase">
+                            <span class="size-[7px] shrink-0 rounded-tile-sm" style="background:#3ED3F0" aria-hidden="true"></span>
+                            Getting Started
+                        </span>
+                        <h3 class="font-display text-[14.5px] leading-[1.4] font-bold text-foam text-pretty">Log A Completion, And Fill In A Day You Missed</h3>
+                    </a>
+                </article>
+                            <article>
+                    <a href="https://habitkit.app/help/data-backup-and-sync/automatic-backups-and-recovery" class="flex h-full flex-col gap-2 px-5 py-[18px] rounded-[14px] border border-white/7 bg-panel transition-colors hover:border-white/20 focus-ring">
+                        <span class="flex items-center gap-[7px] font-mono text-[10px] tracking-[0.13em] text-dim uppercase">
+                            <span class="size-[7px] shrink-0 rounded-tile-sm" style="background:#57D29A" aria-hidden="true"></span>
+                            Data, Backup &amp; Sync
+                        </span>
+                        <h3 class="font-display text-[14.5px] leading-[1.4] font-bold text-foam text-pretty">HabitKit Backups: How To Restore Your Data</h3>
+                    </a>
+                </article>
+                    </div>
+    </section>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://habitkit.app/help/widgets/complete-habits-with-siri-and-ios-shortcuts#article","headline":"Complete Habits With Siri And iOS Shortcuts","description":"Use HabitKit's seven iOS Shortcuts actions to log amounts and notes, edit past days, read progress or open a habit. Run them with Siri or automations.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://habitkit.app/help/widgets/complete-habits-with-siri-and-ios-shortcuts"},"isPartOf":{"@id":"https://habitkit.app/help/widgets#topic"},"datePublished":"2026-08-26","dateModified":"2026-09-21","author":{"@id":"https://habitkit.app#sebastian"},"publisher":{"@id":"https://habitkit.app#sebastian"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why can't I find \"Complete Habit\" in Shortcuts?","acceptedAnswer":{"@type":"Answer","text":"Search for Mark Habit As Completed for a build habit. To clear today's logged amount, use Clear Habit Log, the current name of the old clearing action. Existing saved shortcuts keep working."}},{"@type":"Question","name":"Can a Shortcut log a past day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose a Date in Log Amount or Log Habit Note to edit a past day. Get Habit Progress can read a chosen day too. The complete, clear and increment actions still act on today. Future days cannot be logged, and locked historical amounts remain read-only."}},{"@type":"Question","name":"Is there anything like this on Android?","acceptedAnswer":{"@type":"Answer","text":"HabitKit's Shortcuts and Siri actions are iOS only. On Android, use a home screen widget to log a habit outside the app."}}]}]}</script>
+                </div>
+            </main>
+        </div>
+        <div class="mx-auto box-border w-full max-w-[1200px]">
+            <footer class="relative flex flex-col gap-10 px-5 py-12 text-[13px] text-dim sm:px-8">
+    <div class="flex flex-col gap-10 sm:flex-row sm:justify-between">
+        <div class="flex max-w-[280px] flex-col gap-3">
+            <a href="https://habitkit.app" class="flex items-center gap-2">
+                <img
+    src="https://habitkit.app/images/habitkit-icon.png"
+    alt=""
+    class="border border-white/10 size-6 rounded-[7px]"
+    width="24"
+    height="24"
+>
+                <span class="font-display text-[14px] font-bold text-foam">HabitKit</span>
+            </a>
+            <p class="text-[13px] leading-[1.6] text-dim text-pretty">
+                Track habits. Build streaks. See your progress. Free on iOS and Android.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 sm:gap-14">
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">PRODUCT</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#features"
+                                                                        class="transition-colors hover:text-foam"
+                                >Features</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#reviews"
+                                                                        class="transition-colors hover:text-foam"
+                                >Reviews</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app#download"
+                                                                        class="transition-colors hover:text-foam"
+                                >Download</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">RESOURCES</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help"
+                                                                        class="transition-colors hover:text-foam"
+                                >Help center</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help/guides"
+                                                                        class="transition-colors hover:text-foam"
+                                >Guides</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/help#faq"
+                                                                        class="transition-colors hover:text-foam"
+                                >FAQ</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/changelog"
+                                                                        class="transition-colors hover:text-foam"
+                                >Changelog</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/support"
+                                                                        class="transition-colors hover:text-foam"
+                                >Support</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/about"
+                                                                        class="transition-colors hover:text-foam"
+                                >About</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">LEGAL</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/privacy"
+                                                                        class="transition-colors hover:text-foam"
+                                >Privacy</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://habitkit.app/terms"
+                                                                        class="transition-colors hover:text-foam"
+                                >Terms</a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="flex flex-col gap-3">
+                    <h2 class="font-mono text-[11px] tracking-[0.14em] text-steel">ELSEWHERE</h2>
+                    <ul class="flex flex-col gap-2.5">
+                                                    <li>
+                                <a
+                                    href="https://tryfocuskit.com"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >FocusKit</a>
+                            </li>
+                                                    <li>
+                                <a
+                                    href="https://roehl.dev"
+                                     target="_blank" rel="noopener"                                     class="transition-colors hover:text-foam"
+                                >roehl.dev</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </div>
+
+    <span class="font-mono text-[11px]">© 2026 HABITKIT</span>
+</footer>
+        </div>
+    </div>
+    </body>
+</html>
