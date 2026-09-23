@@ -8,6 +8,7 @@ import { Timeline } from "@/components/Timeline";
 import { CoverageReport } from "@/components/CoverageReport";
 import { GrowthChart } from "@/components/GrowthChart";
 import { InsightsPanel } from "@/components/Insights";
+import { Summary } from "@/components/Summary";
 
 type Stage = "idle" | "resolving" | "choosing" | "crawling" | "done";
 
@@ -203,6 +204,10 @@ export default function Home() {
                 </p>
               )}
             </div>
+          )}
+
+          {result.pending === 0 && result.brief && (
+            <Summary brief={result.brief} name={result.app.name} />
           )}
 
           <section className="mt-10">

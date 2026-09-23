@@ -17,6 +17,7 @@ import type { AppIdentity, Coverage, CrawlResult, Event, Metric } from "./schema
 import { computeInsights, type Insights } from "./insights.ts";
 import { auditCrawl, type Violation } from "./audit.ts";
 import { attributionSummary, buildSteps, buildTimeline, type Step, type TimelineEntry } from "./impact.ts";
+import { buildBrief, type Brief } from "./brief.ts";
 
 // 45s, not the 15s default: archive.org's CDX endpoint routinely takes 12s+ and a tighter timeout
 // silently drops the capture index — which is how the first recording run lost it.
@@ -49,6 +50,8 @@ export interface CrawlProgress extends CrawlResult {
   steps: Step[];
   /** What the timeline as a whole actually supports. */
   attribution: string;
+  /** The written summary. Deterministic — see lib/brief.ts. */
+  brief: Brief;
 }
 
 /** Resolve identity, persist it, and queue the rest. Returns the crawl id immediately. */
@@ -210,13 +213,15 @@ export async function readCrawl(crawlId: string): Promise<CrawlProgress | null> 
 
   const timeline = buildTimeline(eventRows, metricRows);
   const steps = buildSteps(eventRows, metricRows);
+  const insights = computeInsights(eventRows, metricRows);
 
   return {
     crawl_id: crawlId,
     app: target,
     events: eventRows,
     metrics: metricRows,
-    insights: computeInsights(eventRows, metricRows),
+    insights,
+    brief: buildBrief(target.name, eventRows, metricRows, insights, steps),
     violations: auditCrawl(eventRows, metricRows),
     timeline,
     steps,
