@@ -11,8 +11,10 @@
  */
 
 import type { Event, Metric } from "./schema.ts";
+import { bracketCeiling, bracketValue } from "./sources/playstore.ts";
 
 const RATING = "ios_rating_count";
+const RATING_AVG = "ios_rating_avg";
 
 /** Milestones worth comparing across apps. */
 export const MILESTONES = [100, 1_000, 10_000] as const;
@@ -40,6 +42,46 @@ export interface Milestone {
    * and the UI can decide which to show from the size of the bound.
    */
   days_upper_bound?: number;
+}
+
+/**
+ * The rating average over time — did quality hold as the app scaled?
+ *
+ * Already collected on every App Store capture and never shown. For an app that degrades under load
+ * this is the earliest public warning there is, and it costs nothing: the readings are in the
+ * database today.
+ */
+export interface Quality {
+  series: { date: string; value: number }[];
+  first: { date: string; value: number };
+  last: { date: string; value: number };
+  /** The worst reading, which a first-to-last comparison hides. */
+  low: { date: string; value: number };
+  /**
+   * `held` when the move is inside the store's own precision. Apple publishes one decimal, so a
+   * 0.1 step is a rounding boundary, not a measured decline.
+   */
+  verdict: "held" | "improved" | "declined";
+  /** Rating count at the first and last quality reading — quality *at what scale*. */
+  scale_from: number | null;
+  scale_to: number | null;
+}
+
+/**
+ * Reviews per install — how much of the user base ever says anything.
+ *
+ * Both halves come from the same Play capture, so this compares one platform's audience with
+ * itself. It is reported as a **range** because Play publishes installs in brackets: `500,000+`
+ * means somewhere under 1,000,000, and treating the floor as the count overstates the rate by up
+ * to 5×.
+ */
+export interface Engagement {
+  date: string;
+  reviews: number;
+  installs: string;
+  /** Reviews per 1,000 installs, at the bracket ceiling and at its floor. */
+  per_1k_min: number;
+  per_1k_max: number;
 }
 
 export interface Insights {
@@ -76,6 +118,10 @@ export interface Insights {
   current_pricing: { period: string; price: number }[];
   /** Cheapest yearly-equivalent price seen, and the latest — did they raise prices? */
   price_change: { period: string; from: number; to: number } | null;
+  /** The rating average over time. Null until there are two readings to compare. */
+  quality: Quality | null;
+  /** The most recent capture carrying both a review count and an install bracket. */
+  engagement: Engagement | null;
 }
 
 const toDate = (s: string) => new Date(`${s}T00:00:00Z`);
@@ -222,6 +268,58 @@ export function computeInsights(events: Event[], metrics: Metric[]): Insights {
     }
   }
 
+  // ---- quality over time ---------------------------------------------------
+  const avgSeries = metrics
+    .filter((m) => m.metric === RATING_AVG && typeof m.value === "number")
+    .map((m) => ({ date: m.date, value: m.value as number }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  /** Apple publishes one decimal, so anything under a full step is rounding, not a decline. */
+  const RATING_NOISE = 0.15;
+
+  let quality: Quality | null = null;
+  if (avgSeries.length >= 2) {
+    const first = avgSeries[0];
+    const last = avgSeries[avgSeries.length - 1];
+    const low = avgSeries.reduce((a, b) => (b.value < a.value ? b : a));
+    // Scale at each end, so "4.9 held" can be read against "1 rating" versus "2,385".
+    const at = (date: string) =>
+      ratings.filter((r) => r.date <= date).at(-1)?.value ?? null;
+    const delta = last.value - first.value;
+    quality = {
+      series: avgSeries,
+      first, last, low,
+      verdict: Math.abs(delta) < RATING_NOISE ? "held" : delta > 0 ? "improved" : "declined",
+      scale_from: at(first.date),
+      scale_to: at(last.date),
+    };
+  }
+
+  // ---- reviews per install -------------------------------------------------
+  // Both numbers must come from the same capture: pairing a review count with an install bracket
+  // read months earlier would date the ratio to neither.
+  const playByDate = new Map<string, { reviews?: number; installs?: string }>();
+  for (const m of metrics) {
+    if (m.metric === "play_rating_count" && typeof m.value === "number") {
+      playByDate.set(m.date, { ...playByDate.get(m.date), reviews: m.value });
+    } else if (m.metric === "play_installs" && typeof m.value === "string") {
+      playByDate.set(m.date, { ...playByDate.get(m.date), installs: m.value });
+    }
+  }
+  let engagement: Engagement | null = null;
+  for (const date of [...playByDate.keys()].sort()) {
+    const { reviews, installs } = playByDate.get(date)!;
+    if (reviews === undefined || installs === undefined) continue;
+    const floor = bracketValue(installs);
+    const ceiling = bracketCeiling(installs);
+    if (!floor || !ceiling) continue;
+    engagement = {
+      date, reviews, installs,
+      per_1k_min: (reviews / ceiling) * 1_000,
+      per_1k_max: (reviews / floor) * 1_000,
+    };
+  }
+
   return {
     launch_date: launch,
     observed_from: firstReading ? { date: firstReading.date, value: firstReading.value } : null,
@@ -242,6 +340,8 @@ export function computeInsights(events: Event[], metrics: Metric[]): Insights {
     growth_multiple: early !== null && recent !== null && early >= 1 ? recent / early : null,
     current_pricing: currentPricing,
     price_change: priceChange,
+    quality,
+    engagement,
     age_series: launch
       ? afterLaunch.map((r) => ({
           month: Math.round(daysBetween(launch, r.date) / 30.44),

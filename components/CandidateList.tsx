@@ -45,7 +45,7 @@ export function CandidateList({
               <div className="shrink-0 text-right text-sm text-[var(--color-muted)] tabular-nums">
                 <div>{c.released ? c.released.slice(0, 7) : "—"}</div>
                 <div>
-                  {c.rating_count.toLocaleString()}★
+                  {c.rating_count.toLocaleString("en-US")}★
                   {c.rating_avg !== null && c.rating_count > 0 && (
                     <> · {c.rating_avg.toFixed(2)}</>
                   )}

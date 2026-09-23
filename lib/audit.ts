@@ -24,7 +24,7 @@ export interface Violation {
 const EPOCH = "2008-07-10";
 
 /** Cumulative series that can only ever go up. */
-const MONOTONIC = new Set(["ios_rating_count", "play_installs"]);
+const MONOTONIC = new Set(["ios_rating_count", "play_installs", "play_rating_count"]);
 
 export function auditCrawl(
   events: Event[],
@@ -116,6 +116,18 @@ export function auditCrawl(
   for (const e of events) bySource.set(e.source, (bySource.get(e.source) ?? 0) + 1);
   if ((bySource.get("appstore") ?? 0) > 0 && series.get("ios_rating_count") === undefined) {
     push("appstore_no_growth", "App Store events but no rating series — the JSON-LD may have moved");
+  }
+
+  // A Play page that carries an install bracket carries a review count beside it. Every reading
+  // missing one meant the extractor's pattern had gone stale — which it silently was, for every
+  // crawl, until the headline turned out to read `8.61K reviews` rather than a quoted integer.
+  const installReadings = metrics.filter((m) => m.metric === "play_installs").length;
+  if (installReadings > 1 && series.get("play_rating_count") === undefined) {
+    push(
+      "play_no_reviews",
+      `${installReadings} install readings but no review count — the Play pattern may have moved`,
+      "warn",
+    );
   }
 
   return v;

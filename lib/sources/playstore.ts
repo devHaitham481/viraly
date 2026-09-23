@@ -51,6 +51,37 @@ export function bracketValue(bracket: string): number {
   return Number(bracket.replace(/[+,\s]/g, "")) || 0;
 }
 
+/**
+ * The upper edge of an install bracket.
+ *
+ * `100,000+` does not mean 100,000 — it means somewhere under the next bracket. Play's steps are
+ * 1/5/10/50/100/500 per decade, so the ceiling is the next step up. Without this the bracket reads
+ * as a point value and every ratio derived from it is overstated by up to 5×.
+ */
+export function bracketCeiling(bracket: string): number | null {
+  const floor = bracketValue(bracket);
+  if (!floor) return null;
+  const decade = 10 ** Math.floor(Math.log10(floor));
+  const lead = Math.round(floor / decade);
+  const next: Record<number, number> = { 1: 5, 5: 10 };
+  return next[lead] ? next[lead] * decade : 10 * decade;
+}
+
+/**
+ * `8.61K` → 8610, `1.2M` → 1200000, `7,575` → 7575.
+ *
+ * Play abbreviates the headline count to three significant figures, so the value carries the
+ * rounding of its last digit — ~0.6% at 8.61K, far tighter than the install bracket it gets divided
+ * by. Rounding preserves ordering, so a monotonic series stays monotonic.
+ */
+export function parseCount(raw: string): number | null {
+  const m = /^(\d[\d,]*(?:\.\d+)?)\s*([KM])?$/.exec(raw.trim());
+  if (!m) return null;
+  const n = Number(m[1].replace(/,/g, ""));
+  if (!Number.isFinite(n)) return null;
+  return Math.round(n * (m[2] === "M" ? 1e6 : m[2] === "K" ? 1e3 : 1));
+}
+
 function positionsOf(haystack: string, needle: string): number[] {
   const out: number[] = [];
   let i = haystack.indexOf(needle);
@@ -86,11 +117,16 @@ export function extractPlay(html: string, pkg: string): PlaySnapshot {
 
   let reviews: number | null = null;
   let bestReviewDist = Infinity;
-  for (const m of html.matchAll(/"([\d,]{3,})\s*reviews?"/gi)) {
+  // Unquoted and possibly abbreviated. The previous pattern required a quoted, comma-only number,
+  // which matches nothing Play has ever served: the headline reads `8.61K reviews` in plain text.
+  // `play_rating_count` was therefore silently empty on every crawl — a source returning zero rows
+  // for a field it can read, which is the failure this codebase keeps having to catch.
+  for (const m of html.matchAll(/(\d[\d,]*(?:\.\d+)?\s*[KM]?)\s*reviews?\b/gi)) {
     const d = nearest(marks, m.index!);
-    if (d < bestReviewDist && d <= SCOPE_CHARS) {
+    const n = parseCount(m[1]);
+    if (n !== null && d < bestReviewDist && d <= SCOPE_CHARS) {
       bestReviewDist = d;
-      reviews = Number(m[1].replace(/,/g, "")) || null;
+      reviews = n;
     }
   }
 

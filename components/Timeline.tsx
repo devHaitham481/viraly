@@ -39,7 +39,7 @@ function Action({ event }: { event: Event }) {
         <div className="text-xs text-[var(--color-muted)]">
           {event.kind.replace(/_/g, " ")} · {event.source}
           {event.by && <> · {event.by}</>}
-          {event.number !== null && <> · {event.number.toLocaleString()}</>}
+          {event.number !== null && <> · {event.number.toLocaleString("en-US")}</>}
         </div>
       </div>
     </li>
@@ -61,7 +61,7 @@ function Effect({ step }: { step: Step }) {
     <div className="md:text-right">
       {impact.ratings_at !== null && (
         <div className="tabular-nums">
-          <span className="text-lg font-medium">{impact.ratings_at.toLocaleString()}</span>
+          <span className="text-lg font-medium">{impact.ratings_at.toLocaleString("en-US")}</span>
           <span className="ml-1 text-xs text-[var(--color-muted)]">ratings</span>
         </div>
       )}

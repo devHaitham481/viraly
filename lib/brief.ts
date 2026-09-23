@@ -27,6 +27,13 @@ export interface Brief {
   caveat: string;
 }
 
+/**
+ * Numbers are formatted `en-US` explicitly, never with the ambient locale.
+ *
+ * A bare `toLocaleString()` renders 2,385 as "2.385" on a German machine — wrong for English copy,
+ * and in Next.js it differs between the server that renders and the browser that hydrates, which is
+ * a mismatch rather than a typo. The copy is English, so the number format is too.
+ */
 const months = (days: number) => Math.round(days / 30.44);
 
 function plural(n: number, one: string, many = `${one}s`) {
@@ -68,7 +75,7 @@ export function buildBrief(
     const { value, day } = insights.year_one;
     const near = Math.abs(day - 365) <= 90;
     let s =
-      `At ${near ? "the one-year mark" : `day ${day}`} it had ${value.toLocaleString()} ratings` +
+      `At ${near ? "the one-year mark" : `day ${day}`} it had ${value.toLocaleString("en-US")} ratings` +
       (near ? "" : " — the nearest reading to its first anniversary");
     if (m1k?.days_min !== null && m1k?.days_max !== undefined && m1k?.days_max !== null) {
       s +=
@@ -133,6 +140,34 @@ export function buildBrief(
   if (outside.length) dist.push(`drew ${plural(outside.length, "unprompted mention")}`);
   if (dist.length) {
     paragraphs.push(`On distribution they ${dist.join(", ")}.`);
+  }
+
+  // ---- quality under scale -------------------------------------------------
+  // The finding is the pairing: a rating average alone is a vanity number, and a rating count alone
+  // says nothing about whether the product survived the users it gained.
+  if (insights.quality) {
+    const q = insights.quality;
+    const scaled =
+      q.scale_from !== null && q.scale_to !== null && q.scale_to > q.scale_from * 2
+        ? ` while the count went from ${q.scale_from.toLocaleString("en-US")} to ${q.scale_to.toLocaleString("en-US")}`
+        : "";
+    const verb =
+      q.verdict === "held"
+        ? `held at ${q.last.value}`
+        : q.verdict === "improved"
+          ? `rose from ${q.first.value} to ${q.last.value}`
+          : `slipped from ${q.first.value} to ${q.last.value}`;
+    paragraphs.push(`The App Store rating average ${verb}${scaled}.`);
+  }
+
+  // ---- how many users ever say anything -------------------------------------
+  if (insights.engagement) {
+    const e = insights.engagement;
+    paragraphs.push(
+      `On Android, ${e.reviews.toLocaleString("en-US")} reviews against ${e.installs} installs puts the ` +
+        `review rate between ${Math.round(e.per_1k_min)} and ${Math.round(e.per_1k_max)} per 1,000 ` +
+        `— a range, because Play publishes installs in brackets.`,
+    );
   }
 
   // ---- growth shape --------------------------------------------------------

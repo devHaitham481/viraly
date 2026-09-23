@@ -1,6 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { bracketValue, extractPlay, playstore, playUrl } from "../lib/sources/playstore.ts";
+import { bracketCeiling, bracketValue, extractPlay, parseCount, playstore, playUrl } from "../lib/sources/playstore.ts";
 import { missingNeeds } from "../lib/sources/registry.ts";
 import { auditCrawl } from "../lib/audit.ts";
 import { FROZEN_NOW, offlineCtx } from "./helpers.ts";
@@ -116,5 +116,76 @@ describe("playstore source", () => {
     // rather than as a confident "this app has no Android listing".
     const { coverage } = await playstore.collect(habitkit, replayCtx({}, FROZEN_NOW));
     assert.equal(coverage.status, "blocked");
+  });
+});
+
+describe("parseCount", () => {
+  test("reads the abbreviated forms Play actually serves", () => {
+    // The headline count is abbreviated to three significant figures: `8.61K reviews`.
+    assert.equal(parseCount("8.61K"), 8_610);
+    assert.equal(parseCount("10.1K"), 10_100);
+    assert.equal(parseCount("1.2M"), 1_200_000);
+    assert.equal(parseCount("7,575"), 7_575);
+  });
+
+  test("refuses anything that is not a count", () => {
+    assert.equal(parseCount("ratings"), null);
+    assert.equal(parseCount("4.9★"), null);
+  });
+});
+
+describe("bracketCeiling", () => {
+  test("a bracket is an interval, and its top is the next step", () => {
+    // Play's steps run 1/5/10/50/100/500 per decade. `100,000+` tops out at 500,000, not 1,000,000.
+    assert.equal(bracketCeiling("100,000+"), 500_000);
+    assert.equal(bracketCeiling("500,000+"), 1_000_000);
+    assert.equal(bracketCeiling("1,000,000+"), 5_000_000);
+    assert.equal(bracketCeiling("100+"), 500);
+  });
+});
+
+describe("review counts are read, not silently dropped", () => {
+  test("the abbreviated headline is extracted", () => {
+    // Regression: the previous pattern required a quoted, comma-only integer — a shape Play has
+    // never served — so `play_rating_count` was empty on every crawl and nothing failed.
+    const html = `"com.roehl.habitkit" ... "500,000+" ... 8.61K reviews`;
+    assert.equal(extractPlay(html, "com.roehl.habitkit").reviews, 8_610);
+  });
+
+  test("the star histogram does not outrank the headline", () => {
+    // A Play page carries per-star counts too. The headline sits nearest the package mention.
+    const html = `"com.roehl.habitkit" 8.61K reviews ${"x".repeat(2_000)} 7,575 reviews`;
+    assert.equal(extractPlay(html, "com.roehl.habitkit").reviews, 8_610);
+  });
+
+  test("a neighbouring app's review count is still out of scope", () => {
+    const html = `"com.roehl.habitkit"${"x".repeat(9_000)}2.5M reviews`;
+    assert.equal(extractPlay(html, "com.roehl.habitkit").reviews, null);
+  });
+
+  test("real captures now yield a monotonic review series", async () => {
+    const { metrics } = await playstore.collect(habitkit, await offlineCtx());
+    const reviews = metrics.filter((m) => m.metric === "play_rating_count");
+    assert.ok(reviews.length >= 8, `only ${reviews.length} review readings`);
+    for (let i = 1; i < reviews.length; i++) {
+      assert.ok(
+        (reviews[i].value as number) >= (reviews[i - 1].value as number),
+        `review count fell at ${reviews[i].date} — scoping picked up another app`,
+      );
+    }
+  });
+});
+
+describe("a stale extractor is a violation, not a silence", () => {
+  test("install readings with no review count anywhere is flagged", () => {
+    // This is the shape the bug above had for months: eleven install readings, zero reviews, no
+    // error. An invariant is the only thing that catches a pattern going stale on a live site.
+    const installs = ["2025-01-01", "2025-06-01"].map((date) => ({
+      date, metric: "play_installs", value: "100,000+", url: "https://example.com",
+    }));
+    const v = auditCrawl([], installs, { today: "2026-12-31" });
+    assert.equal(v.length, 1);
+    assert.equal(v[0].rule, "play_no_reviews");
+    assert.equal(v[0].level, "warn");
   });
 });

@@ -102,7 +102,7 @@ export function GrowthChart({ metrics, events }: { metrics: Metric[]; events: Ev
           {fmt(t1)}
         </text>
         <text x={W - PAD.right} y={PAD.top + 4} fontSize="11" textAnchor="end" fill="var(--color-muted)">
-          {vMax.toLocaleString()} ratings
+          {vMax.toLocaleString("en-US")} ratings
         </text>
       </svg>
 

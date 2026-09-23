@@ -43,7 +43,7 @@ const ROWS: { label: string; of: (i: Insights) => string }[] = [
     // landed at month 4 for one of them.
     label: "Ratings near year 1",
     of: (i) =>
-      i.year_one ? `${i.year_one.value.toLocaleString()} (day ${i.year_one.day})` : "—",
+      i.year_one ? `${i.year_one.value.toLocaleString("en-US")} (day ${i.year_one.day})` : "—",
   },
   { label: "To 100 ratings", of: (i) => milestone(i, 100) },
   { label: "To 1,000 ratings", of: (i) => milestone(i, 1000) },

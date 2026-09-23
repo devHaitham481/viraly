@@ -1,4 +1,4 @@
-import type { Insights, Milestone } from "@/lib/insights";
+import type { Insights, Milestone, Quality } from "@/lib/insights";
 
 const fmtDays = (d: number | null) =>
   d === null ? "—" : d < 90 ? `${d} days` : `${Math.round(d / 30.44)} months`;
@@ -24,6 +24,26 @@ function milestoneText(m: Milestone | undefined): { value: string; hint?: string
     };
   }
   return { value: "—" };
+}
+
+/**
+ * Quality read against scale, because neither half means much alone.
+ *
+ * "4.9" is a vanity number; "4.9 while ratings went 1 → 2,385" is the finding — the app got a
+ * hundred times more users without getting worse. A `declined` verdict against a rising count is
+ * the inverse and the more urgent one.
+ */
+function qualityHint(q: Quality): string {
+  const move =
+    q.first.value === q.last.value
+      ? `flat at ${q.last.value}`
+      : `${q.first.value} → ${q.last.value}`;
+  const scale =
+    q.scale_from !== null && q.scale_to !== null
+      ? ` while ratings went ${q.scale_from.toLocaleString("en-US")} → ${q.scale_to.toLocaleString("en-US")}`
+      : "";
+  const dip = q.low.value < q.last.value ? `, low of ${q.low.value} in ${q.low.date.slice(0, 7)}` : "";
+  return `${move}${scale}${dip}`;
 }
 
 /** Within ~3 months of the anniversary is close enough to label a reading "year one". */
@@ -78,7 +98,7 @@ export function InsightsPanel({ insights: i, name }: { insights: Insights; name:
           <Figure
             // Only call it "after year 1" when the reading is actually near the anniversary.
             label={nearAnniversary(i.year_one.day) ? "Ratings after year 1" : `Ratings at day ${i.year_one.day}`}
-            value={i.year_one.value.toLocaleString()}
+            value={i.year_one.value.toLocaleString("en-US")}
             hint={
               nearAnniversary(i.year_one.day)
                 ? "the number most teardowns leave out"
@@ -138,6 +158,26 @@ export function InsightsPanel({ insights: i, name }: { insights: Insights; name:
           value={String(i.repositionings)}
           hint="landing-page message changes"
         />
+        {i.quality && (
+          <Figure
+            label={
+              i.quality.verdict === "held"
+                ? "Rating average (held)"
+                : `Rating average (${i.quality.verdict})`
+            }
+            value={i.quality.last.value.toFixed(1)}
+            hint={qualityHint(i.quality)}
+          />
+        )}
+        {i.engagement && (
+          <Figure
+            label="Reviews per 1,000 installs"
+            // A range, not a number: Play publishes installs as `500,000+`, so the floor would
+            // overstate the rate by up to 5×.
+            value={`${Math.round(i.engagement.per_1k_min)}–${Math.round(i.engagement.per_1k_max)}`}
+            hint={`${i.engagement.reviews.toLocaleString("en-US")} reviews against ${i.engagement.installs} Android installs (${i.engagement.date})`}
+          />
+        )}
       </dl>
 
       {/* The honest reading of the numbers, stated once rather than implied. */}
@@ -153,7 +193,7 @@ export function InsightsPanel({ insights: i, name }: { insights: Insights; name:
         i.growth_early < i.growth_recent / 3 && (
           <p className="mt-4 rounded-lg border border-[var(--color-line)] bg-white px-4 py-3 text-sm">
             {name} grew slowly for its first year —{" "}
-            <span className="font-medium">{i.year_one.value.toLocaleString()} ratings</span> — then
+            <span className="font-medium">{i.year_one.value.toLocaleString("en-US")} ratings</span> — then
             compounded {i.growth_multiple.toFixed(0)}×. No single event in the timeline explains
             that, which is the usual shape: growth compounds more often than it spikes.
           </p>

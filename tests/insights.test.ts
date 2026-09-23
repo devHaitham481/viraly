@@ -184,3 +184,85 @@ describe("edge cases", () => {
     assert.equal(i.median_days_between_releases, null);
   });
 });
+
+/** A dated rating-average reading, the series A1 surfaces. */
+const avg = (date: string, value: number): Metric => ({
+  date, metric: "ios_rating_avg", value, url: "https://example.com",
+});
+
+describe("quality over time (A1)", () => {
+  test("HabitKit held its average across a 2,000× rise in ratings", async () => {
+    const i = await habitkit();
+    const q = i.quality!;
+    assert.equal(q.first.value, 5);
+    assert.equal(q.last.value, 4.9);
+    // 5.0 → 4.9 is one rounding step on a one-decimal scale, not a measured decline.
+    assert.equal(q.verdict, "held");
+    assert.equal(q.scale_from, 1);
+    assert.equal(q.scale_to, 2385);
+  });
+
+  test("the worst reading survives a first-to-last comparison", async () => {
+    // 4.8 in late 2024 sits between two 4.9s; comparing only the ends would erase it.
+    const i = await habitkit();
+    assert.equal(i.quality!.low.value, 4.8);
+    assert.equal(i.quality!.low.date, "2024-11-17");
+  });
+
+  test("a real decline is reported as one", () => {
+    const i = computeInsights([], [avg("2023-01-01", 4.8), avg("2024-01-01", 3.9)]);
+    assert.equal(i.quality!.verdict, "declined");
+  });
+
+  test("a single rounding step is not a decline", () => {
+    // Apple publishes one decimal. Calling 4.9 → 4.8 a decline would flag every app that crosses a
+    // rounding boundary, which is the false positive that makes a warning worthless.
+    const i = computeInsights([], [avg("2023-01-01", 4.9), avg("2024-01-01", 4.8)]);
+    assert.equal(i.quality!.verdict, "held");
+  });
+
+  test("one reading is not a trend", () => {
+    assert.equal(computeInsights([], [avg("2023-01-01", 4.9)]).quality, null);
+  });
+});
+
+describe("reviews per install (A4)", () => {
+  const play = (date: string, metric: string, value: number | string): Metric => ({
+    date, metric, value, url: "https://example.com",
+  });
+
+  test("the bracket becomes a range, never a point", () => {
+    // 10,100 reviews against `500,000+` installs is 10.1 per 1,000 at the bracket ceiling and 20.2
+    // at its floor. Reporting 20.2 alone treats "500,000+" as "exactly 500,000".
+    const i = computeInsights([], [
+      play("2026-02-15", "play_installs", "500,000+"),
+      play("2026-02-15", "play_rating_count", 10_100),
+    ]);
+    const e = i.engagement!;
+    assert.equal(Math.round(e.per_1k_min), 10);
+    assert.equal(Math.round(e.per_1k_max), 20);
+  });
+
+  test("both halves must come from the same capture", () => {
+    // Pairing a review count with an install bracket read a year earlier dates the ratio to neither.
+    const i = computeInsights([], [
+      play("2025-01-01", "play_installs", "100,000+"),
+      play("2026-02-15", "play_rating_count", 10_100),
+    ]);
+    assert.equal(i.engagement, null);
+  });
+
+  test("the latest complete capture wins", () => {
+    const i = computeInsights([], [
+      play("2025-01-01", "play_installs", "100,000+"),
+      play("2025-01-01", "play_rating_count", 5_000),
+      play("2026-02-15", "play_installs", "500,000+"),
+      play("2026-02-15", "play_rating_count", 10_100),
+    ]);
+    assert.equal(i.engagement!.date, "2026-02-15");
+  });
+
+  test("no Android data means no ratio", () => {
+    assert.equal(computeInsights([], [mt("2023-01-01", 100)]).engagement, null);
+  });
+});
