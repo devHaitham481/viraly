@@ -14,7 +14,7 @@ export function Summary({ brief, name }: { brief: Brief; name: string }) {
   if (brief.paragraphs.length === 0 && !brief.caveat) return null;
 
   return (
-    <section className="mt-10 rounded-xl border border-[var(--color-line)] bg-white p-6">
+    <section className="mt-10 rounded-xl border border-[var(--color-line)] bg-white p-4 sm:p-6">
       <h2 className="text-xs uppercase tracking-wide text-[var(--color-muted)]">
         How {name} grew
       </h2>

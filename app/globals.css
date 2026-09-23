@@ -9,3 +9,12 @@
 }
 
 html, body { background: var(--color-paper); color: var(--color-ink); }
+
+/*
+ * What the timeline is sitting on.
+ *
+ * Its year headers are sticky and need an opaque backing, which has to match the surface behind
+ * them — the page on a live crawl, a white panel in the worked example on the landing page. A
+ * hardcoded colour is right in one place and a grey band across the other.
+ */
+:root { --surface: var(--color-paper); }

@@ -1,246 +1,276 @@
-"use client";
-
-import { useState } from "react";
-import type { Candidate } from "@/lib/schema";
-import type { CrawlProgress } from "@/lib/crawl";
-import { CandidateList } from "@/components/CandidateList";
+import { Crawler } from "@/components/Crawler";
 import { Timeline } from "@/components/Timeline";
 import { CoverageReport } from "@/components/CoverageReport";
 import { GrowthChart } from "@/components/GrowthChart";
 import { InsightsPanel } from "@/components/Insights";
 import { Summary } from "@/components/Summary";
+import { DEMO } from "@/lib/demo";
+import type { SourceId } from "@/lib/schema";
 
-type Stage = "idle" | "resolving" | "choosing" | "crawling" | "done";
+/**
+ * The landing page.
+ *
+ * A server component, so the worked example below the fold is real output computed at build time
+ * from a recorded crawl — no database, no worker, no fetch. The page is therefore always up and
+ * always populated, which matters because a growth-forensics tool that greets you with an empty
+ * search box is asking you to imagine the product.
+ *
+ * Only the search box is interactive, and it is the one thing that ships as client JS.
+ */
+
+/** What each source is for, in a sentence. Paired at render with what it actually returned. */
+const SOURCES: { id: SourceId; label: string; what: string }[] = [
+  { id: "itunes", label: "iTunes", what: "Identity. The store id everything else keys off — two unrelated apps are called HabitKit." },
+  { id: "rdap", label: "RDAP", what: "Domain registration: the earliest public trace of a project, usually predating everything else." },
+  { id: "wayback", label: "Wayback", what: "Landing-page copy across every archived capture. Every repositioning, dated." },
+  { id: "structure", label: "Site structure", what: "What they built and when — a press kit, a pricing page, a changelog — and what they quietly took down." },
+  { id: "appstore", label: "App Store", what: "Archived listings: the rating series, release notes, and every price change." },
+  { id: "playstore", label: "Google Play", what: "Install brackets — the closest thing to a public download count — and a second review series." },
+  { id: "blog", label: "Blog", what: "Their own posts, dated from the sitemap. Where a content play started, and whether it stopped." },
+  { id: "podcast", label: "Podcasts", what: "Guest appearances, filtered to real mentions rather than name collisions." },
+  { id: "github", label: "GitHub", what: "The founder's public repos, once a handle resolves." },
+  { id: "hackernews", label: "Hacker News", what: "Domain-anchored, not name-anchored: “habitkit” returns 12,135 hits, the domain returns 1." },
+];
+
+const DELIVERS = [
+  {
+    title: "A chronological timeline",
+    body: "Every dated move from the first public trace to today, grouped into steps — two events three days apart are one measurement, not two.",
+  },
+  {
+    title: "What each step did",
+    body: "The growth reading either side of it. Where a change is measurable it says so; where it is not, it says that instead of guessing.",
+  },
+  {
+    title: "Benchmarks",
+    body: "Ratings at year one, time to the first thousand, shipping cadence, price moves. The numbers teardowns leave out because the story reads better without them.",
+  },
+  {
+    title: "A coverage report",
+    body: "Which sources answered, which failed, and which had nothing. A gap in the timeline must never look like a gap in the crawl.",
+  },
+];
 
 export default function Home() {
-  const [query, setQuery] = useState("");
-  const [stage, setStage] = useState<Stage>("idle");
-  const [candidates, setCandidates] = useState<Candidate[]>([]);
-  const [result, setResult] = useState<CrawlProgress | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const { app, brief, steps, insights, events, metrics, coverage, span, recorded_at } = DEMO;
 
-  async function resolve(e: React.FormEvent) {
-    e.preventDefault();
-    if (!query.trim()) return;
-    setStage("resolving");
-    setError(null);
-    setResult(null);
-    setCandidates([]);
-    try {
-      const res = await fetch("/api/resolve", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ query }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "search failed");
-      setCandidates(data.candidates);
-      setStage("choosing");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-      setStage("idle");
-    }
-  }
+  const bySource = new Map<string, number>();
+  for (const e of events) bySource.set(e.source, (bySource.get(e.source) ?? 0) + 1);
 
-  async function crawl(c: Candidate) {
-    setStage("crawling");
-    setError(null);
-    try {
-      const res = await fetch("/api/crawl", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ ios_id: c.ios_id }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "crawl failed");
-      // Identity lands immediately; queued sources fill in as the worker finishes them.
-      await poll(data.crawl_id);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-      setStage("choosing");
-    }
-  }
-
-  async function poll(crawlId: string) {
-    for (let i = 0; i < 200; i++) {
-      const res = await fetch(`/api/crawl/${crawlId}`, { cache: "no-store" });
-      if (!res.ok) throw new Error((await res.json()).error ?? "poll failed");
-      const data: CrawlProgress = await res.json();
-      setResult(data);
-      setStage(data.pending > 0 ? "crawling" : "done");
-      if (data.pending === 0) return;
-      await new Promise((r) => setTimeout(r, 1200));
-    }
-    setStage("done");
-  }
+  const stats = [
+    { value: String(events.length), label: "dated events" },
+    { value: String(metrics.length), label: "growth readings" },
+    { value: `${DEMO.sources_ok}/${coverage.length}`, label: "sources answered" },
+    { value: "0", label: "invented values" },
+  ];
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
-      <header className="flex items-baseline justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">viraly</h1>
-          <p className="mt-1 text-[var(--color-muted)]">
-            How did this app actually grow? Reconstructed from public sources.
+    <main>
+      {/* ---- nav ------------------------------------------------------------ */}
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <span className="text-lg font-semibold tracking-tight">viraly</span>
+        <div className="flex items-center gap-5 text-sm">
+          <a href="#example" className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]">
+            Example
+          </a>
+          <a href="#sources" className="text-[var(--color-muted)] transition hover:text-[var(--color-ink)]">
+            Sources
+          </a>
+          <a
+            href="/compare"
+            className="rounded-lg border border-[var(--color-line)] bg-white px-3 py-1.5 transition hover:border-[var(--color-ink)]"
+          >
+            Compare
+          </a>
+        </div>
+      </nav>
+
+      {/* ---- hero ----------------------------------------------------------- */}
+      <section className="relative overflow-hidden border-b border-[var(--color-line)] pb-20 pt-14">
+        {/* A warm wash behind the fold. Decorative only, and never over the text. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(184,83,42,0.10),transparent_70%)]"
+        />
+
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white px-3 py-1 text-xs text-[var(--color-muted)]">
+            <span className="size-1.5 rounded-full bg-[var(--color-accent)]" />
+            {coverage.length} public sources · no LLM in the pipeline
+          </span>
+
+          <h1 className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+            How this app actually grew, with dates
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl text-balance text-lg leading-relaxed text-[var(--color-muted)]">
+            Enter a name. viraly reconstructs a chronological, evidence-backed timeline from public
+            archives — every launch, price change, post and repositioning — and says what each one
+            did to the growth curve.
+          </p>
+
+          <div className="mt-9">
+            <Crawler>
+              <>
+                {/* ---- stat strip ------------------------------------------- */}
+                <div className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--color-line)] bg-[var(--color-line)] sm:grid-cols-4">
+                  {stats.map((s) => (
+                    <div key={s.label} className="bg-[var(--color-paper)] px-4 py-5">
+                      <div className="text-2xl font-semibold tabular-nums">{s.value}</div>
+                      <div className="mt-0.5 text-xs text-[var(--color-muted)]">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-3 text-xs text-[var(--color-muted)]">
+                  From the example below — one real crawl, not a running total.
+                </p>
+              </>
+            </Crawler>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- the worked example -------------------------------------------- */}
+      <section id="example" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            A real crawl, start to finish
+          </h2>
+          <p className="mt-3 text-[var(--color-muted)]">
+            Everything below is output, not illustration — {app.name} reconstructed from{" "}
+            {DEMO.sources_ok} sources, {span.from} to {span.to}. Every row links to the page it came
+            from.
           </p>
         </div>
-        <a href="/compare" className="shrink-0 text-sm underline decoration-[var(--color-line)] underline-offset-4">
-          compare
-        </a>
-      </header>
 
-      <form onSubmit={resolve} className="mt-8 flex gap-2">
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="App name — try HabitKit"
-          aria-label="App name"
-          className="flex-1 rounded-lg border border-[var(--color-line)] bg-white px-4 py-2.5 outline-none placeholder:text-[var(--color-muted)] focus:border-[var(--color-ink)]"
-        />
-        <button
-          type="submit"
-          disabled={stage === "resolving" || !query.trim()}
-          className="rounded-lg bg-[var(--color-ink)] px-5 py-2.5 font-medium text-[var(--color-paper)] disabled:opacity-40"
-        >
-          {stage === "resolving" ? "Searching…" : "Search"}
-        </button>
-      </form>
-
-      {error && (
-        <p className="mt-4 rounded-lg border border-[var(--color-accent)] px-4 py-3 text-sm text-[var(--color-accent)]">
-          {error}
-        </p>
-      )}
-
-      {stage === "choosing" && candidates.length === 0 && (
-        <p className="mt-8 text-[var(--color-muted)]">
-          No apps matched “{query}”. Try a different spelling.
-        </p>
-      )}
-
-      {(stage === "choosing" || stage === "crawling") && candidates.length > 0 && (
-        <CandidateList candidates={candidates} onPick={crawl} />
-      )}
-
-      {stage === "crawling" && !result && (
-        <p className="mt-6 text-sm text-[var(--color-muted)]">Resolving…</p>
-      )}
-
-      {(stage === "done" || stage === "crawling") && result && (
-        <>
-          <section className="mt-12 border-t border-[var(--color-line)] pt-8">
-            <div className="flex items-center gap-4">
-              {result.app.artwork && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={result.app.artwork} alt="" className="size-14 rounded-xl" />
-              )}
-              <div>
-                <h2 className="text-lg font-semibold">{result.app.name}</h2>
-                <p className="text-sm text-[var(--color-muted)]">
-                  {result.app.founder ?? "unknown developer"}
-                  {result.app.domain && <> · {result.app.domain}</>}
-                </p>
-              </div>
+        {/* Framed, so it reads as the product's output rather than as more page copy. */}
+        <div className="mt-8 overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white shadow-sm [--surface:#fff]">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--color-line)] bg-[var(--color-paper)] px-5 py-3">
+            <div className="flex items-center gap-2.5">
+              <span className="size-2 rounded-full bg-[var(--color-accent)]" />
+              <span className="font-medium">{app.name}</span>
+              <span className="text-sm text-[var(--color-muted)]">{app.domain}</span>
             </div>
+            <span className="font-mono text-xs text-[var(--color-muted)]">
+              recorded {recorded_at}
+            </span>
+          </div>
 
-            <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 text-sm sm:grid-cols-3">
-              {[
-                ["iOS id", result.app.ios_id],
-                ["Bundle", result.app.play_id],
-                ["Founder via", result.app.founder_source],
-              ].map(([k, v]) => (
-                <div key={k as string}>
-                  <dt className="text-[var(--color-muted)]">{k}</dt>
-                  <dd className="truncate font-mono text-xs">{v ?? "—"}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
+          <div className="px-2.5 pb-8 pt-1 sm:px-8">
+            <Summary brief={brief} name={app.name} />
 
-          {/* A worker running older code claims runs it cannot execute. Name it. */}
-          {result.worker_missing.length > 0 && (
-            <div className="mt-6 rounded-lg border border-amber-600 px-4 py-3 text-sm">
-              <p className="font-medium text-amber-700">The worker is running older code</p>
-              <p className="mt-1 text-[var(--color-muted)]">
-                It does not know {result.worker_missing.join(", ")}, so those sources fail rather
-                than run. Restart it with <code className="font-mono">npm run worker</code>.
-              </p>
-            </div>
-          )}
-
-          {/* Queued work with no worker is not slowness — it is never going to happen. Say so. */}
-          {result.pending > 0 && !result.worker_alive && (
-            <div className="mt-6 rounded-lg border border-[var(--color-accent)] px-4 py-3 text-sm">
-              <p className="font-medium text-[var(--color-accent)]">No worker is running</p>
-              <p className="mt-1 text-[var(--color-muted)]">
-                {result.pending} source{result.pending === 1 ? "" : "s"} are queued and nothing will
-                pick them up. Start one with <code className="font-mono">npm run worker</code>, or
-                deploy a worker process — Vercel alone cannot run it.
-              </p>
-            </div>
-          )}
-
-          {result.pending > 0 && result.worker_alive && (
-            <div className="mt-6 rounded-lg border border-[var(--color-line)] bg-white px-4 py-3 text-sm">
-              <div className="flex items-center gap-2 font-medium">
-                <span className="inline-block size-1.5 animate-pulse rounded-full bg-[var(--color-accent)]" />
-                Crawling — {result.coverage.filter((c) => c.status === "ok" || c.status === "empty" || c.status === "partial" || c.status === "failed").length} of {result.coverage.length} sources done
-              </div>
-              <ul className="mt-2 space-y-0.5 text-[var(--color-muted)]">
-                {result.coverage
-                  .filter((c) => c.status === "running" || c.status === "queued")
-                  .map((c) => (
-                    <li key={c.source}>
-                      {c.status === "running" ? "▸" : "·"} {c.source}
-                      {c.status === "running"
-                        ? ` — ${c.progress ?? "started"}${c.elapsed_s != null ? ` (${c.elapsed_s}s)` : ""}`
-                        : " — waiting"}
-                    </li>
-                  ))}
-              </ul>
-              {result.queue_ahead > 0 && (
-                <p className="mt-2 text-xs text-[var(--color-muted)]">
-                  {result.queue_ahead} job{result.queue_ahead === 1 ? "" : "s"} from other crawls are
-                  ahead of this one in the shared queue.
-                </p>
-              )}
-            </div>
-          )}
-
-          {result.pending === 0 && result.brief && (
-            <Summary brief={result.brief} name={result.app.name} />
-          )}
-
-          <section className="mt-10">
-            <h2 className="text-sm font-medium text-[var(--color-muted)]">Timeline</h2>
-            {result.pending === 0 && result.attribution && (
-              <p className="mt-1 text-sm text-[var(--color-muted)]">{result.attribution}</p>
-            )}
-            <Timeline steps={result.steps} />
-          </section>
-
-          {result.metrics.length > 0 && (
             <section className="mt-10">
-              <h2 className="text-sm font-medium text-[var(--color-muted)]">Growth</h2>
-              <GrowthChart metrics={result.metrics} events={result.events} />
-              {result.metrics.filter((m) => m.metric === "ios_rating_count").length < 3 && (
-                <p className="mt-2 text-xs text-[var(--color-muted)]">
-                  Only a live reading so far — the dated series comes from archived App Store pages.
-                </p>
-              )}
+              <h3 className="text-sm font-medium text-[var(--color-muted)]">Timeline</h3>
+              <p className="mt-1 text-sm text-[var(--color-muted)]">{DEMO.attribution}</p>
+              <Timeline steps={steps} />
             </section>
-          )}
 
-          {result.pending === 0 && result.insights && (
-            <InsightsPanel insights={result.insights} name={result.app.name} />
-          )}
+            <section className="mt-10">
+              <h3 className="text-sm font-medium text-[var(--color-muted)]">Growth</h3>
+              <GrowthChart metrics={metrics} events={events} />
+            </section>
 
-          <CoverageReport
-            coverage={result.coverage}
-            queueAhead={result.queue_ahead}
-            violations={result.violations}
-          />
-        </>
-      )}
+            <InsightsPanel insights={insights} name={app.name} />
+
+            <CoverageReport coverage={coverage} />
+          </div>
+        </div>
+      </section>
+
+      {/* ---- what comes back ------------------------------------------------ */}
+      <section className="border-y border-[var(--color-line)] bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+            What comes back
+          </h2>
+          <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            {DELIVERS.map((d, i) => (
+              <div key={d.title} className="border-t border-[var(--color-line)] pt-5">
+                <span className="font-mono text-xs text-[var(--color-muted)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 font-medium">{d.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted)]">{d.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---- sources -------------------------------------------------------- */}
+      <section id="sources" className="mx-auto max-w-6xl px-6 py-20">
+        <div className="max-w-2xl">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            Where the record comes from
+          </h2>
+          <p className="mt-3 text-[var(--color-muted)]">
+            Every source is deterministic — archives, store listings, sitemaps, registries. No model
+            decides what is true, which is what makes the output testable and a timeline
+            reproducible.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-[var(--color-line)] bg-[var(--color-line)] sm:grid-cols-2">
+          {SOURCES.map((s) => {
+            const n = bySource.get(s.id) ?? 0;
+            return (
+              <div key={s.id} className="bg-[var(--color-paper)] px-5 py-5">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="font-medium">{s.label}</h3>
+                  <span className="shrink-0 font-mono text-xs text-[var(--color-muted)]">
+                    {n > 0 ? `${n} event${n === 1 ? "" : "s"}` : "—"}
+                  </span>
+                </div>
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted)]">{s.what}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ---- the honest part ------------------------------------------------ */}
+      <section className="border-t border-[var(--color-line)] bg-[var(--color-ink)] text-[var(--color-paper)]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-[1fr_1.1fr]">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                It tells you what it cannot tell you
+              </h2>
+              <p className="mt-4 leading-relaxed text-[var(--color-paper)]/70">
+                Archived readings land roughly every two months, so most steps have no measurement
+                close enough on either side to judge. Saying so is the feature. A confident number
+                derived from data that cannot support it is the failure this whole project is built
+                against.
+              </p>
+            </div>
+
+            <figure className="rounded-xl border border-[var(--color-paper)]/15 bg-[var(--color-paper)]/5 p-6">
+              <figcaption className="text-xs uppercase tracking-wide text-[var(--color-paper)]/50">
+                From the {app.name} crawl above
+              </figcaption>
+              <blockquote className="mt-3 leading-relaxed">“{brief.caveat}”</blockquote>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- footer --------------------------------------------------------- */}
+      <footer className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-line)] pt-8 text-sm text-[var(--color-muted)]">
+          <span>viraly — reconstruct how an app grew, from public sources.</span>
+          <div className="flex gap-5">
+            <a href="/compare" className="transition hover:text-[var(--color-ink)]">
+              Compare
+            </a>
+            <a
+              href="https://github.com/devHaitham481/viraly"
+              className="transition hover:text-[var(--color-ink)]"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

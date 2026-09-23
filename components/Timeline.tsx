@@ -121,7 +121,7 @@ export function Timeline({ steps }: { steps: Step[] }) {
           return (
             <li key={`${step.date}-${i}`}>
               {newYear && (
-                <div className="sticky top-0 z-10 -mx-2 bg-[var(--color-paper)]/95 px-2 pb-1 pt-4 text-sm font-medium backdrop-blur">
+                <div className="sticky top-0 z-10 -mx-2 bg-[var(--surface)]/95 px-2 pb-1 pt-4 text-sm font-medium backdrop-blur">
                   {year}
                 </div>
               )}

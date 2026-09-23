@@ -11,6 +11,8 @@ import { FIXTURE_DIR, loadManifest, replayCtx } from "../lib/fetcher.ts";
 import { lookupApp } from "../lib/sources/itunes.ts";
 import { wayback } from "../lib/sources/wayback.ts";
 import { appstore } from "../lib/sources/appstore.ts";
+import { missingNeeds, SOURCES } from "../lib/sources/registry.ts";
+import type { Coverage, Event, Metric } from "../lib/schema.ts";
 import { FROZEN_NOW, GOLDEN } from "../tests/helpers.ts";
 
 const OUT = path.join(FIXTURE_DIR, "golden");
@@ -45,4 +47,63 @@ console.log(`  appstore     ${as.events.length} events, ${as.metrics.length} met
 await writeFile(path.join(OUT, "wayback-habitkit.json"), JSON.stringify(wb.events, null, 2) + "\n");
 console.log(`  wayback      ${wb.events.length} positioning changes`);
 
-console.log(`\n${Object.keys(GOLDEN).length + 2} golden files → fixtures/golden/`);
+/**
+ * One complete crawl, every source merged — what the landing page shows.
+ *
+ * The page needs a real result to display, and a fabricated one would violate rule #1 on the most
+ * visible surface the project has. This is the recorded HabitKit crawl, run offline through the
+ * same registry the worker uses, so what a visitor sees is what a crawl produces.
+ */
+const DEMO_APP = {
+  ...HABITKIT,
+  name: "HabitKit",
+  play_id: "com.roehl.habitkit",
+  founder_source: "itunes",
+  artwork: null,
+};
+
+const demoEvents: Event[] = [];
+const demoMetrics: Metric[] = [];
+const demoCoverage: Coverage[] = [];
+
+const resolved = await lookupApp(GOLDEN.habitkit, ctx);
+demoEvents.push(...resolved.events);
+demoMetrics.push(...resolved.metrics);
+demoCoverage.push({ ...resolved.coverage, source: "itunes" });
+
+for (const source of SOURCES) {
+  const missing = missingNeeds(source, DEMO_APP);
+  if (missing.length) {
+    demoCoverage.push({ source: source.id, status: "blocked", note: `missing ${missing.join(", ")}` });
+    continue;
+  }
+  const out = await source.collect(DEMO_APP, ctx);
+  demoEvents.push(...out.events);
+  demoMetrics.push(...out.metrics);
+  demoCoverage.push({ ...out.coverage, source: source.id });
+}
+
+demoEvents.sort((a, b) => a.date.localeCompare(b.date));
+demoMetrics.sort((a, b) => a.date.localeCompare(b.date));
+
+await writeFile(
+  path.join(OUT, "demo-habitkit.json"),
+  JSON.stringify(
+    {
+      // Stamped so the page can say when, rather than implying the data is live.
+      recorded_at: FROZEN_NOW.slice(0, 10),
+      app: { ...DEMO_APP, artwork: resolved.app.artwork },
+      events: demoEvents,
+      metrics: demoMetrics,
+      coverage: demoCoverage,
+    },
+    null,
+    2,
+  ) + "\n",
+);
+console.log(
+  `  demo         ${demoEvents.length} events, ${demoMetrics.length} metrics, ` +
+    `${demoCoverage.filter((c) => c.status === "ok" || c.status === "partial").length}/${demoCoverage.length} sources`,
+);
+
+console.log(`\n${Object.keys(GOLDEN).length + 3} golden files → fixtures/golden/`);

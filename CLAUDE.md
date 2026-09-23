@@ -32,7 +32,8 @@ npm run typecheck && npm run build
 ## Layout
 
 ```
-app/              Next.js App Router — page.tsx is the whole UI
+app/              Next.js App Router
+  page.tsx        the landing page — a SERVER component, prerendered with a real crawl baked in
   api/resolve/    name → candidates
   api/crawl/      chosen ios_id → CrawlResult
 lib/schema.ts     THE CONTRACT — Event, Metric, Coverage, AppIdentity
@@ -42,7 +43,9 @@ lib/db/           connection + schema.sql
 lib/queue/        global per-host token bucket
 lib/sources/      registry.ts declares the Source shape; one file per source
 worker/           generic — reads the registry, knows nothing about any source
+lib/demo.ts       the landing page's worked example, from fixtures/golden/demo-habitkit.json
 components/       CandidateList (disambiguation), Timeline, CoverageReport
+  Crawler.tsx     the only client component — search, poll, render a live result
 ```
 
 `lib/` mirrors the package boundaries in PRD §12.2. At E2 it becomes `packages/` — a directory move,
@@ -89,6 +92,16 @@ not a rewrite.
 - **Crawls are cached in Postgres** (`http_cache`). A re-crawl is ~2s instead of ~2min. Dated Wayback
   captures are cached forever because they are immutable; indexes and live lookups have short TTLs.
   To force a refetch, delete the rows: `delete from http_cache where url like '%...%'`.
+- **The landing page ships a recorded crawl**, not a live one — `lib/demo.ts` statically imports
+  `fixtures/golden/demo-habitkit.json` so `/` prerenders with no database, worker or network. Add a
+  source and the page keeps describing the old product until you run `npm run golden`;
+  `tests/demo.test.ts` fails when a registered source is missing from it.
+- **`lib/` is imported by the test runner as well as the bundler**, so the `@/` alias does not work
+  there — node resolves it as a package and fails. Relative imports only, and a JSON import needs
+  `with { type: "json" }`.
+- **The timeline's sticky year headers read `--surface`**, which defaults to paper and is overridden
+  to white inside the landing page's example panel. Hardcoding the colour puts a grey band across
+  one of the two places it renders.
 - **Play's headline count is abbreviated plain text** — `8.61K reviews`, not a quoted integer. A
   pattern requiring `"8610"` matches nothing Play has ever served, and `play_rating_count` was
   silently empty on every crawl until 2026-09-24. Parse `K`/`M` (`parseCount`).
